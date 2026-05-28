@@ -68,7 +68,7 @@ const SECURITY_CONFIG = {
   // "WARNING — Unauthorized access…" screen) is shown when
   // the website first loads, before it fades out automatically.
   // ----------------------------------------------------------
-  WARNING_SCREEN_DURATION: 4,
+  WARNING_SCREEN_DURATION: 8,
 
   // ----------------------------------------------------------
   // REDIRECT_COUNTDOWN_SECONDS
@@ -77,7 +77,7 @@ const SECURITY_CONFIG = {
   // to REDIRECT_URL. The timer displays with millisecond
   // precision (e.g. "REDIRECTING IN 14.928").
   // ----------------------------------------------------------
-  REDIRECT_COUNTDOWN_SECONDS: 15,
+  REDIRECT_COUNTDOWN_SECONDS: 19,
 
 };
 
