@@ -60,7 +60,7 @@ const SECURITY_CONFIG = {
   //   30   = lock after 30 seconds of browsing
   //   0    = never lock automatically
   // ----------------------------------------------------------
-  PAGE_LOCK_TIME_SECONDS: 15,
+  PAGE_LOCK_TIME_SECONDS: 30,
 
   // ----------------------------------------------------------
   // WARNING_SCREEN_DURATION
