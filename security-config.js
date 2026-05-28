@@ -45,7 +45,7 @@ const SECURITY_CONFIG = {
   // Change this to any valid URL, e.g.:
   //   REDIRECT_URL: "https://google.com"
   // ----------------------------------------------------------
-  REDIRECT_URL: "https://www.amazon.in/",
+  REDIRECT_URL: "https://www.google.com/search?q=nucliex+infosys&rlz=1C1RXQR_enIN1193IN1193&oq=nucliex+infosys&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDsyBggCEEUYPDIGCAMQRRg80gEIODgxNWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8",
 
   // ----------------------------------------------------------
   // PAGE_LOCK_TIME_SECONDS
@@ -60,7 +60,7 @@ const SECURITY_CONFIG = {
   //   30   = lock after 30 seconds of browsing
   //   0    = never lock automatically
   // ----------------------------------------------------------
-  PAGE_LOCK_TIME_SECONDS: 1,
+  PAGE_LOCK_TIME_SECONDS: 15,
 
   // ----------------------------------------------------------
   // WARNING_SCREEN_DURATION
@@ -68,7 +68,7 @@ const SECURITY_CONFIG = {
   // "WARNING — Unauthorized access…" screen) is shown when
   // the website first loads, before it fades out automatically.
   // ----------------------------------------------------------
-  WARNING_SCREEN_DURATION: 2,
+  WARNING_SCREEN_DURATION: 4,
 
   // ----------------------------------------------------------
   // REDIRECT_COUNTDOWN_SECONDS
