@@ -60,7 +60,7 @@ const SECURITY_CONFIG = {
   //   30   = lock after 30 seconds of browsing
   //   0    = never lock automatically
   // ----------------------------------------------------------
-  PAGE_LOCK_TIME_SECONDS: 30,
+  PAGE_LOCK_TIME_SECONDS: 60,
 
   // ----------------------------------------------------------
   // WARNING_SCREEN_DURATION
@@ -68,7 +68,7 @@ const SECURITY_CONFIG = {
   // "WARNING — Unauthorized access…" screen) is shown when
   // the website first loads, before it fades out automatically.
   // ----------------------------------------------------------
-  WARNING_SCREEN_DURATION: 30,
+  WARNING_SCREEN_DURATION: 10,
 
   // ----------------------------------------------------------
   // REDIRECT_COUNTDOWN_SECONDS
