@@ -60,7 +60,7 @@ const SECURITY_CONFIG = {
   //   30   = lock after 30 seconds of browsing
   //   0    = never lock automatically
   // ----------------------------------------------------------
-  PAGE_LOCK_TIME_SECONDS: 20,
+  PAGE_LOCK_TIME_SECONDS: 10,
 
   // ----------------------------------------------------------
   // WARNING_SCREEN_DURATION
@@ -68,7 +68,7 @@ const SECURITY_CONFIG = {
   // "WARNING — Unauthorized access…" screen) is shown when
   // the website first loads, before it fades out automatically.
   // ----------------------------------------------------------
-  WARNING_SCREEN_DURATION: 4,
+  WARNING_SCREEN_DURATION: 3,
 
   // ----------------------------------------------------------
   // REDIRECT_COUNTDOWN_SECONDS
@@ -77,7 +77,7 @@ const SECURITY_CONFIG = {
   // to REDIRECT_URL. The timer displays with millisecond
   // precision (e.g. "REDIRECTING IN 14.928").
   // ----------------------------------------------------------
-  REDIRECT_COUNTDOWN_SECONDS: 19,
+  REDIRECT_COUNTDOWN_SECONDS: 10,
 
 };
 
