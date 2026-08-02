@@ -110,7 +110,12 @@ export default function HomePage() {
             {activeFamilies.map((family) => (
               <Card key={family.key} interactive>
                 <CardMedia>
-                  <ProductFrame ratio="16/9" label={family.frameLabel} />
+                  <ProductFrame
+                    ratio="16/9"
+                    label={family.frameLabel}
+                    src={family.image?.src}
+                    alt={family.image?.alt}
+                  />
                 </CardMedia>
                 <CardBody>
                   <h3 className="text-h3 font-semibold">

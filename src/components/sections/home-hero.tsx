@@ -54,7 +54,8 @@ export function HomeHero() {
           >
             <ProductFrame
               ratio="4/3"
-              label="NUCLIEX SSD — photography pending"
+              src="/products/green-ssd-256gb.jpg"
+              alt="NUCLIEX GREEN Series SSD 256 GB retail box, front view"
               priority
             />
           </div>

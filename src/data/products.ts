@@ -154,7 +154,14 @@ export function getProduct(slug: string): Product | undefined {
  * Families the company currently focuses on (confirmed in docs/05 §1).
  * The homepage shows one card per family — never padded to three.
  */
-export const activeFamilies = [
+export const activeFamilies: {
+  key: ProductFamily;
+  name: string;
+  href: string;
+  descriptor: string;
+  frameLabel: string;
+  image?: { src: string; alt: string };
+}[] = [
   {
     key: "sata-ssd" as ProductFamily,
     name: "SATA SSDs",
@@ -162,6 +169,10 @@ export const activeFamilies = [
     descriptor:
       "2.5-inch drives that give working laptops and desktops a faster second life.",
     frameLabel: "SATA SSD family",
+    image: {
+      src: "/products/green-ssd-256gb.jpg",
+      alt: "NUCLIEX GREEN Series SSD 256 GB retail box, front view",
+    },
   },
   {
     key: "nvme-ssd" as ProductFamily,
