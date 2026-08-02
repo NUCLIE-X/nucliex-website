@@ -98,7 +98,7 @@ export function Footer() {
         <div className="flex flex-col gap-6 border-t border-border-dark py-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-3">
             <Link href="/" aria-label="NUCLIEX home">
-              <Logo variant="white" className="h-12 w-auto" />
+              <Logo className="h-12 w-auto" />
             </Link>
             <p className="text-body-sm text-fg-inverse-muted">
               {company.legalName} · {company.corporateSignature}

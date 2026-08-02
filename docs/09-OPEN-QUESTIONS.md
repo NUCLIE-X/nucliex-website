@@ -58,9 +58,10 @@ code. **Blockers marked 🔴 must be resolved before launch.**
 4. **Hindi/Marathi.** English-only for v1. Confirm no regional language requirement.
 5. **Tagline placement.** "Driven by Expertise" is set as the corporate signature and "Powering
    Reliable Technology" as the product line. Confirm this split is acceptable.
-6. **Logo colour.** The teal `#7ACCC9` is retired in favour of navy/white/brand-blue reproduction.
-   Confirm — if the client insists on teal, the entire colour system needs revisiting, because teal
-   and `#0057B8` do not coexist cleanly.
+6. **Logo colour.** ~~The teal `#7ACCC9` is retired in favour of navy/white/brand-blue
+   reproduction.~~ **RESOLVED 2026-08-02: client chose the original teal artwork.** The site
+   now renders the teal lockup/mark everywhere (see CLAUDE.md §3.2 amendment). Teal remains
+   outside the UI token set; the SVG redraw (#1) should be produced in teal.
 
 ---
 

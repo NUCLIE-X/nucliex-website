@@ -91,6 +91,13 @@ The supplied logo artwork is `#7ACCC9` (soft teal). The brand system is deep blu
 - The node-network mark may use **`#0057B8`** when it appears alone (favicon, app icon, avatar).
 - Teal `#7ACCC9` is **retired** from the web identity. Do not add it to the token set.
 
+> **AMENDED 2026-08-02 (client decision, supersedes the above):** the client chose the
+> **original teal artwork** for the site logo. `Logo` renders the teal lockup/mark everywhere
+> (header, footer, favicons); the navy/white PNGs remain in `/public/brand` as alternates.
+> The teal exists **only inside the logo artwork** — it is still not a UI token and must not
+> enter the colour system. Known tradeoff, accepted: the teal wordmark sits below AA contrast
+> on white. Revisit at the SVG redraw (launch blocker #1).
+
 Pre-recoloured PNGs are in `/brand-assets`. **Before launch the logo must be redrawn as SVG** —
 tracking a raster logo is a launch blocker (`/docs/09-OPEN-QUESTIONS.md`).
 
