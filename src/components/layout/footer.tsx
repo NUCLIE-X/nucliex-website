@@ -118,7 +118,8 @@ export function Footer() {
               ))}
             </ul>
             <p>
-              © {new Date().getFullYear()} {company.legalName}.
+              {/* Fixed at 2025 (GST registration year) per client instruction. */}
+              © 2025 {company.legalName}.
               {/* GSTIN/CIN appear here once supplied ({{TBD:gstin}} {{TBD:cin}}) —
                   a placeholder registration number is worse than none. */}
               {!isTbd(company.gstin) && ` GSTIN ${company.gstin}`}
