@@ -48,6 +48,11 @@
   Pune founding as history.
 - **GSTIN:** 27IAIPM5293K1ZX (from the GST REG-06 certificate). The embedded PAN marks a
   proprietorship, so a CIN likely does not exist for this entity.
+- **GST registration details (REG-06):** type **Regular** (tax invoices with input tax
+  credit — substantiates the "GST-compliant invoicing" claim), liability/valid from
+  **12 February 2025**, open-ended validity, jurisdictional office Mumbai, certificate
+  issued 12 February 2025. "GST-registered since February 2025" is a usable dated fact
+  (docs/09 #14's years-in-operation stand-in if ever needed).
 - **Founding:** founded in Pune, now based in Mira Road, Thane (client confirmed).
 - Source artwork: `brand-assets/green-ssd-256gb-box-original.jpeg`.
 

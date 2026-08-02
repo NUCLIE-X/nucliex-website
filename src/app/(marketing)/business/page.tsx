@@ -57,7 +57,7 @@ export default function BusinessPage() {
               },
               {
                 title: "GST-compliant invoicing.",
-                body: "Proper tax invoices with our GSTIN on every order, sized for your input credit paperwork.",
+                body: "Regular GST registration (GSTIN 27IAIPM5293K1ZX) — proper tax invoices on every order, eligible for your input tax credit.",
               },
               {
                 title: "Consistent supply.",
