@@ -44,8 +44,9 @@ export default function WarrantyPage() {
               <div>
                 <dt className="text-label text-fg-subtle uppercase">Term</dt>
                 <dd className="mt-1 text-fg-muted">
-                  {"{{TBD:warranty_years}}"} — the exact term in years is
-                  published here and on every product page before launch.
+                  GREEN Series: 5 years standard, extended to 7 years with the
+                  registration benefit (T&amp;C apply). Registering below is what
+                  activates the extra two years.
                 </dd>
               </div>
               <div>

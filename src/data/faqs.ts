@@ -17,7 +17,7 @@ export const faqs: Faq[] = [
     group: "Warranty",
     question: "How long is the warranty on NUCLIEX drives?",
     answer:
-      "The exact term is published on every product page before launch ({{TBD:warranty_years}}). Whatever the number, the rule is the same: it's stated in years, in plain language, with what's covered and what voids it on the same page — not buried in a PDF.",
+      "The GREEN Series carries 5 years standard, extending to 7 years with the extended registration benefit when you register the drive (T&C apply). The rule is the same for every drive we ship: the term is stated in years, in plain language, with what's covered and what voids it on the product page — not buried in a PDF.",
   },
   {
     id: "warranty-register",

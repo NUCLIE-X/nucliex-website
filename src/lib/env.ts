@@ -10,7 +10,8 @@ import { z } from "zod";
  * site that silently drops enquiries is worse than one that fails to deploy.
  */
 const schema = z.object({
-  NEXT_PUBLIC_SITE_URL: z.url().default("https://nucliex.com"),
+  // Domain confirmed from retail packaging: www.nucliex.in (docs/09 #9).
+  NEXT_PUBLIC_SITE_URL: z.url().default("https://www.nucliex.in"),
   RESEND_API_KEY: z.string().min(1).optional(),
   MAIL_TO_SALES: z.email().optional(),
   MAIL_TO_SUPPORT: z.email().optional(),

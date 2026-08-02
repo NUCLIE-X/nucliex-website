@@ -78,8 +78,9 @@ export default function HomePage() {
       <SpecRail
         items={[
           {
-            value: "{{TBD:warranty_years}} YEAR",
-            label: "Warranty on every drive",
+            value: "7 YEAR",
+            label: "Warranty with registration",
+            note: "GREEN Series: 5 years standard + 2 years extended registration benefit. T&C apply.",
           },
           { value: "{{TBD:rma_hours}} HR", label: "RMA first response" },
           { value: "{{TBD:service_count}}", label: "IT services delivered" },
@@ -285,7 +286,7 @@ export default function HomePage() {
                 </span>
               ) : (
                 <Button
-                  href={`tel:${company.phone}`}
+                  href={company.phoneHref}
                   variant="secondary"
                   size="lg"
                   icon={Phone}

@@ -14,10 +14,14 @@ export const company = {
   state: "Maharashtra",
   country: "IN",
   addressLine: "{{TBD:address}}",
-  phone: "{{TBD:phone}}",
-  salesEmail: "{{TBD:email}}",
-  supportEmail: "{{TBD:email}}",
-  partnersEmail: "{{TBD:email}}",
+  // Phone + mailboxes confirmed by the client 2026-08-02 (packaging + chat):
+  // ram@, support@, sales@, accounts@ @nucliex.in · +91 9167862127.
+  phone: "+91 9167862127",
+  phoneHref: "tel:+919167862127",
+  salesEmail: "sales@nucliex.in",
+  supportEmail: "support@nucliex.in",
+  // No partners@ mailbox exists yet — partner enquiries route to sales.
+  partnersEmail: "sales@nucliex.in",
   hours: "{{TBD:hours}}",
   gstin: "{{TBD:gstin}}",
   cin: "{{TBD:cin}}",

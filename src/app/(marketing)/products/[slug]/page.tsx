@@ -140,9 +140,10 @@ export default async function ProductPage({
 
             <p className="mt-8 border-t border-border pt-4 text-body-sm text-fg-muted">
               Warranty:{" "}
-              {product.warrantyYears !== null
-                ? `${product.warrantyYears} years`
-                : "{{TBD:warranty_years}} — exact term published before launch"}{" "}
+              {product.warrantyLabel ??
+                (product.warrantyYears !== null
+                  ? `${product.warrantyYears} years`
+                  : "{{TBD:warranty_years}} — exact term published before launch")}{" "}
               · {product.formFactor} · {product.interface}
             </p>
           </div>

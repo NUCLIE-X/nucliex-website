@@ -67,7 +67,7 @@ export const warrantySchema = z.object({
     .trim()
     .min(4, "Enter the serial number printed on the drive label.")
     .max(64, "That doesn't look like a drive serial number."),
-  product: z.string().trim().min(2, "Enter the product name, e.g. NX-500."),
+  product: z.string().trim().min(2, "Enter the product name, e.g. GREEN SSD."),
   purchaseDate: z
     .string()
     .trim()

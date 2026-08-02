@@ -26,7 +26,7 @@ export function WarrantyForm() {
           <FormField
             name="product"
             label="Product"
-            help="e.g. NX-500"
+            help="e.g. GREEN SSD 256 GB"
             state={state}
           >
             <Input autoComplete="off" />

@@ -40,9 +40,17 @@ code. **Blockers marked 🔴 must be resolved before launch.**
 ## Build-status notes (2026-08-02)
 
 - The site is built through Phase 10 of `08-BUILD-PLAN.md`; every `{{TBD}}` in `src/` traces to a row above (verified by grep).
-- **"NX-500" is a provisional model name** — the working name used in these docs, shipped at status `coming-soon` with all specs tokenised. It must be confirmed or replaced under item #2 before launch, and nothing may move to `available` before items #2–#4 resolve.
 - The serial-number lookup on `/support` validates format and routes to the support mailbox — a real lookup needs the warranty-records decision in #16.
 - Legal pages are structured but `noindex` until #8 resolves.
+
+### Resolved / narrowed 2026-08-02 (client-supplied packaging + messages — see docs/05 §1a)
+
+- **#2 products — PARTIALLY RESOLVED:** real product is the **GREEN Series SSD** (256 GB SATA III); it replaced the provisional NX-500 and ships at status `available`. Other models/capacities still open.
+- **#3 specs — PARTIALLY RESOLVED:** packaging figures live on the product page with a "measured-conditions datasheet pending" footnote. The datasheet itself is still open.
+- **#4 warranty — RESOLVED:** 5 years standard + 2 years extended registration benefit (7 total), T&C apply.
+- **#6 contacts — PARTIALLY RESOLVED:** phone +91 9167862127; support@/sales@/accounts@/ram@ @nucliex.in. Address and hours still open; no partners@ mailbox (routes to sales).
+- **#9 domain — RESOLVED:** `www.nucliex.in` (confirm www-vs-apex canonical at deploy).
+- **#12 certifications — PARTIALLY RESOLVED:** BIS certification claimed on packaging and listed on the spec table; certificate number still open.
 
 ---
 

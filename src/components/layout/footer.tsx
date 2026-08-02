@@ -65,7 +65,7 @@ export function Footer() {
                   <span>{company.phone}</span>
                 ) : (
                   <a
-                    href={`tel:${company.phone}`}
+                    href={company.phoneHref}
                     className="duration-fast transition-colors hover:text-accent-400"
                   >
                     {company.phone}

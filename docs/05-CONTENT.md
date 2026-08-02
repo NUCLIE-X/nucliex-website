@@ -26,6 +26,22 @@
   cloud integration, plus a software ecosystem (SSD health monitoring, firmware utility, warranty
   portal, product authentication, diagnostics, driver centre, dealer portal).
 
+### 1a. Confirmed 2026-08-02 (client-supplied: retail packaging + direct message)
+
+- **Product:** NUCLIEX **GREEN Series SSD** — 2.5″ SATA III 6 Gb/s solid state drive, **256 GB**
+  capacity confirmed. Packaging figures: up to **560 MB/s** read, up to **520 MB/s** write,
+  **170 TBW** endurance (256 GB), **2.0 million hours MTTF**, 1,500 G shock resistance,
+  5.0 gRMS vibration resistance, dynamic SLC cache, TRIM support, S.M.A.R.T. health
+  monitoring, LDPC error correction, low power consumption, **BIS certified**.
+  (Measured-conditions datasheet still pending — keep the packaging-figures footnote.)
+- **Warranty (GREEN Series):** **5 years standard + 2 years extended registration benefit
+  (7 years total), T&C apply.**
+- **Domain:** `www.nucliex.in`.
+- **Phone:** +91 9167862127.
+- **Mailboxes:** ram@nucliex.in · support@nucliex.in · sales@nucliex.in · accounts@nucliex.in.
+  (No partners@ yet — partner enquiries route to sales.)
+- Source artwork: `brand-assets/green-ssd-256gb-box-original.jpeg`.
+
 ## 2. Facts that are NOT confirmed — use `{{TBD}}`
 
 Product SKUs and model names · capacities · read/write speeds · TBW · MTBF · DWPD · controller and

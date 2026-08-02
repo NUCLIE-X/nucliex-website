@@ -41,8 +41,10 @@ export async function sendMail(input: MailInput): Promise<void> {
   }
 }
 
+// Real mailboxes confirmed by the client 2026-08-02; env vars still override.
+// No partners@ mailbox exists yet — partner mail routes to sales.
 export const mailboxes = {
-  sales: env.MAIL_TO_SALES ?? "sales@nucliex.example",
-  support: env.MAIL_TO_SUPPORT ?? "support@nucliex.example",
-  partners: env.MAIL_TO_PARTNERS ?? "partners@nucliex.example",
+  sales: env.MAIL_TO_SALES ?? "sales@nucliex.in",
+  support: env.MAIL_TO_SUPPORT ?? "support@nucliex.in",
+  partners: env.MAIL_TO_PARTNERS ?? "sales@nucliex.in",
 };

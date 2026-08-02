@@ -62,6 +62,8 @@ const organizationJsonLd = {
   url: env.NEXT_PUBLIC_SITE_URL,
   logo: `${env.NEXT_PUBLIC_SITE_URL}/brand/nucliex-logo-navy.png`,
   founder: { "@type": "Person", name: company.founder },
+  telephone: company.phone,
+  email: company.supportEmail,
   address: {
     "@type": "PostalAddress",
     addressLocality: company.city,

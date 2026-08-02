@@ -3,10 +3,10 @@
  * Every field must be real: unknown values carry literal {{TBD:…}} tokens
  * tracked in docs/09-OPEN-QUESTIONS.md.
  *
- * ⚠️ The catalogue below is PROVISIONAL. "NX-500" is the working model name
- * used throughout /docs for design purposes; the real product list is open
- * question #2 ({{TBD:products}}). Nothing here may move to status
- * "available" until the client confirms models, capacities, and specs.
+ * Figures for the GREEN Series come from the client-supplied retail
+ * packaging (brand-assets/green-ssd-256gb-box-original.jpeg, received
+ * 2026-08-02). The measured-conditions datasheet is still pending —
+ * docs/09 #3 stays partially open.
  */
 
 export type ProductStatus = "available" | "coming-soon" | "planned";
@@ -39,6 +39,8 @@ export interface Product {
   specs: SpecRow[];
   useCases: string[];
   warrantyYears: number | null; // null → renders {{TBD}}
+  /** Preferred display line where the term needs nuance, e.g. "5 years — 7 with registration". */
+  warrantyLabel?: string;
   images: { src: string; alt: string }[];
   documents: {
     title: string;
@@ -75,31 +77,71 @@ export const familyLabels: Record<ProductFamily, string> = {
 
 export const products: Product[] = [
   {
-    slug: "nx-500-sata-ssd",
-    name: "NX-500",
+    slug: "green-ssd",
+    name: "GREEN SSD",
     family: "sata-ssd",
-    status: "coming-soon",
-    tagline: "A dependable SATA upgrade for the machines people actually use.",
+    status: "available",
+    tagline: "The GREEN Series 2.5-inch SATA drive — built for the machines people actually use.",
     summary:
-      "The NX-500 is the first drive in the NUCLIEX SATA line — built for laptop and desktop upgrades where reliability matters more than headline numbers. Full specifications are published once validation completes.",
-    capacities: [], // {{TBD:products}} — capacity options pending confirmation
+      "The GREEN Series is NUCLIEX's 2.5-inch SATA III SSD for laptop and desktop upgrades: up to 560 MB/s reads, dynamic SLC caching, and a 5-year warranty that extends to 7 years when you register the drive.",
+    capacities: ["256 GB"], // further capacities pending confirmation ({{TBD:products}})
     formFactor: "2.5-inch",
-    interface: "SATA III",
+    interface: "SATA III 6 Gb/s",
     highlights: [
-      { value: "{{TBD:specs}}", label: "Seq. read" },
-      { value: "{{TBD:specs}}", label: "Seq. write" },
-      { value: "{{TBD:specs}}", label: "TBW" },
-      { value: "{{TBD:warranty_years}} YR", label: "Warranty" },
+      {
+        value: "560 MB/s",
+        label: "Seq. read (up to)",
+        note: "Figures as rated on retail packaging; measured-conditions datasheet pending.",
+      },
+      { value: "520 MB/s", label: "Seq. write (up to)" },
+      { value: "170 TBW", label: "Endurance (256 GB)" },
+      {
+        value: "7 YEAR",
+        label: "Warranty",
+        note: "5 years standard + 2 years extended registration benefit. T&C apply.",
+      },
     ],
-    specs: [], // {{TBD:specs}} — published only after validation, never invented
+    specs: [
+      {
+        label: "Sequential read",
+        value: "Up to 560 MB/s",
+        group: "performance",
+        note: "Figures as rated on retail packaging; measured-conditions datasheet pending.",
+      },
+      { label: "Sequential write", value: "Up to 520 MB/s", group: "performance" },
+      { label: "Cache", value: "Dynamic SLC", group: "performance" },
+      { label: "Endurance (256 GB)", value: "170 TBW", group: "endurance" },
+      { label: "MTTF", value: "2.0 million hours", group: "endurance" },
+      { label: "Error correction", value: "LDPC", group: "endurance" },
+      { label: "Shock resistance", value: "1,500 G", group: "endurance" },
+      { label: "Vibration resistance", value: "5.0 gRMS", group: "endurance" },
+      { label: "Form factor", value: "2.5-inch", group: "physical" },
+      { label: "Interface", value: "SATA III 6 Gb/s", group: "physical" },
+      { label: "TRIM", value: "Supported", group: "compatibility" },
+      { label: "S.M.A.R.T.", value: "Health monitoring supported", group: "compatibility" },
+      { label: "Certification", value: "BIS", group: "compatibility" },
+      { label: "Standard warranty", value: "5 years", group: "warranty" },
+      {
+        label: "Extended warranty",
+        value: "+2 years on registration",
+        group: "warranty",
+        note: "Extended registration benefit — terms and conditions apply.",
+      },
+    ],
     useCases: ["Laptop upgrade", "Office desktop fleet", "Everyday PC build"],
-    warrantyYears: null,
-    images: [],
-    documents: [], // {{TBD:documents}}
+    warrantyYears: 5,
+    warrantyLabel: "5-year warranty — 7 years with registration",
+    images: [
+      {
+        src: "/products/green-ssd-256gb.jpg",
+        alt: "NUCLIEX GREEN Series SSD 256 GB retail box, front view",
+      },
+    ],
+    documents: [], // {{TBD:documents}} — datasheet PDF pending
     seo: {
-      title: "NX-500 SATA SSD",
+      title: "GREEN SSD — 2.5-inch SATA III, 256 GB",
       description:
-        "The NX-500 2.5-inch SATA SSD from NUCLIEX — full specifications, warranty terms, and datasheet published after validation.",
+        "The NUCLIEX GREEN Series SATA SSD: up to 560 MB/s read, 170 TBW endurance, and a 5-year warranty extendable to 7 with registration.",
     },
   },
 ];

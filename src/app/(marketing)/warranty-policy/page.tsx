@@ -20,13 +20,15 @@ export default function WarrantyPolicyPage() {
       </h1>
       <p className="mt-4 text-body-sm text-fg-subtle">
         Draft structure — final terms are supplied by {company.legalName}.
-        {" {{TBD:legal}} {{TBD:warranty_years}}"}
+        {" {{TBD:legal}}"}
       </p>
       <Prose className="mt-10">
         <h2>Warranty term</h2>
         <p>
-          {"{{TBD:warranty_years}}"} — stated in years per product, printed on
-          the product page and the packaging.
+          GREEN Series: 5 years standard, plus 2 years extended registration
+          benefit (terms and conditions apply) — 7 years in total for
+          registered drives. The term for every product is printed on its
+          product page and packaging.
         </p>
         <h2>What is covered</h2>
         <p>{"{{TBD:legal}}"} — failure in normal use within the term.</p>

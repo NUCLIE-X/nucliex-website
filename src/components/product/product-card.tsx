@@ -51,9 +51,11 @@ export function ProductCard({ product }: { product: Product }) {
         </h3>
         <p className="mt-2 text-body text-fg-muted">{product.tagline}</p>
         <p className="mt-3 text-body-sm text-fg-subtle">
-          {product.capacities.length > 0
-            ? `${product.capacities[0]} – ${product.capacities[product.capacities.length - 1]} · `
-            : ""}
+          {product.capacities.length === 1
+            ? `${product.capacities[0]} · `
+            : product.capacities.length > 1
+              ? `${product.capacities[0]} – ${product.capacities[product.capacities.length - 1]} · `
+              : ""}
           {product.formFactor} · {product.interface}
         </p>
         {confirmedHighlights.length > 0 ? (
