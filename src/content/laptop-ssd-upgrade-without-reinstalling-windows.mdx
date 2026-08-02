@@ -1,0 +1,83 @@
+The fastest way to make an ageing laptop feel new is an SSD. The fastest way
+to ruin the weekend is doing the swap without a plan. This is the process our
+technicians use — clone first, swap second, and verify before anything gets
+wiped.
+
+## Before you start
+
+Three rules that prevent almost every disaster:
+
+- **Back up anything you can't lose** before touching hardware. A clone is not
+  a backup until it has booted successfully.
+- **Don't wipe the old drive** until the new one has run for a few days. It is
+  your rollback plan.
+- **Windows activation survives a drive swap.** The licence is tied to the
+  machine, not the disk — you will not need to reactivate or find a product key.
+
+You'll need the new SSD, a small screwdriver, and a way to connect the new
+drive while cloning: a USB-to-SATA cable or M.2 enclosure, whichever matches
+the drive you bought.
+
+## Step 1: check what your laptop can take
+
+Open the service manual or the manufacturer's spec page for your exact model
+and confirm two things: the physical slot (2.5-inch bay, M.2, or both) and —
+for M.2 — whether the slot speaks SATA, NVMe, or either. Buying the wrong kind
+of M.2 drive is the most common self-upgrade mistake we see.
+
+While you're there, check the drive you're replacing. If Windows currently
+lives on a 500 GB disk that's 300 GB full, the new SSD needs at least that
+much used-space headroom.
+
+## Step 2: clone the old drive
+
+Connect the new SSD over USB and clone the entire system disk to it — not just
+the C: partition. A Windows installation includes small hidden partitions (EFI
+boot, recovery) and the clone must carry all of them.
+
+Use a disk-cloning utility that explicitly supports system disks; most SSD
+vendors ship one free with their drives, and several well-known free imaging
+tools do the same job. The clone will take from twenty minutes to a few hours
+depending on how much data you have.
+
+When it finishes, don't skip verification: the cloning tool should report
+success, and the new drive's partition layout should mirror the old one.
+
+## Step 3: swap the drives
+
+Power off fully — shut down, not sleep — unplug the charger, and if the
+battery is removable, remove it. Ground yourself on something metal before
+touching the internals.
+
+Open the service panel, swap the old drive for the new one, and reassemble.
+On most laptops this is four to eight screws; if yours needs the whole bottom
+case removed and pried, work slowly at the clips or let a technician do it.
+
+## Step 4: first boot and checks
+
+The machine should boot straight into your Windows exactly as you left it. If
+it doesn't find a bootable drive, enter the firmware settings and check the
+boot order — the new drive sometimes registers as a new entry.
+
+Once you're in:
+
+1. Confirm Windows sees the full new capacity in Disk Management. If the clone
+   left unallocated space, extend the partition into it.
+2. Check that TRIM is on: `fsutil behavior query DisableDeleteNotify` should
+   return 0.
+3. Use the machine normally for a few days with the old drive stored safely.
+   Then wipe the old drive and repurpose it as external storage.
+
+## What can go wrong
+
+- **The clone won't boot.** Usually a partition-mode mismatch or an incomplete
+  clone. Re-clone with a tool that copies the whole disk including hidden
+  partitions.
+- **The new drive isn't detected while cloning.** New SSDs sometimes arrive
+  uninitialised — initialise the disk in Disk Management first.
+- **The laptop resists opening.** Some chassis hide screws under feet or
+  keyboards. The service manual knows; force doesn't.
+
+If any of that sounds like a worse afternoon than you signed up for, this
+exact job — clone, swap, verify, with your data treated as the priority — is
+one of the services we do most.

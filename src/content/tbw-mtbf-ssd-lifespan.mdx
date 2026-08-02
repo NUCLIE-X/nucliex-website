@@ -1,0 +1,75 @@
+Two numbers dominate every SSD endurance conversation: TBW and MTBF. One is a
+fuel tank, the other is a population statistic, and neither is the countdown
+timer people assume. Reading them correctly tells you a lot about a drive —
+and about the honesty of whoever published them.
+
+## Why these two numbers exist
+
+Flash memory wears out by writing. Each cell tolerates a finite number of
+program-erase cycles, so manufacturers need a way to express "how much writing
+this drive is built to absorb". That's TBW. Separately, electronics fail for
+reasons unrelated to wear — controllers, capacitors, solder joints — and MTBF
+is the statistical language for that kind of failure. Two different failure
+modes, two different numbers. The confusion starts when either is read as
+"how long until my drive dies".
+
+## TBW: the fuel tank
+
+TBW — terabytes written — is the total volume of writes the manufacturer
+rates the drive for within its warranty. A 240 TB TBW rating on a 512 GB drive
+means the maker stands behind roughly 240 terabytes of cumulative writes.
+
+The way to make that concrete is to divide by your own usage. A typical office
+or home machine writes in the range of tens of gigabytes a day at the high
+end. At even 40 GB written every single day, 240 TB lasts over sixteen years —
+far beyond the useful life of the machine around it. Heavy video work,
+databases, or surveillance recording change that maths, which is why those
+buyers should do the division before buying, not after.
+
+Two things TBW is not: it isn't a cliff (drives don't die at the rated number;
+the rating is where the warranty's write cover ends), and it isn't a promise
+about any single drive — it's the engineering margin the maker commits to.
+
+## MTBF: the statistic everyone misreads
+
+MTBF — mean time between failures — is quoted in huge numbers, often a
+million hours or more. A million hours is 114 years, which is obviously not a
+claim that your drive will outlive your grandchildren.
+
+MTBF describes a population, not a unit. A million-hour MTBF means that if you
+ran a thousand identical drives, you'd statistically expect about one failure
+per thousand hours across the whole fleet — roughly one failure in the fleet
+every six weeks. It's a defect-rate statement in disguise, useful for fleet
+planning and meaningless as a personal lifespan prediction.
+
+What it *is* good for: comparing the claimed baseline reliability of drive
+families, and estimating replacement rates when you run many machines.
+
+## DWPD: the same idea in different units
+
+Enterprise spec sheets often quote DWPD — drive writes per day — instead of
+TBW. It's the same fuel tank expressed as a rate: how many times you can write
+the drive's full capacity every day for the warranty period. The conversion is
+simple: DWPD = TBW ÷ (capacity × warranty days). A consumer drive might work
+out around 0.2–0.3 DWPD; write-heavy enterprise drives are rated at 1, 3, or
+more. If you're comparing a consumer and an enterprise drive, convert one
+number into the other and you'll usually find the difference is the whole
+point of the price gap.
+
+## How to actually use these numbers
+
+1. **Estimate your daily writes.** Operating system telemetry and SMART data
+   (the "host writes" counter) tell you what you actually write, which is
+   usually less than people guess.
+2. **Divide TBW by that figure.** If the answer is decades, endurance is not
+   your buying criterion — move on to warranty term and price.
+3. **Treat MTBF as a fleet number.** Buying one drive? Weight the warranty
+   terms and the maker's RMA behaviour far more heavily.
+4. **Watch the drive, not the rating.** SMART attributes report wear as it
+   happens. A drive that reports its health honestly beats a bigger number on
+   a sticker.
+
+The pattern behind all of it: endurance ratings are commitments, and they're
+only as good as the company behind the warranty. Read the numbers, then read
+the RMA process — the second one tells you what happens when the first one is
+tested.

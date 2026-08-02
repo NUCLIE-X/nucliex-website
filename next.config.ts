@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import rehypeSlug from "rehype-slug";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -39,6 +40,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withMDX = createMDX({});
+// rehype-slug gives headings stable ids for the blog Toc. Requires the
+// webpack build (see §0 of CLAUDE.md) — plugin options don't serialise for
+// Turbopack, which this machine can't run anyway.
+const withMDX = createMDX({
+  options: { rehypePlugins: [rehypeSlug] },
+});
 
 export default withMDX(nextConfig);

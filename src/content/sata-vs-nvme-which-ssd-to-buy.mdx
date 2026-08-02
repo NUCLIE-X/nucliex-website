@@ -1,0 +1,74 @@
+Every week someone asks us this in the workshop, usually holding a laptop that
+deserves better than the drive inside it. The answer is less dramatic than the
+marketing suggests — and it depends on the machine, not the benchmark.
+
+## The short answer
+
+If your machine only has a 2.5-inch bay, buy a SATA SSD and stop reading. If
+you're building or upgrading something modern with an M.2 slot that supports
+NVMe, buy NVMe — the price difference has mostly disappeared. The complicated
+cases are the ones in between, and that's what the rest of this article is for.
+
+## What SATA and NVMe actually mean
+
+SATA and NVMe are interfaces — the road between the drive and the rest of the
+computer — not measures of quality.
+
+SATA III was designed in the hard-drive era. Its 6 Gb/s link means real-world
+sequential transfers top out around 550 MB/s, no matter how fast the flash
+behind it is. Almost every 2.5-inch SSD is SATA.
+
+NVMe was designed for flash from the start. It runs over PCIe lanes, so the
+ceiling depends on the PCIe generation: roughly 3,500 MB/s on Gen3 x4, around
+7,000 MB/s on Gen4 x4, and higher again on Gen5. NVMe drives usually come in
+the M.2 2280 "stick of gum" form factor.
+
+One trap worth knowing: some M.2 slots — especially in older laptops — are
+SATA-only, and some M.2 drives are SATA drives in an M.2 shape. The connector
+alone doesn't tell you which road you're on. Check the manual, not the socket.
+
+## The numbers, honestly framed
+
+Here is the part spec sheets don't emphasise: for booting Windows, opening a
+browser, and loading everyday applications, a SATA SSD and an NVMe drive feel
+almost identical. Those workloads are dominated by small random reads, and both
+technologies handle them far better than any hard drive ever did.
+
+The gap shows up when you move large amounts of data in one go — video
+projects, disk images, game installs, big datasets. Copying a 50 GB file is
+several times faster on a good NVMe drive. If your day involves that, the
+difference is real money-worth of time. If it doesn't, it's a benchmark you'll
+never feel.
+
+## When SATA is the right call
+
+- The machine only has a 2.5-inch bay or a SATA-only M.2 slot. This is most
+  laptops older than a few years — and the upgrade is still transformative.
+- You're reviving an office fleet. Fifty SATA drives make fifty machines feel
+  new; the interface ceiling is irrelevant for spreadsheets and email.
+- The drive is a secondary data disk. Documents and media don't need PCIe
+  bandwidth.
+
+## When NVMe is worth it
+
+- The machine has a proper NVMe-capable M.2 slot — most desktop boards and
+  laptops from the last several years.
+- You move big files as part of the job: footage, renders, virtual machines,
+  large builds.
+- You're building new. There's no reason to give a new machine yesterday's
+  interface when the price gap is small.
+
+## The checklist
+
+1. Find out what the machine accepts: 2.5-inch SATA, M.2 SATA, or M.2 NVMe —
+   and which PCIe generation if NVMe.
+2. Decide from your workload, not the headline number: everyday use is served
+   by either; heavy file movement favours NVMe.
+3. Compare endurance and warranty, not just speed. A drive is a promise about
+   the future — the term and the TBW rating tell you how much future the maker
+   stands behind.
+4. Buy the capacity you'll actually fill plus room to breathe. A fuller SSD is
+   a slower SSD, whatever the interface.
+
+If you're still unsure which slot your laptop has, that's a two-minute answer
+for our services team — ask before you buy, not after.
