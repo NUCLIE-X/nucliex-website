@@ -27,9 +27,12 @@ export const quoteSchema = z.object({
 /** Dealer & distributor application — docs/03 §3, notifies partners@. */
 export const dealerSchema = z.object({
   businessName: z.string().trim().min(2, "Enter your business name."),
-  businessType: z.enum(["retailer", "distributor", "system-integrator", "online-seller"], {
-    error: "Choose your business type.",
-  }),
+  businessType: z.enum(
+    ["retailer", "distributor", "system-integrator", "online-seller"],
+    {
+      error: "Choose your business type.",
+    },
+  ),
   city: z.string().trim().min(2, "Enter your city."),
   state: z.string().trim().min(2, "Enter your state."),
   gstin,
@@ -48,9 +51,12 @@ export const contactSchema = z.object({
   email: requiredEmail,
   phone: indianMobile,
   city: z.string().trim().min(2, "Enter your city."),
-  enquiryType: z.enum(["sales", "services", "support", "partnership", "other"], {
-    error: "Choose an enquiry type.",
-  }),
+  enquiryType: z.enum(
+    ["sales", "services", "support", "partnership", "other"],
+    {
+      error: "Choose an enquiry type.",
+    },
+  ),
   message: requiredMessage,
 });
 

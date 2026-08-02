@@ -5,7 +5,8 @@
  * before quoting any).
  */
 
-export type ServiceCategory = "hardware" | "software" | "network" | "support" | "consulting";
+export type ServiceCategory =
+  "hardware" | "software" | "network" | "support" | "consulting";
 
 export interface Service {
   slug: string;
@@ -45,10 +46,29 @@ export const services: Service[] = [
       "Post-upgrade health check",
     ],
     process: [
-      { step: 1, title: "Tell us the machine and the problem", detail: "Model, symptoms, and what you use it for." },
-      { step: 2, title: "We recommend and quote", detail: "One recommendation with a straight price — not a menu of upsells." },
-      { step: 3, title: "Upgrade and migration", detail: "Drive fitted, data moved, system verified to boot and perform." },
-      { step: 4, title: "Handover", detail: "You get the machine back with the old drive and what was done in writing." },
+      {
+        step: 1,
+        title: "Tell us the machine and the problem",
+        detail: "Model, symptoms, and what you use it for.",
+      },
+      {
+        step: 2,
+        title: "We recommend and quote",
+        detail:
+          "One recommendation with a straight price — not a menu of upsells.",
+      },
+      {
+        step: 3,
+        title: "Upgrade and migration",
+        detail:
+          "Drive fitted, data moved, system verified to boot and perform.",
+      },
+      {
+        step: 4,
+        title: "Handover",
+        detail:
+          "You get the machine back with the old drive and what was done in writing.",
+      },
     ],
     icon: "HardDrive",
   },
@@ -141,10 +161,29 @@ export const services: Service[] = [
       "A named contact who knows your setup",
     ],
     process: [
-      { step: 1, title: "Site assessment", detail: "We inventory what you run and how critical each piece is." },
-      { step: 2, title: "Contract scoped", detail: "Coverage, visit schedule, and response expectations in plain language." },
-      { step: 3, title: "Onboarding", detail: "Documentation, monitoring where agreed, and introductions to your contact." },
-      { step: 4, title: "Steady state", detail: "Scheduled maintenance plus priority support for the life of the contract." },
+      {
+        step: 1,
+        title: "Site assessment",
+        detail: "We inventory what you run and how critical each piece is.",
+      },
+      {
+        step: 2,
+        title: "Contract scoped",
+        detail:
+          "Coverage, visit schedule, and response expectations in plain language.",
+      },
+      {
+        step: 3,
+        title: "Onboarding",
+        detail:
+          "Documentation, monitoring where agreed, and introductions to your contact.",
+      },
+      {
+        step: 4,
+        title: "Steady state",
+        detail:
+          "Scheduled maintenance plus priority support for the life of the contract.",
+      },
     ],
     icon: "ShieldCheck",
   },

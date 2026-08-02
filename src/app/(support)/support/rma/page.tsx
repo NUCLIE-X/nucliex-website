@@ -26,12 +26,12 @@ export default function RmaPage() {
           ]}
         />
         <p className="text-label text-brand-500 uppercase">RMA / replacement</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           What actually happens when a drive fails
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
-          An RMA is a sequence with stated timelines, not a negotiation.
-          Here is the whole of it.
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
+          An RMA is a sequence with stated timelines, not a negotiation. Here is
+          the whole of it.
         </p>
       </Section>
 
@@ -64,25 +64,32 @@ export default function RmaPage() {
       </Section>
 
       <Section spacing="tight">
-        <h2 className="text-h2 font-display text-brand-900 font-medium">Have these ready</h2>
-        <ul className="text-body text-fg-muted mt-6 max-w-2xl list-disc space-y-2 pl-6">
+        <h2 className="font-display text-h2 font-medium text-brand-900">
+          Have these ready
+        </h2>
+        <ul className="mt-6 max-w-2xl list-disc space-y-2 pl-6 text-body text-fg-muted">
           <li>The drive&rsquo;s serial number (on the label).</li>
           <li>Your warranty registration ID, or the purchase invoice.</li>
           <li>Where and roughly when you bought it.</li>
-          <li>A short description of the failure — what you saw, and when it started.</li>
+          <li>
+            A short description of the failure — what you saw, and when it
+            started.
+          </li>
         </ul>
-        <p className="text-body text-fg-muted mt-6 max-w-[68ch]">
-          Missing an invoice? Start the conversation anyway — a missing
-          document changes the paperwork, not the outcome, if the drive is
-          genuinely in term.
+        <p className="mt-6 max-w-[68ch] text-body text-fg-muted">
+          Missing an invoice? Start the conversation anyway — a missing document
+          changes the paperwork, not the outcome, if the drive is genuinely in
+          term.
         </p>
       </Section>
 
       <Section tone="subtle" spacing="tight" className="mt-8">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h2 className="text-h3 text-brand-900 font-semibold">Start an RMA</h2>
-            <p className="text-body text-fg-muted mt-2 max-w-[60ch]">
+            <h2 className="text-h3 font-semibold text-brand-900">
+              Start an RMA
+            </h2>
+            <p className="mt-2 max-w-[60ch] text-body text-fg-muted">
               Email {company.supportEmail} with the details above, or register
               your drive first so the record exists.
             </p>

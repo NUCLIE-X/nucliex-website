@@ -11,7 +11,11 @@ export interface Post {
   /** ISO date, e.g. "2026-08-02". Rendered as DD Month YYYY. */
   date: string;
   readingMinutes: number;
-  category: "SSD & storage explainers" | "Buying guides" | "IT how-tos" | "Company updates";
+  category:
+    | "SSD & storage explainers"
+    | "Buying guides"
+    | "IT how-tos"
+    | "Company updates";
   toc: { id: string; title: string }[];
 }
 
@@ -26,9 +30,18 @@ export const posts: Post[] = [
     category: "Buying guides",
     toc: [
       { id: "the-short-answer", title: "The short answer" },
-      { id: "what-sata-and-nvme-actually-mean", title: "What SATA and NVMe actually mean" },
-      { id: "the-numbers-honestly-framed", title: "The numbers, honestly framed" },
-      { id: "when-sata-is-the-right-call", title: "When SATA is the right call" },
+      {
+        id: "what-sata-and-nvme-actually-mean",
+        title: "What SATA and NVMe actually mean",
+      },
+      {
+        id: "the-numbers-honestly-framed",
+        title: "The numbers, honestly framed",
+      },
+      {
+        id: "when-sata-is-the-right-call",
+        title: "When SATA is the right call",
+      },
       { id: "when-nvme-is-worth-it", title: "When NVMe is worth it" },
       { id: "the-checklist", title: "The checklist" },
     ],
@@ -43,10 +56,19 @@ export const posts: Post[] = [
     category: "IT how-tos",
     toc: [
       { id: "before-you-start", title: "Before you start" },
-      { id: "step-1-check-what-your-laptop-can-take", title: "Step 1: check what your laptop can take" },
-      { id: "step-2-clone-the-old-drive", title: "Step 2: clone the old drive" },
+      {
+        id: "step-1-check-what-your-laptop-can-take",
+        title: "Step 1: check what your laptop can take",
+      },
+      {
+        id: "step-2-clone-the-old-drive",
+        title: "Step 2: clone the old drive",
+      },
       { id: "step-3-swap-the-drives", title: "Step 3: swap the drives" },
-      { id: "step-4-first-boot-and-checks", title: "Step 4: first boot and checks" },
+      {
+        id: "step-4-first-boot-and-checks",
+        title: "Step 4: first boot and checks",
+      },
       { id: "what-can-go-wrong", title: "What can go wrong" },
     ],
   },
@@ -59,11 +81,23 @@ export const posts: Post[] = [
     readingMinutes: 6,
     category: "SSD & storage explainers",
     toc: [
-      { id: "why-these-two-numbers-exist", title: "Why these two numbers exist" },
+      {
+        id: "why-these-two-numbers-exist",
+        title: "Why these two numbers exist",
+      },
       { id: "tbw-the-fuel-tank", title: "TBW: the fuel tank" },
-      { id: "mtbf-the-statistic-everyone-misreads", title: "MTBF: the statistic everyone misreads" },
-      { id: "dwpd-the-same-idea-in-different-units", title: "DWPD: the same idea in different units" },
-      { id: "how-to-actually-use-these-numbers", title: "How to actually use these numbers" },
+      {
+        id: "mtbf-the-statistic-everyone-misreads",
+        title: "MTBF: the statistic everyone misreads",
+      },
+      {
+        id: "dwpd-the-same-idea-in-different-units",
+        title: "DWPD: the same idea in different units",
+      },
+      {
+        id: "how-to-actually-use-these-numbers",
+        title: "How to actually use these numbers",
+      },
     ],
   },
 ];

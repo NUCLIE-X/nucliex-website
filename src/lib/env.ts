@@ -30,10 +30,10 @@ export const env = parsed.data;
 
 export const mailConfigured = Boolean(
   env.RESEND_API_KEY &&
-    env.MAIL_FROM &&
-    env.MAIL_TO_SALES &&
-    env.MAIL_TO_SUPPORT &&
-    env.MAIL_TO_PARTNERS,
+  env.MAIL_FROM &&
+  env.MAIL_TO_SALES &&
+  env.MAIL_TO_SUPPORT &&
+  env.MAIL_TO_PARTNERS,
 );
 
 if (process.env.VERCEL_ENV === "production" && !mailConfigured) {

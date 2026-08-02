@@ -27,8 +27,12 @@ export function SpecTable({
   caption = "Product specifications",
   className,
 }: SpecTableProps) {
-  const groups = groupOrder.filter((group) => specs.some((row) => row.group === group));
-  const rowNotes = specs.filter((row) => row.note).map((row) => row.note as string);
+  const groups = groupOrder.filter((group) =>
+    specs.some((row) => row.group === group),
+  );
+  const rowNotes = specs
+    .filter((row) => row.note)
+    .map((row) => row.note as string);
   const allNotes = [...rowNotes, ...footnotes];
 
   return (
@@ -42,7 +46,7 @@ export function SpecTable({
                 <th
                   scope="colgroup"
                   colSpan={2}
-                  className="text-label text-fg-subtle pt-8 pb-3 text-left uppercase first:pt-0"
+                  className="pt-8 pb-3 text-left text-label text-fg-subtle uppercase first:pt-0"
                 >
                   {specGroupLabels[group]}
                 </th>
@@ -50,16 +54,21 @@ export function SpecTable({
               {specs
                 .filter((row) => row.group === group)
                 .map((row) => {
-                  const noteIndex = row.note ? rowNotes.indexOf(row.note) + 1 : null;
+                  const noteIndex = row.note
+                    ? rowNotes.indexOf(row.note) + 1
+                    : null;
                   return (
-                    <tr key={`${group}-${row.label}`} className="border-border border-b">
+                    <tr
+                      key={`${group}-${row.label}`}
+                      className="border-b border-border"
+                    >
                       <th
                         scope="row"
-                        className="text-body text-fg-muted w-1/2 py-3 pr-4 text-left font-normal"
+                        className="w-1/2 py-3 pr-4 text-left text-body font-normal text-fg-muted"
                       >
                         {row.label}
                       </th>
-                      <td className="text-data font-mono tnum text-fg py-3">
+                      <td className="py-3 font-mono tnum text-data text-fg">
                         {row.value}
                         {noteIndex ? (
                           <sup className="ml-1">
@@ -76,7 +85,7 @@ export function SpecTable({
         </tbody>
       </table>
       {allNotes.length > 0 ? (
-        <ol className="text-body-sm text-fg-subtle mt-4 space-y-1">
+        <ol className="mt-4 space-y-1 text-body-sm text-fg-subtle">
           {allNotes.map((note, i) => (
             <li key={note}>
               <sup aria-hidden="true">{i + 1}</sup> {note}

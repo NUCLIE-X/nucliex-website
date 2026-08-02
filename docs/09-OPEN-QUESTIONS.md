@@ -7,32 +7,42 @@ code. **Blockers marked 🔴 must be resolved before launch.**
 
 ## 🔴 Launch blockers
 
-| # | Token | Question | Why it blocks |
-|---|---|---|---|
-| 1 | `{{TBD:logo_svg}}` | Vector (SVG/AI/EPS) source of the logo | The supplied file is a 2726px PNG. A raster logo in the header is a permanent quality and performance defect. Needs redrawing as SVG in navy/white. |
-| 2 | `{{TBD:products}}` | Actual product list — model names, capacities, form factors | There is no product catalogue without this. |
-| 3 | `{{TBD:specs}}` | Per-product read/write speeds, TBW, MTBF, controller, NAND type, and the test conditions those were measured under | The spec rail and spec table are the site's core credibility mechanism. Cannot be invented. |
-| 4 | `{{TBD:warranty_years}}` | Warranty term, exactly what is covered, and what voids it | Referenced on the homepage, every product page, and the support hub. |
-| 5 | `{{TBD:rma_hours}}` / `{{TBD:rma_process}}` | RMA first-response time and the real step-by-step process | The RMA page is a primary trust asset. |
-| 6 | `{{TBD:address}}` `{{TBD:phone}}` `{{TBD:email}}` `{{TBD:hours}}` | Registered address, support and sales phone numbers, email addresses, business hours | Footer, contact page, `LocalBusiness` JSON-LD, and local SEO all depend on these matching the Google Business Profile exactly. |
-| 7 | `{{TBD:gstin}}` `{{TBD:cin}}` | GSTIN and CIN / registration number | Required in the footer for B2B credibility and Indian commercial norms. |
-| 8 | `{{TBD:legal}}` | Privacy policy, terms, warranty policy, and DPDP Act 2023 grievance officer details | Legal requirement. Needs the client's advisor — not drafted by us. |
-| 9 | `{{TBD:domain}}` | Confirmed domain | Canonicals, OG URLs, sitemap, email sending domain. |
+| #   | Token                                                             | Question                                                                                                           | Why it blocks                                                                                                                                       |
+| --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `{{TBD:logo_svg}}`                                                | Vector (SVG/AI/EPS) source of the logo                                                                             | The supplied file is a 2726px PNG. A raster logo in the header is a permanent quality and performance defect. Needs redrawing as SVG in navy/white. |
+| 2   | `{{TBD:products}}`                                                | Actual product list — model names, capacities, form factors                                                        | There is no product catalogue without this.                                                                                                         |
+| 3   | `{{TBD:specs}}`                                                   | Per-product read/write speeds, TBW, MTBF, controller, NAND type, and the test conditions those were measured under | The spec rail and spec table are the site's core credibility mechanism. Cannot be invented.                                                         |
+| 4   | `{{TBD:warranty_years}}`                                          | Warranty term, exactly what is covered, and what voids it                                                          | Referenced on the homepage, every product page, and the support hub.                                                                                |
+| 5   | `{{TBD:rma_hours}}` / `{{TBD:rma_process}}`                       | RMA first-response time and the real step-by-step process                                                          | The RMA page is a primary trust asset.                                                                                                              |
+| 6   | `{{TBD:address}}` `{{TBD:phone}}` `{{TBD:email}}` `{{TBD:hours}}` | Registered address, support and sales phone numbers, email addresses, business hours                               | Footer, contact page, `LocalBusiness` JSON-LD, and local SEO all depend on these matching the Google Business Profile exactly.                      |
+| 7   | `{{TBD:gstin}}` `{{TBD:cin}}`                                     | GSTIN and CIN / registration number                                                                                | Required in the footer for B2B credibility and Indian commercial norms.                                                                             |
+| 8   | `{{TBD:legal}}`                                                   | Privacy policy, terms, warranty policy, and DPDP Act 2023 grievance officer details                                | Legal requirement. Needs the client's advisor — not drafted by us.                                                                                  |
+| 9   | `{{TBD:domain}}`                                                  | Confirmed domain                                                                                                   | Canonicals, OG URLs, sitemap, email sending domain.                                                                                                 |
 
 ---
 
 ## 🟡 Needed for a strong launch (site can ship with placeholders, but weaker)
 
-| # | Token | Question |
-|---|---|---|
-| 10 | `{{TBD:photography}}` | Real product photography — front, angle, and in-situ shots per SKU, on a neutral background. Until then every product uses `ProductFrame`. |
-| 11 | `{{TBD:founder_photo}}` | Photograph of Ramjit J. Mourya for the About page. A named face materially reduces the "shell brand" suspicion. |
-| 12 | `{{TBD:certifications}}` | Any ISO / BIS / RoHS / CE certification, with certificate numbers. Only listed once verified. |
-| 13 | `{{TBD:documents}}` | Datasheet PDFs, installation guides, warranty cards for the downloads centre. |
-| 14 | `{{TBD:years}}` / `{{TBD:service_count}}` | Year the business started and a defensible services-delivered figure, for the homepage spec rail. |
-| 15 | `{{TBD:socials}}` | LinkedIn, Instagram, YouTube, X handles for the footer and `sameAs`. |
-| 16 | `{{TBD:enquiry_sink}}` | Where enquiries should land besides email — Google Sheet, CRM, WhatsApp Business? Enquiries should never live only in an inbox. |
-| 17 | `{{TBD:dealer_terms}}` | Dealer margin structure, territory policy, and minimum order — even at a summary level, for the partners page. |
+| #   | Token                                     | Question                                                                                                                                   |
+| --- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| 10  | `{{TBD:photography}}`                     | Real product photography — front, angle, and in-situ shots per SKU, on a neutral background. Until then every product uses `ProductFrame`. |
+| 11  | `{{TBD:founder_photo}}`                   | Photograph of Ramjit J. Mourya for the About page. A named face materially reduces the "shell brand" suspicion.                            |
+| 12  | `{{TBD:certifications}}`                  | Any ISO / BIS / RoHS / CE certification, with certificate numbers. Only listed once verified.                                              |
+| 13  | `{{TBD:documents}}`                       | Datasheet PDFs, installation guides, warranty cards for the downloads centre.                                                              |
+| 14  | `{{TBD:years}}` / `{{TBD:service_count}}` | Year the business started and a defensible services-delivered figure, for the homepage spec rail.                                          |
+| 15  | `{{TBD:socials}}`                         | LinkedIn, Instagram, YouTube, X handles for the footer and `sameAs`.                                                                       |
+| 16  | `{{TBD:enquiry_sink}}`                    | Where enquiries should land besides email — Google Sheet, CRM, WhatsApp Business? Enquiries should never live only in an inbox.            |
+| 17  | `{{TBD:dealer_terms}}`                    | Dealer margin structure, territory policy, and minimum order — even at a summary level, for the partners page.                             |
+| 18  | `{{TBD:turnaround}}`                      | Turnaround times per service ("same day", "48 hours") for the services pages. Currently omitted rather than guessed.                       |
+
+---
+
+## Build-status notes (2026-08-02)
+
+- The site is built through Phase 10 of `08-BUILD-PLAN.md`; every `{{TBD}}` in `src/` traces to a row above (verified by grep).
+- **"NX-500" is a provisional model name** — the working name used in these docs, shipped at status `coming-soon` with all specs tokenised. It must be confirmed or replaced under item #2 before launch, and nothing may move to `available` before items #2–#4 resolve.
+- The serial-number lookup on `/support` validates format and routes to the support mailbox — a real lookup needs the warranty-records decision in #16.
+- Legal pages are structured but `noindex` until #8 resolves.
 
 ---
 

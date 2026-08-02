@@ -22,10 +22,10 @@ export default function WarrantyPage() {
       />
       <div className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-7">
-          <h1 className="text-display-2 font-display text-brand-900 font-bold">
+          <h1 className="font-display text-display-2 font-bold text-brand-900">
             Register your warranty
           </h1>
-          <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+          <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
             Two minutes now saves the proof-of-purchase hunt later. Registration
             is a convenience, not a condition — an unregistered drive with an
             invoice is still covered.
@@ -36,33 +36,41 @@ export default function WarrantyPage() {
         </div>
 
         <aside className="lg:col-span-4 lg:col-start-9">
-          <div className="border-border rounded-lg border p-6">
-            <h2 className="text-h4 text-brand-900 font-medium">The policy, plainly</h2>
-            <dl className="text-body-sm mt-4 space-y-4">
+          <div className="rounded-lg border border-border p-6">
+            <h2 className="text-h4 font-medium text-brand-900">
+              The policy, plainly
+            </h2>
+            <dl className="mt-4 space-y-4 text-body-sm">
               <div>
                 <dt className="text-label text-fg-subtle uppercase">Term</dt>
-                <dd className="text-fg-muted mt-1">
+                <dd className="mt-1 text-fg-muted">
                   {"{{TBD:warranty_years}}"} — the exact term in years is
                   published here and on every product page before launch.
                 </dd>
               </div>
               <div>
-                <dt className="text-label text-fg-subtle uppercase">What&rsquo;s covered</dt>
-                <dd className="text-fg-muted mt-1">
+                <dt className="text-label text-fg-subtle uppercase">
+                  What&rsquo;s covered
+                </dt>
+                <dd className="mt-1 text-fg-muted">
                   Drive failure in normal use. The full coverage list ships with
                   the warranty policy ({"{{TBD:legal}}"}).
                 </dd>
               </div>
               <div>
-                <dt className="text-label text-fg-subtle uppercase">What voids it</dt>
-                <dd className="text-fg-muted mt-1">
+                <dt className="text-label text-fg-subtle uppercase">
+                  What voids it
+                </dt>
+                <dd className="mt-1 text-fg-muted">
                   Physical damage and tampering; the precise conditions are
                   stated in the same policy — no surprises added later.
                 </dd>
               </div>
               <div>
-                <dt className="text-label text-fg-subtle uppercase">If a drive fails</dt>
-                <dd className="text-fg-muted mt-1">
+                <dt className="text-label text-fg-subtle uppercase">
+                  If a drive fails
+                </dt>
+                <dd className="mt-1 text-fg-muted">
                   Raise an RMA quoting your registration ID. First response
                   within {"{{TBD:rma_hours}}"} hours.
                 </dd>

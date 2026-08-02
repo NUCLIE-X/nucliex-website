@@ -5,24 +5,28 @@
 ## 1. SEO
 
 ### Metadata
+
 Use the Next.js Metadata API. Root `layout.tsx` sets `metadataBase`, `title.template`
 (`"%s — NUCLIEX"`), default OpenGraph and Twitter card, `robots`, and `alternates.canonical`.
 Every route overrides `title` and `description` from the table in `05-CONTENT.md`. No page ships
 with an inherited generic description.
 
 ### Structured data (JSON-LD)
-| Schema | Where |
-|---|---|
-| `Organization` + `LocalBusiness` | Root layout — name, legal name, logo, address, contact points, sameAs |
-| `WebSite` + `SearchAction` | Root layout |
-| `Product` | Product detail (no `Offer` until pricing is confirmed — a fake price is a Merchant policy violation) |
-| `BreadcrumbList` | Every nested page |
-| `FAQPage` | FAQ page and product FAQ blocks |
-| `Article` | Blog posts |
-| `Service` | Service detail pages |
+
+| Schema                           | Where                                                                                                |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `Organization` + `LocalBusiness` | Root layout — name, legal name, logo, address, contact points, sameAs                                |
+| `WebSite` + `SearchAction`       | Root layout                                                                                          |
+| `Product`                        | Product detail (no `Offer` until pricing is confirmed — a fake price is a Merchant policy violation) |
+| `BreadcrumbList`                 | Every nested page                                                                                    |
+| `FAQPage`                        | FAQ page and product FAQ blocks                                                                      |
+| `Article`                        | Blog posts                                                                                           |
+| `Service`                        | Service detail pages                                                                                 |
 
 ### Local SEO (this matters more than the client expects)
+
 NUCLIEX is a Pune business selling nationally. Both need to work:
+
 - Consistent NAP (name, address, phone) in the footer and in `LocalBusiness` JSON-LD — must match
   the Google Business Profile character for character.
 - `areaServed` covering Pune, Maharashtra, and India.
@@ -30,6 +34,7 @@ NUCLIEX is a Pune business selling nationally. Both need to work:
   without keyword stuffing — write for the reader, mark up for the crawler.
 
 ### Technical
+
 - `sitemap.ts` generating all static + dynamic routes with `lastModified`.
 - `robots.ts` allowing everything except `/api`.
 - One canonical per page; no duplicate content across `/products/ssd/sata` and `/products?family=sata`
@@ -44,17 +49,18 @@ NUCLIEX is a Pune business selling nationally. Both need to work:
 
 ## 2. Performance budget
 
-| Metric | Target |
-|---|---|
-| Lighthouse Performance (mobile) | ≥ 95 |
-| LCP | < 2.0s |
-| CLS | < 0.05 |
-| INP | < 200ms |
-| First-load JS per route | ≤ 120 kB gzipped |
-| Total page weight (homepage) | ≤ 600 kB |
-| Fonts | ≤ 3 families, 7 weights total, self-hosted via `next/font` |
+| Metric                          | Target                                                     |
+| ------------------------------- | ---------------------------------------------------------- |
+| Lighthouse Performance (mobile) | ≥ 95                                                       |
+| LCP                             | < 2.0s                                                     |
+| CLS                             | < 0.05                                                     |
+| INP                             | < 200ms                                                    |
+| First-load JS per route         | ≤ 120 kB gzipped                                           |
+| Total page weight (homepage)    | ≤ 600 kB                                                   |
+| Fonts                           | ≤ 3 families, 7 weights total, self-hosted via `next/font` |
 
 ### Rules
+
 - Static generation by default. No unnecessary `"use client"` — audit the client boundary each phase.
 - `next/image` everywhere. AVIF + WebP. `priority` on the hero image **only**. Explicit `sizes`.
 - No layout shift: every image and embed has reserved dimensions; fonts use `size-adjust` fallback
@@ -95,6 +101,7 @@ Run this on every page before marking it done:
 - [ ] `lang="en-IN"` on `<html>`.
 
 ## 5. Pre-launch verification
+
 1. Lighthouse mobile + desktop on every top-level route, on the deployed preview (not localhost).
 2. Keyboard-only pass on home, a product page, and every form.
 3. Screen reader spot-check (VoiceOver or NVDA) on home, product detail, and the contact form.

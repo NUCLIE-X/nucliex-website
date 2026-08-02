@@ -44,7 +44,11 @@ export function DealerForm() {
           >
             <Input autoComplete="off" />
           </FormField>
-          <FormField name="yearsInBusiness" label="Years in business" state={state}>
+          <FormField
+            name="yearsInBusiness"
+            label="Years in business"
+            state={state}
+          >
             <Select defaultValue="">
               <option value="" disabled>
                 Choose a range

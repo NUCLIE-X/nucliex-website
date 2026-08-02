@@ -29,7 +29,12 @@ function rateLimited(ip: string): boolean {
 function isSpam(formData: FormData): boolean {
   if (String(formData.get("website") ?? "").length > 0) return true;
   const startedAt = Number(formData.get("startedAt"));
-  if (Number.isFinite(startedAt) && startedAt > 0 && Date.now() - startedAt < 2000) return true;
+  if (
+    Number.isFinite(startedAt) &&
+    startedAt > 0 &&
+    Date.now() - startedAt < 2000
+  )
+    return true;
   return false;
 }
 
@@ -43,7 +48,8 @@ export async function guardAndParse<S extends ZodType>(
   formData: FormData,
 ): Promise<GuardResult<z.output<S>>> {
   const headerList = await headers();
-  const ip = headerList.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ip =
+    headerList.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
 
   if (rateLimited(ip)) {
     return {
@@ -59,7 +65,8 @@ export async function guardAndParse<S extends ZodType>(
 
   const raw: Record<string, unknown> = {};
   for (const [key, value] of formData.entries()) {
-    if (key === "website" || key === "startedAt" || key.startsWith("$")) continue;
+    if (key === "website" || key === "startedAt" || key.startsWith("$"))
+      continue;
     if (typeof value === "string") raw[key] = value;
   }
 

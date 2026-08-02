@@ -1,63 +1,62 @@
 # NUCLIEX INFOSYS — Website
 
-Specification and build documentation for the NUCLIEX website.
+The public website for NUCLIEX INFOSYS (Pune): SATA/NVMe SSDs, computer
+hardware, and professional IT services. Next.js 16 (App Router) · React 19 ·
+TypeScript strict · Tailwind CSS 4 · MDX · Server Actions + zod · Resend ·
+Vercel.
 
-## What's here
+**Build status:** Phases 0–10 of `docs/08-BUILD-PLAN.md` are implemented — all
+routes, forms, blog, JSON-LD, sitemap/robots, and OG images. Launch is gated
+on the client inputs in `docs/09-OPEN-QUESTIONS.md` (real product specs,
+warranty terms, contact details, legal text, SVG logo). Every unknown renders
+a literal `{{TBD:…}}` token — grep for `{{TBD` before any release.
 
-| File | Purpose |
-|---|---|
-| `CLAUDE.md` | The operating manual. Claude Code reads this on every session. Non-negotiables, stack, conventions, quality gates. |
-| `docs/01-BRAND.md` | Identity, positioning, voice, copy rules, logo usage |
-| `docs/02-DESIGN-SYSTEM.md` | Art direction, colour/type/spacing tokens, motion, imagery |
-| `docs/03-ARCHITECTURE.md` | Rendering strategy, data model, forms, security |
-| `docs/04-SITEMAP-AND-PAGES.md` | Every route, specified section by section |
-| `docs/05-CONTENT.md` | Approved copy and the hard boundary between known and unknown facts |
-| `docs/06-COMPONENTS.md` | Component prop contracts and build order |
-| `docs/07-SEO-PERF-A11Y.md` | Metadata, schema, budgets, accessibility checklist |
-| `docs/08-BUILD-PLAN.md` | Phased task list with acceptance criteria |
-| `docs/09-OPEN-QUESTIONS.md` | Blockers awaiting client input |
-| `brand-assets/` | Logo recoloured to the brand system (raster — SVG still required) |
-
-## How to run this with Claude Code
+## Commands
 
 ```bash
-mkdir nucliex-web && cd nucliex-web
-git init
-# copy CLAUDE.md, docs/ and brand-assets/ into the repo root
-claude
+npm run dev          # localhost:3000 (webpack — see note below)
+npm run build        # production build
+npm run start        # serve the build
+npm run lint         # eslint, zero warnings allowed
+npm run typecheck    # tsc --noEmit
+npm run format       # prettier
 ```
 
-Then, one phase at a time:
+> **This machine:** Smart App Control blocks the native SWC binary, so `dev`
+> and `build` pin the `--webpack` flag (WASM SWC fallback — Turbopack cannot
+> run here). Vercel builds are unaffected. See `CLAUDE.md §0`.
 
-```
-Read CLAUDE.md and docs/08-BUILD-PLAN.md. Execute Phase 0 only.
-Stop when its acceptance criteria pass and report what you did.
-```
+Mail (forms) needs `.env.local` — copy `.env.example` and fill the Resend
+keys. Without keys, form submissions are logged to the console in dev, and a
+production Vercel deploy fails on purpose rather than dropping enquiries.
 
-Do not ask for the whole site in one prompt. The phases exist because token layers must be built
-before components, and components before pages — skipping that order produces inconsistent spacing
-that costs more to unpick than it saved.
+## Documentation
 
-Useful follow-up prompts:
+| File                           | Purpose                                                                                       |
+| ------------------------------ | --------------------------------------------------------------------------------------------- |
+| `CLAUDE.md`                    | The operating manual. Non-negotiables, stack, conventions, quality gates. **This file wins.** |
+| `docs/01-BRAND.md`             | Identity, positioning, voice, copy rules, logo usage                                          |
+| `docs/02-DESIGN-SYSTEM.md`     | Art direction, colour/type/spacing tokens, motion, imagery                                    |
+| `docs/03-ARCHITECTURE.md`      | Rendering strategy, data model, forms, security                                               |
+| `docs/04-SITEMAP-AND-PAGES.md` | Every route, specified section by section                                                     |
+| `docs/05-CONTENT.md`           | Approved copy and the hard boundary between known and unknown facts                           |
+| `docs/06-COMPONENTS.md`        | Component prop contracts and build order                                                      |
+| `docs/07-SEO-PERF-A11Y.md`     | Metadata, schema, budgets, accessibility checklist                                            |
+| `docs/08-BUILD-PLAN.md`        | Phased task list with acceptance criteria + build status                                      |
+| `docs/09-OPEN-QUESTIONS.md`    | Blockers awaiting client input — **read this before launch talk**                             |
+| `brand-assets/`                | Logo recoloured to the brand system (raster — SVG redraw is launch blocker #1)                |
 
-```
-Execute Phase 1. Re-read docs/02-DESIGN-SYSTEM.md sections 2–4 first.
-```
-```
-Execute Phase 5. Use only copy from docs/05-CONTENT.md section 3.
-Where a fact is missing, use a {{TBD:label}} token and add a row to docs/09-OPEN-QUESTIONS.md.
-```
-```
-Audit the homepage against docs/07-SEO-PERF-A11Y.md section 4 and fix every failure.
-```
+## Where things live
 
-## Before you start
+- Content and catalogue data: `src/data/*.ts` (typed modules — no CMS in v1)
+- Blog posts: `src/content/*.mdx` + registry in `src/data/posts.ts`
+- Design tokens: `src/styles/globals.css` (`@theme` — the only file with hex values)
+- Form actions: `src/lib/actions/*.ts`; schemas in `src/lib/schemas/`
+- `/styleguide` — internal token/component audit page; delete at launch (Phase 10 checklist)
 
-Read `docs/09-OPEN-QUESTIONS.md`. Nine items are launch blockers — most importantly the vector
-logo, the real product specifications, and the warranty terms. The build can proceed without them
-using `{{TBD}}` tokens, but the site cannot launch.
+## Before launch
 
-## Stack
-
-Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind CSS 4 · MDX · Server Actions +
-zod · Resend · Vercel. Node 20+.
+Work `docs/09-OPEN-QUESTIONS.md` top to bottom: nine 🔴 items block launch.
+Then run the pre-launch verification in `docs/07-SEO-PERF-A11Y.md §5` on the
+deployed preview, and grep the repo for `{{TBD` — none may remain in shipped
+copy.

@@ -5,7 +5,10 @@ import { Card, CardBody, CardMedia } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ProductFrame } from "@/components/product/product-frame";
 
-const statusBadge: Record<Product["status"], { tone: "success" | "warning" | "planned"; label: string }> = {
+const statusBadge: Record<
+  Product["status"],
+  { tone: "success" | "warning" | "planned"; label: string }
+> = {
   available: { tone: "success", label: "Available" },
   "coming-soon": { tone: "warning", label: "Coming soon" },
   planned: { tone: "planned", label: "Planned" },
@@ -33,34 +36,43 @@ export function ProductCard({ product }: { product: Product }) {
       </CardMedia>
       <CardBody>
         <div className="flex items-center justify-between gap-4">
-          <p className="text-label text-fg-subtle uppercase">{familyLabels[product.family]}</p>
+          <p className="text-label text-fg-subtle uppercase">
+            {familyLabels[product.family]}
+          </p>
           <Badge tone={badge.tone}>{badge.label}</Badge>
         </div>
-        <h3 className="text-h3 mt-3 font-semibold">
-          <Link href={`/products/${product.slug}` as Route} className="after:absolute after:inset-0">
+        <h3 className="mt-3 text-h3 font-semibold">
+          <Link
+            href={`/products/${product.slug}` as Route}
+            className="after:absolute after:inset-0"
+          >
             {product.name}
           </Link>
         </h3>
-        <p className="text-body text-fg-muted mt-2">{product.tagline}</p>
-        <p className="text-body-sm text-fg-subtle mt-3">
+        <p className="mt-2 text-body text-fg-muted">{product.tagline}</p>
+        <p className="mt-3 text-body-sm text-fg-subtle">
           {product.capacities.length > 0
             ? `${product.capacities[0]} – ${product.capacities[product.capacities.length - 1]} · `
             : ""}
           {product.formFactor} · {product.interface}
         </p>
         {confirmedHighlights.length > 0 ? (
-          <dl className="border-border mt-4 flex gap-8 border-t pt-4">
+          <dl className="mt-4 flex gap-8 border-t border-border pt-4">
             {confirmedHighlights.map((h) => (
               <div key={h.label}>
-                <dd className="text-data font-mono tnum text-brand-900 order-1 font-medium">
+                <dd className="order-1 font-mono tnum text-data font-medium text-brand-900">
                   {h.value}
                 </dd>
-                <dt className="text-label text-fg-subtle order-2 uppercase">{h.label}</dt>
+                <dt className="order-2 text-label text-fg-subtle uppercase">
+                  {h.label}
+                </dt>
               </div>
             ))}
           </dl>
         ) : null}
-        <p className="text-body text-brand-500 mt-4 font-medium">View specifications</p>
+        <p className="mt-4 text-body font-medium text-brand-500">
+          View specifications
+        </p>
       </CardBody>
     </Card>
   );

@@ -16,7 +16,8 @@ const tones = {
   brand: "border border-brand-100 bg-brand-50 text-brand-700",
   success: "border border-border bg-surface text-fg",
   warning: "border border-border bg-warning/15 text-fg",
-  planned: "border border-dashed border-border-strong bg-surface-subtle text-fg-muted",
+  planned:
+    "border border-dashed border-border-strong bg-surface-subtle text-fg-muted",
 };
 
 const dots = {
@@ -32,12 +33,14 @@ export function Badge({ tone, className, children }: BadgeProps) {
   return (
     <span
       className={cn(
-        "text-label inline-flex items-center gap-1.5 rounded-sm px-2 py-1 uppercase",
+        "inline-flex items-center gap-1.5 rounded-sm px-2 py-1 text-label uppercase",
         tones[tone],
         className,
       )}
     >
-      {dot ? <span aria-hidden="true" className={cn("size-1.5 rounded-full", dot)} /> : null}
+      {dot ? (
+        <span aria-hidden="true" className={cn("size-1.5 rounded-full", dot)} />
+      ) : null}
       {children}
     </span>
   );

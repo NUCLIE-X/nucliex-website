@@ -24,10 +24,10 @@ export default function RoadmapPage() {
           ]}
         />
         <p className="text-label text-brand-500 uppercase">Roadmap</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           What we&rsquo;re building next
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           Everything on this page is planned, not purchasable. It ships when it
           passes the same validation as everything else we make — and moves to
           the catalogue only then.
@@ -37,9 +37,11 @@ export default function RoadmapPage() {
       <Section className="pt-0">
         <div className="grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
           {roadmap.map((group) => (
-            <div key={group.group} className="border-border border-t pt-6">
+            <div key={group.group} className="border-t border-border pt-6">
               <div className="flex items-center justify-between gap-4">
-                <h2 className="text-h3 text-brand-900 font-semibold">{group.group}</h2>
+                <h2 className="text-h3 font-semibold text-brand-900">
+                  {group.group}
+                </h2>
                 <Badge tone="planned">Planned</Badge>
               </div>
               <ul className="mt-4 space-y-2">
@@ -57,10 +59,10 @@ export default function RoadmapPage() {
       <Section tone="subtle" spacing="tight">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <h2 className="text-h3 text-brand-900 font-semibold">
+            <h2 className="text-h3 font-semibold text-brand-900">
               Need something on this list sooner?
             </h2>
-            <p className="text-body text-fg-muted mt-2 max-w-[60ch]">
+            <p className="mt-2 max-w-[60ch] text-body text-fg-muted">
               Business and bulk buyers shape what we build first. Tell us what
               your fleet needs.
             </p>

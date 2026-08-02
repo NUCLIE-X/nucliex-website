@@ -89,7 +89,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 transition-[background-color,box-shadow] duration-fast ease-out",
+        "duration-fast sticky top-0 z-40 transition-[background-color,box-shadow] ease-out",
         scrolled
           ? "bg-surface/85 shadow-[0_1px_0_0_var(--color-border)] backdrop-blur"
           : "bg-surface",
@@ -98,14 +98,18 @@ export function Header() {
       <a
         href="#main-content"
         className={cn(
-          "bg-brand-500 text-label absolute top-2 left-2 z-50 rounded-md px-4 py-2 uppercase",
+          "absolute top-2 left-2 z-50 rounded-md bg-brand-500 px-4 py-2 text-label uppercase",
           "-translate-y-16 text-white transition-transform focus:translate-y-0",
         )}
       >
         Skip to content
       </a>
 
-      <nav ref={navRef} aria-label="Main" className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8 lg:px-12">
+      <nav
+        ref={navRef}
+        aria-label="Main"
+        className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8 lg:px-12"
+      >
         <Link href="/" className="shrink-0" aria-label="NUCLIEX home">
           <Logo kind="lockup" className="hidden h-14 w-auto sm:block" />
           <Logo kind="mark" className="h-9 w-auto sm:hidden" />
@@ -120,7 +124,9 @@ export function Header() {
                   onBlur={(e) => {
                     // Light dismissal when focus leaves trigger + panel entirely.
                     if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-                      setOpenPanel((current) => (current === item.label ? null : current));
+                      setOpenPanel((current) =>
+                        current === item.label ? null : current,
+                      );
                     }
                   }}
                 >
@@ -135,8 +141,8 @@ export function Header() {
                       setOpenPanel(openPanel === item.label ? null : item.label)
                     }
                     className={cn(
-                      "text-body text-fg flex h-11 items-center gap-1 rounded-md px-3 font-medium",
-                      "hover:text-brand-500 transition-colors duration-fast ease-out",
+                      "flex h-11 items-center gap-1 rounded-md px-3 text-body font-medium text-fg",
+                      "duration-fast transition-colors ease-out hover:text-brand-500",
                       openPanel === item.label && "text-brand-500",
                     )}
                   >
@@ -146,7 +152,7 @@ export function Header() {
                       strokeWidth={1.5}
                       aria-hidden="true"
                       className={cn(
-                        "transition-transform duration-fast",
+                        "duration-fast transition-transform",
                         openPanel === item.label && "rotate-180",
                       )}
                     />
@@ -157,8 +163,8 @@ export function Header() {
                 <Link
                   href={item.href as Route}
                   className={cn(
-                    "text-body text-fg flex h-11 items-center rounded-md px-3 font-medium",
-                    "hover:text-brand-500 transition-colors duration-fast ease-out",
+                    "flex h-11 items-center rounded-md px-3 text-body font-medium text-fg",
+                    "duration-fast transition-colors ease-out hover:text-brand-500",
                     pathname === item.href && "text-brand-500",
                   )}
                 >
@@ -184,35 +190,43 @@ export function Header() {
   );
 }
 
-function MegaPanel({ item, open }: { item: Extract<NavItem, { panel: unknown }>; open: boolean }) {
+function MegaPanel({
+  item,
+  open,
+}: {
+  item: Extract<NavItem, { panel: unknown }>;
+  open: boolean;
+}) {
   return (
     <div
       id={`nav-panel-${item.label}`}
       hidden={!open}
       className={cn(
-        "bg-surface absolute top-full left-1/2 mt-2 w-[560px] -translate-x-1/2",
-        "border-border rounded-xl border p-6 shadow-lg",
+        "absolute top-full left-1/2 mt-2 w-[560px] -translate-x-1/2 bg-surface",
+        "rounded-xl border border-border p-6 shadow-lg",
       )}
     >
       <div className="grid grid-cols-2 gap-6">
         {item.panel.map((column) => (
           <div key={column.title}>
-            <p className="text-label text-fg-subtle mb-3 uppercase">{column.title}</p>
+            <p className="mb-3 text-label text-fg-subtle uppercase">
+              {column.title}
+            </p>
             <ul className="space-y-1">
               {column.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href as Route}
                     className={cn(
-                      "hover:bg-surface-subtle group block rounded-md p-3",
-                      "transition-colors duration-fast ease-out",
+                      "group block rounded-md p-3 hover:bg-surface-subtle",
+                      "duration-fast transition-colors ease-out",
                     )}
                   >
-                    <span className="text-body text-fg group-hover:text-brand-500 block font-medium">
+                    <span className="block text-body font-medium text-fg group-hover:text-brand-500">
                       {link.label}
                     </span>
                     {link.description ? (
-                      <span className="text-body-sm text-fg-muted mt-0.5 block">
+                      <span className="mt-0.5 block text-body-sm text-fg-muted">
                         {link.description}
                       </span>
                     ) : null}

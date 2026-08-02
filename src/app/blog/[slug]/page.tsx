@@ -27,7 +27,11 @@ export async function generateMetadata({
   return { title: post.title, description: post.description };
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
@@ -66,11 +70,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         />
         <div className="max-w-3xl">
           <p className="text-label text-brand-500 uppercase">{post.category}</p>
-          <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+          <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
             {post.title}
           </h1>
-          <p className="text-body-sm text-fg-subtle mt-4">
-            {formatPostDate(post.date)} · {post.readingMinutes} min read · {company.brand} team
+          <p className="mt-4 text-body-sm text-fg-subtle">
+            {formatPostDate(post.date)} · {post.readingMinutes} min read ·{" "}
+            {company.brand} team
           </p>
         </div>
       </Section>
@@ -84,12 +89,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             <nav
               aria-label="More articles"
-              className="border-border mt-16 flex flex-col gap-4 border-t pt-8 sm:flex-row sm:justify-between"
+              className="mt-16 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between"
             >
               {prev ? (
                 <Link
                   href={`/blog/${prev.slug}` as Route}
-                  className="text-body text-brand-500 hover:text-brand-600 inline-flex items-center gap-2 font-medium"
+                  className="inline-flex items-center gap-2 text-body font-medium text-brand-500 hover:text-brand-600"
                 >
                   <ArrowLeft size={20} strokeWidth={1.5} aria-hidden="true" />
                   {prev.title}
@@ -100,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {next ? (
                 <Link
                   href={`/blog/${next.slug}` as Route}
-                  className="text-body text-brand-500 hover:text-brand-600 inline-flex items-center gap-2 text-right font-medium"
+                  className="inline-flex items-center gap-2 text-right text-body font-medium text-brand-500 hover:text-brand-600"
                 >
                   {next.title}
                   <ArrowRight size={20} strokeWidth={1.5} aria-hidden="true" />
@@ -110,13 +115,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {related.length > 0 ? (
               <aside className="mt-12">
-                <h2 className="text-label text-fg-subtle uppercase">Related reading</h2>
+                <h2 className="text-label text-fg-subtle uppercase">
+                  Related reading
+                </h2>
                 <ul className="mt-4 space-y-3">
                   {related.map((p) => (
                     <li key={p.slug}>
                       <Link
                         href={`/blog/${p.slug}` as Route}
-                        className="text-body text-fg hover:text-brand-500 font-medium"
+                        className="text-body font-medium text-fg hover:text-brand-500"
                       >
                         {p.title}
                       </Link>

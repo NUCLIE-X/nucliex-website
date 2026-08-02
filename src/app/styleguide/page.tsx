@@ -58,7 +58,11 @@ const contrast = [
 const spacing = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128] as const;
 
 const typeScale = [
-  ["display-1", "text-display-1 font-display font-bold", "Homepage hero H1 only"],
+  [
+    "display-1",
+    "text-display-1 font-display font-bold",
+    "Homepage hero H1 only",
+  ],
   ["display-2", "text-display-2 font-display font-bold", "Page H1"],
   ["h2", "text-h2 font-display font-medium", "Section headings"],
   ["h3", "text-h3 font-semibold", "Card/subsection headings"],
@@ -71,15 +75,19 @@ const typeScale = [
   ["data", "text-data font-mono tnum", "Spec table values"],
 ] as const;
 
-function SwatchRow({ rows }: { rows: ReadonlyArray<readonly [string, string, string]> }) {
+function SwatchRow({
+  rows,
+}: {
+  rows: ReadonlyArray<readonly [string, string, string]>;
+}) {
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
       {rows.map(([name, cls, hex]) => (
-        <div key={name} className="border-border rounded-lg border">
+        <div key={name} className="rounded-lg border border-border">
           <div className={`${cls} h-16 rounded-t-lg`} />
           <div className="p-3">
-            <p className="text-body-sm text-fg font-medium">{name}</p>
-            <p className="text-body-sm text-fg-subtle font-mono">{hex}</p>
+            <p className="text-body-sm font-medium text-fg">{name}</p>
+            <p className="font-mono text-body-sm text-fg-subtle">{hex}</p>
           </div>
         </div>
       ))}
@@ -87,10 +95,18 @@ function SwatchRow({ rows }: { rows: ReadonlyArray<readonly [string, string, str
   );
 }
 
-function Block({ title, children }: { title: string; children: React.ReactNode }) {
+function Block({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
-    <section className="border-border border-t py-10">
-      <h2 className="text-h2 font-display text-brand-900 mb-8 font-medium">{title}</h2>
+    <section className="border-t border-border py-10">
+      <h2 className="mb-8 font-display text-h2 font-medium text-brand-900">
+        {title}
+      </h2>
       {children}
     </section>
   );
@@ -99,8 +115,10 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
 export default function StyleguidePage() {
   return (
     <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
-      <p className="text-label text-fg-subtle uppercase">Internal — delete before launch</p>
-      <h1 className="text-display-2 font-display text-brand-900 mt-2 mb-12 font-bold">
+      <p className="text-label text-fg-subtle uppercase">
+        Internal — delete before launch
+      </p>
+      <h1 className="mt-2 mb-12 font-display text-display-2 font-bold text-brand-900">
         Token styleguide
       </h1>
 
@@ -114,20 +132,39 @@ export default function StyleguidePage() {
 
       <Block title="Contrast (documented pairs)">
         <table className="w-full max-w-2xl text-left">
-          <caption className="sr-only">WCAG contrast ratios for approved colour pairs</caption>
+          <caption className="sr-only">
+            WCAG contrast ratios for approved colour pairs
+          </caption>
           <thead>
-            <tr className="border-border border-b">
-              <th scope="col" className="text-label text-fg-subtle py-2 uppercase">Pair</th>
-              <th scope="col" className="text-label text-fg-subtle py-2 uppercase">Ratio</th>
-              <th scope="col" className="text-label text-fg-subtle py-2 uppercase">Verdict</th>
+            <tr className="border-b border-border">
+              <th
+                scope="col"
+                className="py-2 text-label text-fg-subtle uppercase"
+              >
+                Pair
+              </th>
+              <th
+                scope="col"
+                className="py-2 text-label text-fg-subtle uppercase"
+              >
+                Ratio
+              </th>
+              <th
+                scope="col"
+                className="py-2 text-label text-fg-subtle uppercase"
+              >
+                Verdict
+              </th>
             </tr>
           </thead>
           <tbody>
             {contrast.map(([pair, ratio, verdict]) => (
-              <tr key={pair} className="border-border border-b">
-                <th scope="row" className="text-body-sm py-2 font-normal">{pair}</th>
-                <td className="text-data font-mono tnum py-2">{ratio}</td>
-                <td className="text-body-sm text-fg-muted py-2">{verdict}</td>
+              <tr key={pair} className="border-b border-border">
+                <th scope="row" className="py-2 text-body-sm font-normal">
+                  {pair}
+                </th>
+                <td className="py-2 font-mono tnum text-data">{ratio}</td>
+                <td className="py-2 text-body-sm text-fg-muted">{verdict}</td>
               </tr>
             ))}
           </tbody>
@@ -138,7 +175,7 @@ export default function StyleguidePage() {
         <div className="space-y-8">
           {typeScale.map(([name, cls, use]) => (
             <div key={name}>
-              <p className="text-label text-fg-subtle mb-1 uppercase">
+              <p className="mb-1 text-label text-fg-subtle uppercase">
                 {name} · {use}
               </p>
               <p className={cls}>Reliable technology. 0123456789</p>
@@ -151,8 +188,8 @@ export default function StyleguidePage() {
         <div className="space-y-2">
           {spacing.map((px) => (
             <div key={px} className="flex items-center gap-4">
-              <span className="text-data font-mono tnum w-12">{px}</span>
-              <div className="bg-brand-500 h-4" style={{ width: `${px}px` }} />
+              <span className="w-12 font-mono tnum text-data">{px}</span>
+              <div className="h-4 bg-brand-500" style={{ width: `${px}px` }} />
             </div>
           ))}
         </div>
@@ -160,25 +197,35 @@ export default function StyleguidePage() {
 
       <Block title="Radius">
         <div className="flex flex-wrap gap-6">
-          {(["rounded-sm", "rounded-md", "rounded-lg", "rounded-xl", "rounded-full"] as const).map(
-            (cls) => (
-              <div key={cls} className="text-center">
-                <div className={`${cls} bg-brand-100 border-brand-300 h-20 w-20 border`} />
-                <p className="text-body-sm text-fg-subtle mt-2">{cls}</p>
-              </div>
-            ),
-          )}
+          {(
+            [
+              "rounded-sm",
+              "rounded-md",
+              "rounded-lg",
+              "rounded-xl",
+              "rounded-full",
+            ] as const
+          ).map((cls) => (
+            <div key={cls} className="text-center">
+              <div
+                className={`${cls} h-20 w-20 border border-brand-300 bg-brand-100`}
+              />
+              <p className="mt-2 text-body-sm text-fg-subtle">{cls}</p>
+            </div>
+          ))}
         </div>
       </Block>
 
       <Block title="Elevation">
         <div className="flex flex-wrap gap-8">
-          {(["shadow-xs", "shadow-sm", "shadow-md", "shadow-lg"] as const).map((cls) => (
-            <div key={cls} className="text-center">
-              <div className={`${cls} bg-surface h-20 w-32 rounded-lg`} />
-              <p className="text-body-sm text-fg-subtle mt-2">{cls}</p>
-            </div>
-          ))}
+          {(["shadow-xs", "shadow-sm", "shadow-md", "shadow-lg"] as const).map(
+            (cls) => (
+              <div key={cls} className="text-center">
+                <div className={`${cls} h-20 w-32 rounded-lg bg-surface`} />
+                <p className="mt-2 text-body-sm text-fg-subtle">{cls}</p>
+              </div>
+            ),
+          )}
         </div>
       </Block>
 

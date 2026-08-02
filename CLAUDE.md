@@ -28,6 +28,7 @@ or WD — and then convert that belief into an enquiry, a dealer application, or
 **Success = a stranger cannot tell this is a young company.**
 
 ### Primary conversion goals, in priority order
+
 1. Business / bulk enquiry (highest commercial value)
 2. Dealer & distributor application
 3. IT services enquiry (AMC, office IT, repair)
@@ -35,6 +36,7 @@ or WD — and then convert that belief into an enquiry, a dealer application, or
 5. Support / downloads (retention)
 
 ### Audiences
+
 - **Consumer:** PC builders, gamers, students, content creators — want specs, price-to-performance, warranty clarity.
 - **Professional:** developers, designers, engineers, workstation users — want endurance numbers and sustained performance.
 - **Business:** IT companies, system integrators, retailers, schools, government, SMBs — want supply reliability, GST invoicing, RMA process, and a human to talk to.
@@ -67,10 +69,11 @@ These are hard rules. Violating any of them is a bug, not a style preference.
 Two conflicts existed between the logo and the brand brief. They are resolved as follows.
 
 ### 3.1 Name architecture
-| Layer | Name | Used for |
-|---|---|---|
+
+| Layer                    | Name                | Used for                                                             |
+| ------------------------ | ------------------- | -------------------------------------------------------------------- |
 | Legal / corporate entity | **NUCLIEX INFOSYS** | Footer, legal pages, invoices, contact, About page, `<title>` suffix |
-| Brand / product mark | **NUCLIEX** | Product names, hero copy, packaging, conversational reference |
+| Brand / product mark     | **NUCLIEX**         | Product names, hero copy, packaging, conversational reference        |
 
 - Corporate signature: **"Driven by Expertise"** — used with the full lockup (services, About, footer, corporate decks).
 - Product/marketing line: **"Powering Reliable Technology"** — used on the homepage hero and product pages.
@@ -78,9 +81,11 @@ Two conflicts existed between the logo and the brand brief. They are resolved as
 - Spelling is always all-caps `NUCLIEX` in the wordmark; in body copy write `NUCLIEX` (caps) — never "Nucliex" or "NuclieX".
 
 ### 3.2 Colour of the logo
+
 The supplied logo artwork is `#7ACCC9` (soft teal). The brand system is deep blue `#0057B8` / navy `#0B1F3A` / cyan `#00C2FF`. Teal is **off-system** — it reads soft and pastel, which fights the "precision engineering" positioning.
 
 **Decision:** the logo is reproduced in the brand system, not in teal.
+
 - Primary lockup: **navy `#0B1F3A`** on light backgrounds.
 - Reversed lockup: **white `#FFFFFF`** on navy/dark backgrounds.
 - The node-network mark may use **`#0057B8`** when it appears alone (favicon, app icon, avatar).
@@ -95,20 +100,20 @@ tracking a raster logo is a launch blocker (`/docs/09-OPEN-QUESTIONS.md`).
 
 Verified current as of August 2026. Do not silently upgrade majors.
 
-| Layer | Choice | Version | Why |
-|---|---|---|---|
-| Framework | Next.js (App Router) | `16.2.x` | Active LTS, Turbopack default, best-in-class SEO/SSG for a marketing + catalog site |
-| Runtime | Node.js | `>=20` | Next 16 minimum |
-| Language | TypeScript | `5.x`, `strict: true` | |
-| UI | React | `19.x` | |
-| Styling | Tailwind CSS | `4.3.x` | CSS-first config via `@theme`; no `tailwind.config.js` |
-| Content | MDX (`@next/mdx`) + local TS data modules | — | No CMS in v1. Products/blog live in-repo, version-controlled |
-| Forms | React Server Actions + `zod` | — | No client form library |
-| Email | Resend | — | Enquiry/dealer/warranty notifications |
-| Motion | `motion` (Framer Motion) | `12.x` | Used sparingly — see §6 |
-| Icons | `lucide-react` | — | Matches the brief's "minimal line icons, rounded, consistent stroke" |
-| Analytics | Vercel Analytics + Speed Insights | — | Cookieless, no consent banner needed |
-| Deploy | Vercel | — | |
+| Layer     | Choice                                    | Version               | Why                                                                                 |
+| --------- | ----------------------------------------- | --------------------- | ----------------------------------------------------------------------------------- |
+| Framework | Next.js (App Router)                      | `16.2.x`              | Active LTS, Turbopack default, best-in-class SEO/SSG for a marketing + catalog site |
+| Runtime   | Node.js                                   | `>=20`                | Next 16 minimum                                                                     |
+| Language  | TypeScript                                | `5.x`, `strict: true` |                                                                                     |
+| UI        | React                                     | `19.x`                |                                                                                     |
+| Styling   | Tailwind CSS                              | `4.3.x`               | CSS-first config via `@theme`; no `tailwind.config.js`                              |
+| Content   | MDX (`@next/mdx`) + local TS data modules | —                     | No CMS in v1. Products/blog live in-repo, version-controlled                        |
+| Forms     | React Server Actions + `zod`              | —                     | No client form library                                                              |
+| Email     | Resend                                    | —                     | Enquiry/dealer/warranty notifications                                               |
+| Motion    | `motion` (Framer Motion)                  | `12.x`                | Used sparingly — see §6                                                             |
+| Icons     | `lucide-react`                            | —                     | Matches the brief's "minimal line icons, rounded, consistent stroke"                |
+| Analytics | Vercel Analytics + Speed Insights         | —                     | Cookieless, no consent banner needed                                                |
+| Deploy    | Vercel                                    | —                     |                                                                                     |
 
 **Explicitly not used:** UI kits that impose their own look (MUI, Chakra, Bootstrap), a component
 library we cannot restyle, `styled-components`, any CSS-in-JS runtime, jQuery, carousel libraries.
@@ -165,17 +170,20 @@ where accessibility is genuinely hard to get right by hand.
 ## 6. How to work in this repo
 
 ### Order of operations
+
 Follow `/docs/08-BUILD-PLAN.md` phase by phase. Do not jump ahead to page building before the
 token layer and primitives exist — every shortcut there produces inconsistent spacing that has to
 be unpicked later.
 
 ### Before writing any component
+
 1. Check `/docs/06-COMPONENTS.md` — it may already have a defined prop contract.
 2. Check `/src/components/ui` — it may already exist.
 3. Never hardcode a colour, font size, radius, or spacing value. **Every** value comes from a token.
    `text-[#0057B8]` and `p-[13px]` are review failures.
 
 ### Styling rules
+
 - Tailwind utilities only, driven by `@theme` tokens in `globals.css`.
 - No arbitrary values except for genuinely one-off geometry (e.g. `clip-path`), and comment why.
 - Compose repeated utility strings into a component, not into an `@apply` soup.
@@ -183,6 +191,7 @@ be unpicked later.
   ad-hoc — this is the #1 source of CSS drift.
 
 ### Motion rules (the brief says minimal — hold that line)
+
 Permitted: a single staged hero reveal on load; scroll-triggered fade+8px-rise for section entry,
 once, never repeating; hover state transitions ≤200ms. Everything wrapped in a
 `useReducedMotion()` guard.
@@ -190,6 +199,7 @@ Banned: parallax, auto-playing carousels, marquees, counters that animate on scr
 3D objects, particle backgrounds, cursor followers, page transition wipes.
 
 ### Copy rules
+
 - Sentence case for headings and buttons. Not Title Case. Not ALL CAPS except in the eyebrow/label
   utility style and the wordmark.
 - Buttons say what happens: "Request a quote", "Register warranty", "Download datasheet".
@@ -203,6 +213,7 @@ Banned: parallax, auto-playing carousels, marquees, counters that animate on scr
 - Empty states invite an action.
 
 ### Git
+
 - Conventional commits: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `perf:`, `a11y:`.
 - One phase from the build plan ≈ one branch. Small, reviewable commits.
 - `main` is always deployable.
@@ -220,6 +231,7 @@ npm run build         # must succeed with no warnings
 ```
 
 **Performance budget** (Lighthouse mobile, throttled, on the deployed preview):
+
 - Performance ≥ 95, Accessibility = 100, Best Practices ≥ 95, SEO = 100
 - LCP < 2.0s · CLS < 0.05 · INP < 200ms
 - First-load JS per route ≤ 120 kB gzipped

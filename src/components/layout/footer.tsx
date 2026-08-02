@@ -18,13 +18,15 @@ export function Footer() {
         <div className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-5">
           {footerNav.map((column) => (
             <nav key={column.title} aria-label={`Footer — ${column.title}`}>
-              <p className="text-label text-fg-inverse-muted mb-4 uppercase">{column.title}</p>
+              <p className="mb-4 text-label text-fg-inverse-muted uppercase">
+                {column.title}
+              </p>
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href as Route}
-                      className="text-body-sm text-fg-inverse hover:text-accent-400 transition-colors duration-fast"
+                      className="duration-fast text-body-sm text-fg-inverse transition-colors hover:text-accent-400"
                     >
                       {link.label}
                     </Link>
@@ -35,10 +37,17 @@ export function Footer() {
           ))}
 
           <div>
-            <p className="text-label text-fg-inverse-muted mb-4 uppercase">Contact</p>
-            <ul className="text-body-sm space-y-3">
+            <p className="mb-4 text-label text-fg-inverse-muted uppercase">
+              Contact
+            </p>
+            <ul className="space-y-3 text-body-sm">
               <li className="flex items-start gap-2">
-                <MapPin size={16} strokeWidth={1.5} aria-hidden="true" className="text-fg-inverse-muted mt-1 shrink-0" />
+                <MapPin
+                  size={16}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="mt-1 shrink-0 text-fg-inverse-muted"
+                />
                 <span>
                   {company.addressLine}
                   <br />
@@ -46,21 +55,37 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={16} strokeWidth={1.5} aria-hidden="true" className="text-fg-inverse-muted shrink-0" />
+                <Phone
+                  size={16}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="shrink-0 text-fg-inverse-muted"
+                />
                 {isTbd(company.phone) ? (
                   <span>{company.phone}</span>
                 ) : (
-                  <a href={`tel:${company.phone}`} className="hover:text-accent-400 transition-colors duration-fast">
+                  <a
+                    href={`tel:${company.phone}`}
+                    className="duration-fast transition-colors hover:text-accent-400"
+                  >
                     {company.phone}
                   </a>
                 )}
               </li>
               <li className="flex items-center gap-2">
-                <Mail size={16} strokeWidth={1.5} aria-hidden="true" className="text-fg-inverse-muted shrink-0" />
+                <Mail
+                  size={16}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="shrink-0 text-fg-inverse-muted"
+                />
                 {isTbd(company.salesEmail) ? (
                   <span>{company.salesEmail}</span>
                 ) : (
-                  <a href={`mailto:${company.salesEmail}`} className="hover:text-accent-400 transition-colors duration-fast">
+                  <a
+                    href={`mailto:${company.salesEmail}`}
+                    className="duration-fast transition-colors hover:text-accent-400"
+                  >
                     {company.salesEmail}
                   </a>
                 )}
@@ -70,7 +95,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-border-dark flex flex-col gap-6 border-t py-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-6 border-t border-border-dark py-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-3">
             <Link href="/" aria-label="NUCLIEX home">
               <Logo variant="white" className="h-12 w-auto" />
@@ -79,13 +104,13 @@ export function Footer() {
               {company.legalName} · {company.corporateSignature}
             </p>
           </div>
-          <div className="text-body-sm text-fg-inverse-muted flex flex-col gap-2 lg:items-end">
+          <div className="flex flex-col gap-2 text-body-sm text-fg-inverse-muted lg:items-end">
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {legalNav.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href as Route}
-                    className="hover:text-accent-400 transition-colors duration-fast"
+                    className="duration-fast transition-colors hover:text-accent-400"
                   >
                     {link.label}
                   </Link>
@@ -93,7 +118,8 @@ export function Footer() {
               ))}
             </ul>
             <p>
-              © {new Date().getFullYear()} {company.legalName}. GSTIN {company.gstin} · CIN {company.cin}
+              © {new Date().getFullYear()} {company.legalName}. GSTIN{" "}
+              {company.gstin} · CIN {company.cin}
             </p>
           </div>
         </div>

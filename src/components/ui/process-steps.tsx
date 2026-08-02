@@ -15,7 +15,11 @@ type ProcessStepsProps = {
  * Numbered 01/02/03 — ONLY for the RMA process and service/procurement
  * sequences where order genuinely matters (docs/02 §1). Never feature grids.
  */
-export function ProcessSteps({ steps, onDark = false, className }: ProcessStepsProps) {
+export function ProcessSteps({
+  steps,
+  onDark = false,
+  className,
+}: ProcessStepsProps) {
   return (
     <ol className={cn("space-y-0", className)}>
       {steps.map((step, i) => {
@@ -25,7 +29,7 @@ export function ProcessSteps({ steps, onDark = false, className }: ProcessStepsP
             <div className="flex flex-col items-center">
               <span
                 className={cn(
-                  "text-data font-mono tnum pt-0.5 font-medium",
+                  "pt-0.5 font-mono tnum text-data font-medium",
                   onDark ? "text-fg-inverse-muted" : "text-brand-500",
                 )}
                 aria-hidden="true"
@@ -53,7 +57,7 @@ export function ProcessSteps({ steps, onDark = false, className }: ProcessStepsP
               </h3>
               <p
                 className={cn(
-                  "text-body mt-1 max-w-[60ch]",
+                  "mt-1 max-w-[60ch] text-body",
                   onDark ? "text-fg-inverse-muted" : "text-fg-muted",
                 )}
               >

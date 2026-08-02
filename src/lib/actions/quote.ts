@@ -12,7 +12,10 @@ const timelineLabels: Record<string, string> = {
   exploring: "Just exploring",
 };
 
-export async function submitQuote(_prev: FormState, formData: FormData): Promise<FormState> {
+export async function submitQuote(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
   const guarded = await guardAndParse(quoteSchema, formData);
   if (!guarded.ok) return guarded.state;
 

@@ -21,10 +21,10 @@ export default function PartnerApplyPage() {
         ]}
       />
       <div className="max-w-3xl">
-        <h1 className="text-display-2 font-display text-brand-900 font-bold">
+        <h1 className="font-display text-display-2 font-bold text-brand-900">
           Apply to become a partner
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           Five minutes of detail about your business — the partner team will be
           in touch within three working days.
         </p>

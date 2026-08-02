@@ -3,9 +3,17 @@
 Work through these phases in order. Do not start a phase until the previous one passes its
 acceptance criteria. Each phase is one branch and ends with `lint && typecheck && build` green.
 
+> **Status (2026-08-02):** Phases 0–10 are built and committed (one commit per phase on `main`),
+> with `lint`, `typecheck`, and `build` green throughout. Still outstanding — deploy-dependent or
+> blocked on `09-OPEN-QUESTIONS.md`: Lighthouse/a11y verification on a deployed preview, real
+> mail delivery test (needs Resend keys), Search Console/Business Profile, domain + SSL, the
+> `{{TBD}}` content resolutions, the SVG logo redraw, and deleting `/styleguide` at launch
+> (kept for now, noindexed and robots-disallowed).
+
 ---
 
 ## Phase 0 — Foundation
+
 - [ ] `npx create-next-app@latest` — TypeScript, App Router, Tailwind, ESLint, `src/` dir, Turbopack
 - [ ] Pin Next `16.2.x`, React `19.x`, Tailwind `4.3.x`. Node `>=20` in `engines`
 - [ ] `tsconfig` strict mode; path alias `@/*`
@@ -20,6 +28,7 @@ acceptance criteria. Each phase is one branch and ends with `lint && typecheck &
 ---
 
 ## Phase 1 — Design tokens & type
+
 - [ ] `globals.css` with the full `@theme` block from `02-DESIGN-SYSTEM.md §2` and `§3`
 - [ ] Fonts via `next/font/google`: Space Grotesk (500,700), Inter (400,500,600), JetBrains Mono (400,500)
 - [ ] Fluid type scale as `@theme` `--text-*` tokens
@@ -33,6 +42,7 @@ acceptance criteria. Each phase is one branch and ends with `lint && typecheck &
 ---
 
 ## Phase 2 — Layout primitives & UI kit
+
 - [ ] `Container`, `Section`, `SectionHeader`
 - [ ] `Button` (all 4 variants × 3 sizes, all states), `Badge`, `Card` family
 - [ ] Form primitives: `Input`, `Textarea`, `Select`, `Checkbox`, `RadioGroup`, `FileInput`, `FieldError`
@@ -45,6 +55,7 @@ acceptance criteria. Each phase is one branch and ends with `lint && typecheck &
 ---
 
 ## Phase 3 — Shell
+
 - [ ] `src/data/nav.ts` and `src/data/company.ts`
 - [ ] `Header` with mega-panel dropdowns, sticky behaviour, scroll hairline
 - [ ] `MobileNav` sheet with focus trap and scroll lock
@@ -59,6 +70,7 @@ mobile sheet works at 390px.
 ---
 
 ## Phase 4 — The signature
+
 - [ ] `SpecRail` — all tones, 4-up and 2×2, footnote support
 - [ ] `SpecTable` — grouped, semantic, tabular figures
 - [ ] `ProductFrame` — image and placeholder modes, node motif at 4%
@@ -70,6 +82,7 @@ in a column when values differ in digit count.
 ---
 
 ## Phase 5 — Homepage
+
 - [ ] All nine sections from `04-SITEMAP-AND-PAGES.md §2`, using approved copy from `05-CONTENT.md §3`
 - [ ] Hero load sequence (staged, once, reduced-motion safe)
 - [ ] Section entry reveals via `Reveal`
@@ -81,6 +94,7 @@ in `CLAUDE.md §7` passes — no section could be dropped onto a generic B2B sit
 ---
 
 ## Phase 6 — Products
+
 - [ ] `src/data/products.ts` with the real product set (use `{{TBD}}` for unknown specs)
 - [ ] `/products` index with URL-synced filters and a real empty state
 - [ ] `/products/ssd/sata`, `/products/ssd/nvme`
@@ -94,6 +108,7 @@ visible status badge.
 ---
 
 ## Phase 7 — Services, Business, Partners
+
 - [ ] `src/data/services.ts`
 - [ ] `/services` overview + `/services/[slug]`
 - [ ] `/business` + `/business/quote`
@@ -103,6 +118,7 @@ visible status badge.
 ---
 
 ## Phase 8 — Support & forms
+
 - [ ] `/support` hub
 - [ ] `/support/warranty` — policy + registration form + file upload
 - [ ] `/support/rma` — numbered process with timelines
@@ -118,6 +134,7 @@ reader, and a test submission arrives in the correct mailbox with the correct ac
 ---
 
 ## Phase 9 — About, Contact, Blog, Legal
+
 - [ ] `/about` with founder section
 - [ ] `/contact` with facade-loaded map
 - [ ] MDX pipeline, `/blog`, `/blog/[slug]`, `Toc`, `Article` JSON-LD
@@ -127,6 +144,7 @@ reader, and a test submission arrives in the correct mailbox with the correct ac
 ---
 
 ## Phase 10 — Launch readiness
+
 - [ ] `sitemap.ts`, `robots.ts`
 - [ ] Search the repo for `{{TBD` — resolve or escalate every hit
 - [ ] Delete `/styleguide`
@@ -140,6 +158,7 @@ reader, and a test submission arrives in the correct mailbox with the correct ac
 ---
 
 ## Definition of done, for any task
+
 1. It matches the spec in `/docs`.
 2. It uses tokens only — no hardcoded values.
 3. It passes the component checklist and the page accessibility checklist.

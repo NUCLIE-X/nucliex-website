@@ -23,7 +23,10 @@ export function HomeBlog() {
           eyebrow="From the blog"
           title="Guides written by the people who do the upgrades"
           action={
-            <Link href="/blog" className="text-body text-brand-500 hover:text-brand-600 font-medium">
+            <Link
+              href="/blog"
+              className="text-body font-medium text-brand-500 hover:text-brand-600"
+            >
               All articles
             </Link>
           }
@@ -32,8 +35,10 @@ export function HomeBlog() {
           {latest.map((post) => (
             <Card key={post.slug} interactive>
               <CardBody>
-                <p className="text-label text-fg-subtle uppercase">{post.category}</p>
-                <h3 className="text-h3 mt-3 font-semibold">
+                <p className="text-label text-fg-subtle uppercase">
+                  {post.category}
+                </p>
+                <h3 className="mt-3 text-h3 font-semibold">
                   <Link
                     href={`/blog/${post.slug}` as Route}
                     className="after:absolute after:inset-0"
@@ -41,8 +46,10 @@ export function HomeBlog() {
                     {post.title}
                   </Link>
                 </h3>
-                <p className="text-body-sm text-fg-muted mt-2">{post.description}</p>
-                <p className="text-body-sm text-fg-subtle mt-4">
+                <p className="mt-2 text-body-sm text-fg-muted">
+                  {post.description}
+                </p>
+                <p className="mt-4 text-body-sm text-fg-subtle">
                   {formatPostDate(post.date)} · {post.readingMinutes} min read
                 </p>
               </CardBody>

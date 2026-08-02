@@ -5,15 +5,15 @@ export default function Loading() {
   return (
     <Container className="py-16 md:py-20 lg:py-24" aria-hidden="true">
       <div className="max-w-2xl space-y-4">
-        <div className="bg-surface-subtle h-4 w-40 animate-pulse rounded-sm motion-reduce:animate-none" />
-        <div className="bg-surface-subtle h-12 w-full animate-pulse rounded-sm motion-reduce:animate-none" />
-        <div className="bg-surface-subtle h-6 w-3/4 animate-pulse rounded-sm motion-reduce:animate-none" />
+        <div className="h-4 w-40 animate-pulse rounded-sm bg-surface-subtle motion-reduce:animate-none" />
+        <div className="h-12 w-full animate-pulse rounded-sm bg-surface-subtle motion-reduce:animate-none" />
+        <div className="h-6 w-3/4 animate-pulse rounded-sm bg-surface-subtle motion-reduce:animate-none" />
       </div>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 3 }).map((_, i) => (
           <div
             key={i}
-            className="bg-surface-subtle h-64 animate-pulse rounded-lg motion-reduce:animate-none"
+            className="h-64 animate-pulse rounded-lg bg-surface-subtle motion-reduce:animate-none"
           />
         ))}
       </div>

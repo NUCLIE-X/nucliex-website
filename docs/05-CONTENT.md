@@ -39,6 +39,7 @@ any award.
 ## 3. Approved copy
 
 ### Homepage hero
+
 > **Eyebrow:** Indian storage & IT infrastructure
 >
 > **H1:** Storage you can stop thinking about.
@@ -49,11 +50,14 @@ any award.
 > **CTAs:** `Explore SSDs` · `Talk to us`
 
 Alternate H1s if the client prefers a different register (pick one, don't A/B on the same page):
+
 - "Built to be the part of your PC you never worry about."
 - "Reliable storage, engineered in India."
 
 ### Spec rail — homepage
+
 Four company-level figures. Structure, with values pending:
+
 ```
 {{TBD:warranty_years}} YEAR      WARRANTY ON EVERY DRIVE
 {{TBD:rma_hours}} HR             RMA FIRST RESPONSE
@@ -62,6 +66,7 @@ PUNE, MH                          SERVICE & SUPPORT BASE
 ```
 
 ### Section: Why NUCLIEX
+
 Four points, heading + two lines each.
 
 1. **Engineered, then verified.**
@@ -75,6 +80,7 @@ Four points, heading + two lines each.
    No "up to" figures without the test conditions. If a number isn't verified, we don't print it.
 
 ### Section: Warranty & support (dark)
+
 > **H2:** If something goes wrong, here's exactly what happens.
 >
 > **Body:** Register your product once. If a drive fails inside its warranty term, raise an RMA and
@@ -84,6 +90,7 @@ Four points, heading + two lines each.
 > **CTAs:** `Register your warranty` · `Start an RMA`
 
 ### Section: Services strip
+
 > **H2:** We've been fixing and building IT systems since before we made drives.
 >
 > **Body:** Laptop and desktop upgrades, Windows deployment, data migration, networking, CCTV, and
@@ -92,6 +99,7 @@ Four points, heading + two lines each.
 > **CTA:** `View all services`
 
 ### Business page hero
+
 > **Eyebrow:** For business & enterprise
 >
 > **H1:** Storage and IT support for teams that can't afford downtime.
@@ -102,6 +110,7 @@ Four points, heading + two lines each.
 > **CTA:** `Request a business quote`
 
 ### Partners page hero
+
 > **Eyebrow:** Dealers & distributors
 >
 > **H1:** Sell a brand that backs you up after the sale.
@@ -112,6 +121,7 @@ Four points, heading + two lines each.
 > **CTA:** `Apply to become a partner`
 
 ### About page opening
+
 > **H1:** We're building a storage brand the way we'd want one built.
 >
 > **Lead:** NUCLIEX INFOSYS started as an IT services business in Pune — fixing machines, deploying
@@ -119,16 +129,19 @@ Four points, heading + two lines each.
 > started making our own.
 
 ### Pre-footer CTA band
+
 > **H2:** Tell us what you're building.
 > **Body:** Whether it's one laptop upgrade or two hundred workstations, we'll give you a straight answer.
 > **CTAs:** `Request a quote` · `{{TBD:phone}}`
 
 ### 404
+
 > **H1:** That page isn't here.
 > **Body:** It may have moved, or the link may be wrong.
 > **Links:** `Browse products` · `Get support` · `Go to homepage`
 
 ### Form confirmations
+
 - Enquiry: "Quote request sent. We reply within one working day — check your email for a copy."
 - Warranty: "Warranty registered. Your registration ID is {{id}}. We've emailed a copy to {{email}}."
 - Dealer: "Application received. Our partner team will be in touch within three working days."
@@ -137,19 +150,19 @@ Four points, heading + two lines each.
 
 ## 4. Metadata (title / description per route)
 
-| Route | Title | Description |
-|---|---|---|
-| `/` | NUCLIEX — SSDs & IT solutions engineered in India | SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Pune. Clear warranty, real support. |
-| `/products` | SSDs & storage products — NUCLIEX | Browse NUCLIEX SATA and NVMe SSDs. Full specifications, warranty terms, and datasheets for every drive. |
-| `/products/ssd/sata` | SATA SSDs — NUCLIEX | Reliable 2.5-inch SATA SSDs for laptop and desktop upgrades, with published performance figures. |
-| `/products/ssd/nvme` | NVMe SSDs — NUCLIEX | M.2 NVMe SSDs for gaming, content creation, and workstation builds. |
-| `/services` | IT services & support — NUCLIEX INFOSYS | SSD upgrades, Windows deployment, data migration, networking, CCTV, and AMC for businesses in Pune. |
-| `/business` | Business & enterprise storage — NUCLIEX | Bulk pricing, GST invoicing, and dedicated support for IT companies, integrators, schools, and government buyers. |
-| `/partners` | Become a NUCLIEX dealer or distributor | Partner with an Indian storage brand: clear margins, dependable supply, and a fast RMA process. |
-| `/support` | Support, warranty & downloads — NUCLIEX | Register a warranty, start an RMA, download datasheets, or reach the NUCLIEX support team. |
-| `/about` | About NUCLIEX INFOSYS | An Indian technology company building reliable storage, founded in Pune by Ramjit J. Mourya. |
-| `/contact` | Contact NUCLIEX INFOSYS | Talk to our team about products, bulk orders, IT services, or support. |
-| `/blog` | Storage & IT guides — NUCLIEX | Practical guides on SSDs, upgrades, and keeping business IT running. |
+| Route                | Title                                             | Description                                                                                                                   |
+| -------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `/`                  | NUCLIEX — SSDs & IT solutions engineered in India | SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Pune. Clear warranty, real support. |
+| `/products`          | SSDs & storage products — NUCLIEX                 | Browse NUCLIEX SATA and NVMe SSDs. Full specifications, warranty terms, and datasheets for every drive.                       |
+| `/products/ssd/sata` | SATA SSDs — NUCLIEX                               | Reliable 2.5-inch SATA SSDs for laptop and desktop upgrades, with published performance figures.                              |
+| `/products/ssd/nvme` | NVMe SSDs — NUCLIEX                               | M.2 NVMe SSDs for gaming, content creation, and workstation builds.                                                           |
+| `/services`          | IT services & support — NUCLIEX INFOSYS           | SSD upgrades, Windows deployment, data migration, networking, CCTV, and AMC for businesses in Pune.                           |
+| `/business`          | Business & enterprise storage — NUCLIEX           | Bulk pricing, GST invoicing, and dedicated support for IT companies, integrators, schools, and government buyers.             |
+| `/partners`          | Become a NUCLIEX dealer or distributor            | Partner with an Indian storage brand: clear margins, dependable supply, and a fast RMA process.                               |
+| `/support`           | Support, warranty & downloads — NUCLIEX           | Register a warranty, start an RMA, download datasheets, or reach the NUCLIEX support team.                                    |
+| `/about`             | About NUCLIEX INFOSYS                             | An Indian technology company building reliable storage, founded in Pune by Ramjit J. Mourya.                                  |
+| `/contact`           | Contact NUCLIEX INFOSYS                           | Talk to our team about products, bulk orders, IT services, or support.                                                        |
+| `/blog`              | Storage & IT guides — NUCLIEX                     | Practical guides on SSDs, upgrades, and keeping business IT running.                                                          |
 
 Title pattern for untabulated pages: `{Page} — NUCLIEX` (product/marketing) or
 `{Page} — NUCLIEX INFOSYS` (corporate/legal). Max 60 chars. Descriptions 140–158 chars, each one

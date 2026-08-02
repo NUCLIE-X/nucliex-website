@@ -30,6 +30,7 @@
 ```
 
 ### Header navigation
+
 `Products ▾` · `Services ▾` · `Business` · `Support ▾` · `About` — with **`Request a quote`** as the
 primary CTA on the right, and a `Contact` ghost link beside it.
 
@@ -41,6 +42,7 @@ primary CTA on the right, and a `Contact` ghost link beside it.
 - Mobile: full-height sheet, accordion sections, CTA pinned at the bottom.
 
 ### Footer
+
 Five columns — Products · Services · Support · Company · Contact — over a bottom bar with the
 reversed logo, "NUCLIEX INFOSYS · Driven by Expertise", ©, GSTIN/CIN `{{TBD}}`, legal links.
 Background `surface-navy`. Include the full postal address and a `tel:` and `mailto:` link — a real
@@ -50,7 +52,7 @@ address in the footer is a trust signal, not boilerplate.
 
 ## 2. Home — `/`
 
-The homepage answers, in order: *what is this, is it any good, can I trust it, what do I do next.*
+The homepage answers, in order: _what is this, is it any good, can I trust it, what do I do next._
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -85,11 +87,12 @@ The homepage answers, in order: *what is this, is it any good, can I trust it, w
 ```
 
 ### Section notes
+
 1. **Hero.** Left-aligned two-column split, not centred. Eyebrow in `label` style. H1 in `display-1`.
    Lead in `body-lg fg-muted`, max 56ch. Two CTAs: primary `Explore SSDs` → `/products`, secondary
    `Talk to us` → `/contact`. Right column is a `ProductFrame` until real photography exists.
    No gradient mesh, no floating cards, no background video.
-2. **Spec rail.** Four figures. On the homepage these are *company* figures, not product figures —
+2. **Spec rail.** Four figures. On the homepage these are _company_ figures, not product figures —
    e.g. warranty years, RMA response time, service coverage, years in operation. **Only real numbers.**
    Full-bleed navy band, `data-lg` mono figures, `label` captions, hairline dividers between columns
    on desktop, 2×2 on mobile.
@@ -202,6 +205,7 @@ Article page: title, date, reading time, author, 68ch measure, auto-generated ta
 desktop (sticky, `lg+` only), prev/next, related posts, `Article` JSON-LD.
 
 **Seed content (write these three — they are the SEO entry points):**
+
 1. "SATA vs NVMe: which SSD should you actually buy?"
 2. "How to upgrade a laptop to an SSD without reinstalling Windows"
 3. "What TBW and MTBF actually tell you about an SSD's lifespan"
@@ -215,6 +219,7 @@ notification to the right mailbox.
 ---
 
 ## 12. Global states to build
+
 `not-found.tsx` — states what happened, offers products/support/home links.
 `error.tsx` — plain recovery, `Try again` + support link. No stack traces in production.
 `loading.tsx` — skeletons matching the real layout, never a spinner.

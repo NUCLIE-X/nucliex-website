@@ -7,15 +7,18 @@ import { company } from "@/data/company";
 // noindex until the client's legal advisor supplies real text ({{TBD:legal}}).
 export const metadata: Metadata = {
   title: "Warranty policy",
-  description: "The NUCLIEX warranty policy — term, coverage, and claim process.",
+  description:
+    "The NUCLIEX warranty policy — term, coverage, and claim process.",
   robots: { index: false, follow: true },
 };
 
 export default function WarrantyPolicyPage() {
   return (
     <Section spacing="tight" className="py-16 md:py-20" containerSize="narrow">
-      <h1 className="text-display-2 font-display text-brand-900 font-bold">Warranty policy</h1>
-      <p className="text-body-sm text-fg-subtle mt-4">
+      <h1 className="font-display text-display-2 font-bold text-brand-900">
+        Warranty policy
+      </h1>
+      <p className="mt-4 text-body-sm text-fg-subtle">
         Draft structure — final terms are supplied by {company.legalName}.
         {" {{TBD:legal}} {{TBD:warranty_years}}"}
       </p>

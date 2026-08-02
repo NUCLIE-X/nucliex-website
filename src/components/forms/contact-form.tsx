@@ -9,14 +9,22 @@ import { Select } from "@/components/ui/select";
 
 type ContactFormProps = {
   /** Preselects the enquiry type, e.g. when arriving from a service page. */
-  defaultEnquiryType?: "sales" | "services" | "support" | "partnership" | "other";
+  defaultEnquiryType?:
+    "sales" | "services" | "support" | "partnership" | "other";
   /** Seeds the message, e.g. "Enquiry about: SSD & hardware upgrades". */
   defaultMessage?: string;
 };
 
-export function ContactForm({ defaultEnquiryType, defaultMessage }: ContactFormProps) {
+export function ContactForm({
+  defaultEnquiryType,
+  defaultMessage,
+}: ContactFormProps) {
   return (
-    <AppForm action={submitContact} submitLabel="Send enquiry" pendingLabel="Sending…">
+    <AppForm
+      action={submitContact}
+      submitLabel="Send enquiry"
+      pendingLabel="Sending…"
+    >
       {(state) => (
         <div className="grid gap-6 sm:grid-cols-2">
           <FormField name="name" label="Your name" state={state}>
@@ -37,7 +45,11 @@ export function ContactForm({ defaultEnquiryType, defaultMessage }: ContactFormP
             <Input autoComplete="address-level2" />
           </FormField>
           <div className="sm:col-span-2">
-            <FormField name="enquiryType" label="What is this about?" state={state}>
+            <FormField
+              name="enquiryType"
+              label="What is this about?"
+              state={state}
+            >
               <Select defaultValue={defaultEnquiryType ?? ""}>
                 <option value="" disabled>
                   Choose an enquiry type

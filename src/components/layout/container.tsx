@@ -13,9 +13,19 @@ const sizes = {
   wide: "max-w-(--breakpoint-2xl)",
 };
 
-export function Container({ size = "default", className, children }: ContainerProps) {
+export function Container({
+  size = "default",
+  className,
+  children,
+}: ContainerProps) {
   return (
-    <div className={cn("mx-auto w-full px-5 sm:px-8 lg:px-12", sizes[size], className)}>
+    <div
+      className={cn(
+        "mx-auto w-full px-5 sm:px-8 lg:px-12",
+        sizes[size],
+        className,
+      )}
+    >
       {children}
     </div>
   );

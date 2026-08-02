@@ -22,7 +22,12 @@ type SpecRailProps = {
  * mono figures with uppercase micro-labels. Carries real information only —
  * all boldness is spent here, no animation on the numbers.
  */
-export function SpecRail({ items, tone = "navy", bleed = true, className }: SpecRailProps) {
+export function SpecRail({
+  items,
+  tone = "navy",
+  bleed = true,
+  className,
+}: SpecRailProps) {
   const dark = tone !== "light";
   const notes = items.filter((item) => item.note);
 
@@ -42,30 +47,48 @@ export function SpecRail({ items, tone = "navy", bleed = true, className }: Spec
           // pending value must never masquerade as a published figure.
           const pending = item.value.includes("{{TBD");
           return (
-            <div key={item.label} className={cn("flex min-w-0 flex-col gap-2", i > 0 && "md:pl-8", i < items.length - 1 && "md:pr-8")}>
+            <div
+              key={item.label}
+              className={cn(
+                "flex min-w-0 flex-col gap-2",
+                i > 0 && "md:pl-8",
+                i < items.length - 1 && "md:pr-8",
+              )}
+            >
               <dd
                 className={cn(
-                  "font-mono tnum order-1 break-words",
+                  "order-1 font-mono tnum break-words",
                   pending
-                    ? cn("text-data", dark ? "text-fg-inverse-muted" : "text-fg-subtle")
-                    : cn("text-data-lg font-medium", dark ? "text-fg-inverse" : "text-brand-900"),
+                    ? cn(
+                        "text-data",
+                        dark ? "text-fg-inverse-muted" : "text-fg-subtle",
+                      )
+                    : cn(
+                        "text-data-lg font-medium",
+                        dark ? "text-fg-inverse" : "text-brand-900",
+                      ),
                 )}
               >
                 {item.value}
                 {noteIndex ? (
-                  <sup aria-hidden="true" className="text-body-sm ml-1 font-normal">
+                  <sup
+                    aria-hidden="true"
+                    className="ml-1 text-body-sm font-normal"
+                  >
                     {noteIndex}
                   </sup>
                 ) : null}
               </dd>
               <dt
                 className={cn(
-                  "text-label order-2 uppercase",
+                  "order-2 text-label uppercase",
                   dark ? "text-fg-inverse-muted" : "text-fg-subtle",
                 )}
               >
                 {item.label}
-                {noteIndex ? <span className="sr-only"> (see note {noteIndex})</span> : null}
+                {noteIndex ? (
+                  <span className="sr-only"> (see note {noteIndex})</span>
+                ) : null}
               </dt>
             </div>
           );
@@ -74,7 +97,7 @@ export function SpecRail({ items, tone = "navy", bleed = true, className }: Spec
       {notes.length > 0 ? (
         <ol
           className={cn(
-            "text-body-sm mt-6 space-y-1",
+            "mt-6 space-y-1 text-body-sm",
             dark ? "text-fg-inverse-muted" : "text-fg-subtle",
           )}
         >
@@ -93,7 +116,7 @@ export function SpecRail({ items, tone = "navy", bleed = true, className }: Spec
       className={cn(
         tone === "navy" && "bg-surface-navy",
         tone === "dark" && "bg-surface-dark",
-        tone === "light" && "border-border bg-surface border-y",
+        tone === "light" && "border-y border-border bg-surface",
         "py-10 md:py-12",
         className,
       )}

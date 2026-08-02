@@ -19,7 +19,9 @@ type MailInput = {
  */
 export async function sendMail(input: MailInput): Promise<void> {
   if (!mailConfigured) {
-    console.warn(`[mail:dev] would send "${input.subject}" to ${input.to}\n${input.text}`);
+    console.warn(
+      `[mail:dev] would send "${input.subject}" to ${input.to}\n${input.text}`,
+    );
     return;
   }
   const resend = new Resend(env.RESEND_API_KEY);
@@ -29,7 +31,10 @@ export async function sendMail(input: MailInput): Promise<void> {
     subject: input.subject,
     text: input.text,
     replyTo: input.replyTo,
-    attachments: input.attachments?.map((a) => ({ filename: a.filename, content: a.content })),
+    attachments: input.attachments?.map((a) => ({
+      filename: a.filename,
+      content: a.content,
+    })),
   });
   if (error) {
     throw new Error(`Resend rejected the email: ${error.message}`);

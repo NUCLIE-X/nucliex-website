@@ -13,7 +13,11 @@ type LogoProps = {
  * Interim raster reproduction — the vector redraw is launch blocker #1
  * (docs/09). Source PNGs are 510×202 (lockup) and 480×216 (mark).
  */
-export function Logo({ variant = "navy", kind = "lockup", className }: LogoProps) {
+export function Logo({
+  variant = "navy",
+  kind = "lockup",
+  className,
+}: LogoProps) {
   if (kind === "mark") {
     return (
       <Image
@@ -27,7 +31,11 @@ export function Logo({ variant = "navy", kind = "lockup", className }: LogoProps
   }
   return (
     <Image
-      src={variant === "navy" ? "/brand/nucliex-logo-navy.png" : "/brand/nucliex-logo-white.png"}
+      src={
+        variant === "navy"
+          ? "/brand/nucliex-logo-navy.png"
+          : "/brand/nucliex-logo-white.png"
+      }
       alt="NUCLIEX INFOSYS"
       width={510}
       height={202}

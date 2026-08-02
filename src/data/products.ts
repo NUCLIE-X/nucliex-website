@@ -12,19 +12,10 @@
 export type ProductStatus = "available" | "coming-soon" | "planned";
 
 export type ProductFamily =
-  | "sata-ssd"
-  | "nvme-ssd"
-  | "memory"
-  | "external"
-  | "enterprise"
-  | "accessory";
+  "sata-ssd" | "nvme-ssd" | "memory" | "external" | "enterprise" | "accessory";
 
 export type SpecGroup =
-  | "performance"
-  | "endurance"
-  | "physical"
-  | "compatibility"
-  | "warranty";
+  "performance" | "endurance" | "physical" | "compatibility" | "warranty";
 
 export interface SpecRow {
   label: string; // "Sequential read"
@@ -49,7 +40,11 @@ export interface Product {
   useCases: string[];
   warrantyYears: number | null; // null → renders {{TBD}}
   images: { src: string; alt: string }[];
-  documents: { title: string; href: string; type: "datasheet" | "guide" | "warranty" }[];
+  documents: {
+    title: string;
+    href: string;
+    type: "datasheet" | "guide" | "warranty";
+  }[];
   seo: { title: string; description: string };
 }
 
@@ -122,14 +117,16 @@ export const activeFamilies = [
     key: "sata-ssd" as ProductFamily,
     name: "SATA SSDs",
     href: "/products/ssd/sata",
-    descriptor: "2.5-inch drives that give working laptops and desktops a faster second life.",
+    descriptor:
+      "2.5-inch drives that give working laptops and desktops a faster second life.",
     frameLabel: "SATA SSD family",
   },
   {
     key: "nvme-ssd" as ProductFamily,
     name: "NVMe SSDs",
     href: "/products/ssd/nvme",
-    descriptor: "M.2 drives for gaming, content creation, and workstation builds.",
+    descriptor:
+      "M.2 drives for gaming, content creation, and workstation builds.",
     frameLabel: "NVMe SSD family",
   },
 ];

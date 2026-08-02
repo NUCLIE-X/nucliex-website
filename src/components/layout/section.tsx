@@ -44,7 +44,11 @@ export function Section({
 }: SectionProps) {
   return (
     <Tag id={id} className={cn(tones[tone], spacings[spacing], className)}>
-      {bleed ? children : <Container size={containerSize}>{children}</Container>}
+      {bleed ? (
+        children
+      ) : (
+        <Container size={containerSize}>{children}</Container>
+      )}
     </Tag>
   );
 }

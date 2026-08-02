@@ -17,9 +17,12 @@ type TabsProps = {
 
 export function Tabs({ items, defaultValue, className }: TabsProps) {
   return (
-    <TabsPrimitive.Root defaultValue={defaultValue ?? items[0]?.id} className={className}>
+    <TabsPrimitive.Root
+      defaultValue={defaultValue ?? items[0]?.id}
+      className={className}
+    >
       <TabsPrimitive.List
-        className="border-border flex gap-6 border-b"
+        className="flex gap-6 border-b border-border"
         aria-label="Content sections"
       >
         {items.map((item) => (
@@ -27,8 +30,8 @@ export function Tabs({ items, defaultValue, className }: TabsProps) {
             key={item.id}
             value={item.id}
             className={cn(
-              "text-body text-fg-muted -mb-px border-b-2 border-transparent pt-1 pb-3 font-medium",
-              "hover:text-fg transition-colors duration-fast ease-out",
+              "-mb-px border-b-2 border-transparent pt-1 pb-3 text-body font-medium text-fg-muted",
+              "duration-fast transition-colors ease-out hover:text-fg",
               // Cyan underline: active tab is an interactive/live element (docs/02 §1)
               "data-[state=active]:border-accent-500 data-[state=active]:text-fg",
             )}

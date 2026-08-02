@@ -19,10 +19,11 @@ export default function AboutPage() {
       {/* Opening copy verbatim from docs/05 §3 */}
       <Section spacing="hero">
         <p className="text-label text-brand-500 uppercase">About</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-4 max-w-4xl font-bold">
-          We&rsquo;re building a storage brand the way we&rsquo;d want one built.
+        <h1 className="mt-4 max-w-4xl font-display text-display-2 font-bold text-brand-900">
+          We&rsquo;re building a storage brand the way we&rsquo;d want one
+          built.
         </h1>
-        <p className="text-body-lg text-fg-muted mt-6 max-w-[56ch]">
+        <p className="mt-6 max-w-[56ch] text-body-lg text-fg-muted">
           NUCLIEX INFOSYS started as an IT services business in Pune — fixing
           machines, deploying Windows, running office networks, and replacing a
           lot of failed drives. That last part is why we started making our own.
@@ -34,19 +35,22 @@ export default function AboutPage() {
           <div className="grid items-start gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
               {/* {{TBD:founder_photo}} — honest placeholder until a real photo exists */}
-              <ProductFrame ratio="1/1" label={`${company.founder} — photo pending`} />
+              <ProductFrame
+                ratio="1/1"
+                label={`${company.founder} — photo pending`}
+              />
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
               <p className="text-label text-fg-subtle uppercase">Founder</p>
-              <h2 className="text-h2 font-display text-brand-900 mt-2 font-medium">
+              <h2 className="mt-2 font-display text-h2 font-medium text-brand-900">
                 {company.founder}
               </h2>
-              <p className="text-body text-fg-muted mt-4 max-w-[60ch]">
+              <p className="mt-4 max-w-[60ch] text-body text-fg-muted">
                 Ramjit&rsquo;s background spans computer hardware, software,
                 networking, IT infrastructure, and artificial intelligence.
-                NUCLIEX is what that experience looks like turned into a
-                product company: engineering-led, allergic to unverifiable
-                claims, and built on the support work that came first.
+                NUCLIEX is what that experience looks like turned into a product
+                company: engineering-led, allergic to unverifiable claims, and
+                built on the support work that came first.
               </p>
             </div>
           </div>
@@ -61,18 +65,18 @@ export default function AboutPage() {
             lead="Founded in Pune. Currently serving customers across Maharashtra."
           />
           <div className="grid gap-10 md:grid-cols-2">
-            <div className="border-border border-t pt-6">
+            <div className="border-t border-border pt-6">
               <h3 className="text-h3 font-semibold">IT services, every day</h3>
-              <p className="text-body text-fg-muted mt-3 max-w-[60ch]">
+              <p className="mt-3 max-w-[60ch] text-body text-fg-muted">
                 Upgrades, repair, Windows deployment, data migration,
                 networking, CCTV, and maintenance contracts — the revenue that
-                funds the product ambition, and the field experience that
-                shapes it.
+                funds the product ambition, and the field experience that shapes
+                it.
               </p>
             </div>
-            <div className="border-border border-t pt-6">
+            <div className="border-t border-border pt-6">
               <h3 className="text-h3 font-semibold">Storage, in validation</h3>
-              <p className="text-body text-fg-muted mt-3 max-w-[60ch]">
+              <p className="mt-3 max-w-[60ch] text-body text-fg-muted">
                 SATA and NVMe SSDs under the NUCLIEX name, published with full
                 specifications and the conditions they were measured under —
                 when they&rsquo;re verified, not before.
@@ -84,7 +88,10 @@ export default function AboutPage() {
 
       <Section>
         <Reveal>
-          <SectionHeader eyebrow="How we decide" title="The rules we build by" />
+          <SectionHeader
+            eyebrow="How we decide"
+            title="The rules we build by"
+          />
           <TrustPoints
             points={[
               {
@@ -112,10 +119,10 @@ export default function AboutPage() {
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="text-h2 font-display text-fg-inverse font-medium">
+              <h2 className="font-display text-h2 font-medium text-fg-inverse">
                 Based in {company.city}. Built for longer than that.
               </h2>
-              <p className="text-body-lg text-fg-inverse-muted mt-3 max-w-[56ch]">
+              <p className="mt-3 max-w-[56ch] text-body-lg text-fg-inverse-muted">
                 Talk to us about products, services, or partnerships.
               </p>
             </div>

@@ -31,7 +31,8 @@ const variants = {
   secondary:
     "bg-surface border border-border-strong text-fg " +
     "hover:border-brand-500 hover:text-brand-500 disabled:opacity-50",
-  ghost: "bg-transparent text-fg-muted hover:bg-surface-subtle hover:text-fg disabled:opacity-50",
+  ghost:
+    "bg-transparent text-fg-muted hover:bg-surface-subtle hover:text-fg disabled:opacity-50",
   onDark: "bg-white text-brand-900 hover:bg-accent-500 hover:text-brand-900",
 };
 

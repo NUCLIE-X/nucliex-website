@@ -21,7 +21,12 @@ type AppFormProps = {
  * the success state that REPLACES the form (docs/06 §5). Submits without
  * JavaScript — everything here is progressive enhancement.
  */
-export function AppForm({ action, submitLabel, pendingLabel, children }: AppFormProps) {
+export function AppForm({
+  action,
+  submitLabel,
+  pendingLabel,
+  children,
+}: AppFormProps) {
   const [state, formAction] = useActionState(action, idleState);
   const summaryRef = useRef<HTMLDivElement>(null);
 
@@ -33,11 +38,20 @@ export function AppForm({ action, submitLabel, pendingLabel, children }: AppForm
     return (
       <div
         role="status"
-        className="border-border bg-surface-subtle rounded-lg border p-8"
+        className="rounded-lg border border-border bg-surface-subtle p-8"
       >
-        <CheckCircle2 size={24} strokeWidth={1.5} aria-hidden="true" className="text-success" />
-        <h2 className="text-h3 text-brand-900 mt-4 font-semibold">{state.title}</h2>
-        <p className="text-body text-fg-muted mt-2 max-w-[60ch]">{state.detail}</p>
+        <CheckCircle2
+          size={24}
+          strokeWidth={1.5}
+          aria-hidden="true"
+          className="text-success"
+        />
+        <h2 className="mt-4 text-h3 font-semibold text-brand-900">
+          {state.title}
+        </h2>
+        <p className="mt-2 max-w-[60ch] text-body text-fg-muted">
+          {state.detail}
+        </p>
       </div>
     );
   }
@@ -49,16 +63,19 @@ export function AppForm({ action, submitLabel, pendingLabel, children }: AppForm
           ref={summaryRef}
           tabIndex={-1}
           role="alert"
-          className="border-error/40 bg-error/5 rounded-lg border p-4"
+          className="rounded-lg border border-error/40 bg-error/5 p-4"
         >
-          <p className="text-body text-error font-medium">
+          <p className="text-body font-medium text-error">
             {state.formError ?? "The form couldn't be submitted."}
           </p>
           {Object.keys(state.fieldErrors).length > 0 ? (
-            <ul className="text-body-sm text-error mt-2 list-disc space-y-1 pl-5">
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-body-sm text-error">
               {Object.entries(state.fieldErrors).map(([field, message]) => (
                 <li key={field}>
-                  <a href={`#field-${field}`} className="underline underline-offset-2">
+                  <a
+                    href={`#field-${field}`}
+                    className="underline underline-offset-2"
+                  >
                     {message}
                   </a>
                 </li>
@@ -95,7 +112,13 @@ export function AppForm({ action, submitLabel, pendingLabel, children }: AppForm
   );
 }
 
-function SubmitRow({ submitLabel, pendingLabel }: { submitLabel: string; pendingLabel: string }) {
+function SubmitRow({
+  submitLabel,
+  pendingLabel,
+}: {
+  submitLabel: string;
+  pendingLabel: string;
+}) {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" loading={pending} size="lg">

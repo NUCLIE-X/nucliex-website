@@ -6,7 +6,9 @@ export const indianMobile = z
   .string()
   .trim()
   .transform((value) => value.replace(/^\+91[\s-]?/, "").replace(/[\s-]/g, ""))
-  .pipe(z.string().regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number."));
+  .pipe(
+    z.string().regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number."),
+  );
 
 export const gstin = z
   .string()

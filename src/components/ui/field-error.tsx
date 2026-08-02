@@ -11,7 +11,7 @@ type FieldErrorProps = {
 export function FieldError({ id, children }: FieldErrorProps) {
   if (!children) return null;
   return (
-    <p id={id} role="alert" className="text-body-sm text-error mt-2">
+    <p id={id} role="alert" className="mt-2 text-body-sm text-error">
       {children}
     </p>
   );

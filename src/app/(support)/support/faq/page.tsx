@@ -37,7 +37,7 @@ export default function FaqPage() {
           ]}
         />
         <p className="text-label text-brand-500 uppercase">FAQ</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           Asked often, answered straight
         </h1>
       </Section>
@@ -46,12 +46,16 @@ export default function FaqPage() {
         <div className="max-w-3xl space-y-12">
           {groups.map((group) => (
             <div key={group}>
-              <h2 className="text-h3 text-brand-900 font-semibold">{group}</h2>
+              <h2 className="text-h3 font-semibold text-brand-900">{group}</h2>
               <Accordion
                 className="mt-4"
                 items={faqs
                   .filter((faq) => faq.group === group)
-                  .map((faq) => ({ id: faq.id, title: faq.question, content: faq.answer }))}
+                  .map((faq) => ({
+                    id: faq.id,
+                    title: faq.question,
+                    content: faq.answer,
+                  }))}
               />
             </div>
           ))}

@@ -35,7 +35,7 @@ export function ProductFrame({
   return (
     <div
       className={cn(
-        "border-border bg-surface-subtle relative overflow-hidden rounded-xl border",
+        "relative overflow-hidden rounded-xl border border-border bg-surface-subtle",
         ratios[ratio],
         className,
       )}
@@ -61,7 +61,7 @@ export function ProductFrame({
             className="scale-75 object-contain opacity-4"
           />
           {label ? (
-            <span className="text-label text-fg-subtle absolute inset-x-4 bottom-4 text-center uppercase">
+            <span className="absolute inset-x-4 bottom-4 text-center text-label text-fg-subtle uppercase">
               {label}
             </span>
           ) : null}

@@ -18,7 +18,11 @@ type ProductFiltersProps = {
  * linkable, and the form submits without JavaScript. With JS, changes apply
  * immediately via router.replace. Filtered states are noindex'd by the page.
  */
-export function ProductFilters({ families, formFactors, capacities }: ProductFiltersProps) {
+export function ProductFilters({
+  families,
+  formFactors,
+  capacities,
+}: ProductFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const formRef = useRef<HTMLFormElement>(null);
@@ -32,7 +36,9 @@ export function ProductFilters({ families, formFactors, capacities }: ProductFil
       if (typeof value === "string" && value) params.append(key, value);
     }
     const query = params.toString();
-    router.replace(query ? `/products?${query}` : "/products", { scroll: false });
+    router.replace(query ? `/products?${query}` : "/products", {
+      scroll: false,
+    });
   };
 
   const groups = [
@@ -53,7 +59,9 @@ export function ProductFilters({ families, formFactors, capacities }: ProductFil
     >
       {groups.map((group) => (
         <fieldset key={group.name}>
-          <legend className="text-label text-fg-subtle mb-3 uppercase">{group.legend}</legend>
+          <legend className="mb-3 text-label text-fg-subtle uppercase">
+            {group.legend}
+          </legend>
           <div className="flex flex-wrap gap-x-6 gap-y-3">
             {group.options.map((option) => (
               <Checkbox
@@ -61,7 +69,9 @@ export function ProductFilters({ families, formFactors, capacities }: ProductFil
                 name={group.name}
                 value={option.value}
                 label={`${option.label} (${option.count})`}
-                defaultChecked={searchParams.getAll(group.name).includes(option.value)}
+                defaultChecked={searchParams
+                  .getAll(group.name)
+                  .includes(option.value)}
                 onChange={apply}
               />
             ))}

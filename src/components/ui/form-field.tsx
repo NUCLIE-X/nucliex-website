@@ -24,13 +24,21 @@ type InjectedProps = {
  * Visible label above the control — never placeholder-as-label (docs/06 §5).
  * Errors link via aria-describedby and render with role=alert.
  */
-export function FormField({ name, label, required = true, help, state, children }: FormFieldProps) {
+export function FormField({
+  name,
+  label,
+  required = true,
+  help,
+  state,
+  children,
+}: FormFieldProps) {
   const error = state.status === "error" ? state.fieldErrors[name] : undefined;
   const fieldId = `field-${name}`;
   const helpId = `${fieldId}-help`;
   const errorId = `${fieldId}-error`;
   const describedBy =
-    [help ? helpId : null, error ? errorId : null].filter(Boolean).join(" ") || undefined;
+    [help ? helpId : null, error ? errorId : null].filter(Boolean).join(" ") ||
+    undefined;
 
   const control = isValidElement(children)
     ? cloneElement(children as React.ReactElement<InjectedProps>, {
@@ -44,13 +52,18 @@ export function FormField({ name, label, required = true, help, state, children 
 
   return (
     <div>
-      <label htmlFor={fieldId} className="text-body text-fg mb-2 block font-medium">
+      <label
+        htmlFor={fieldId}
+        className="mb-2 block text-body font-medium text-fg"
+      >
         {label}
-        {!required ? <span className="text-fg-subtle font-normal"> (optional)</span> : null}
+        {!required ? (
+          <span className="font-normal text-fg-subtle"> (optional)</span>
+        ) : null}
       </label>
       {control}
       {help ? (
-        <p id={helpId} className="text-body-sm text-fg-subtle mt-2">
+        <p id={helpId} className="mt-2 text-body-sm text-fg-subtle">
           {help}
         </p>
       ) : null}

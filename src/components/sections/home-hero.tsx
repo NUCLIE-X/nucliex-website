@@ -17,27 +17,27 @@ export function HomeHero() {
         <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p
-              className="text-label text-brand-500 animate-hero-rise uppercase motion-reduce:animate-none"
+              className="animate-hero-rise text-label text-brand-500 uppercase motion-reduce:animate-none"
               style={stagger(0)}
             >
               Indian storage &amp; IT infrastructure
             </p>
             <h1
-              className="text-display-1 font-display text-brand-900 animate-hero-rise mt-4 font-bold motion-reduce:animate-none"
+              className="mt-4 animate-hero-rise font-display text-display-1 font-bold text-brand-900 motion-reduce:animate-none"
               style={stagger(1)}
             >
               Storage you can stop thinking about.
             </h1>
             <p
-              className="text-body-lg text-fg-muted animate-hero-rise mt-6 max-w-[56ch] motion-reduce:animate-none"
+              className="mt-6 max-w-[56ch] animate-hero-rise text-body-lg text-fg-muted motion-reduce:animate-none"
               style={stagger(2)}
             >
-              NUCLIEX builds SATA and NVMe SSDs for people who need their data to
-              just be there — backed by a clear warranty and support you can
+              NUCLIEX builds SATA and NVMe SSDs for people who need their data
+              to just be there — backed by a clear warranty and support you can
               actually reach.
             </p>
             <div
-              className="animate-hero-rise mt-8 flex flex-wrap gap-4 motion-reduce:animate-none"
+              className="mt-8 flex animate-hero-rise flex-wrap gap-4 motion-reduce:animate-none"
               style={stagger(3)}
             >
               <Button href="/products" size="lg">
@@ -49,10 +49,14 @@ export function HomeHero() {
             </div>
           </div>
           <div
-            className="animate-hero-rise lg:col-span-5 motion-reduce:animate-none"
+            className="animate-hero-rise motion-reduce:animate-none lg:col-span-5"
             style={stagger(4)}
           >
-            <ProductFrame ratio="4/3" label="NUCLIEX SSD — photography pending" priority />
+            <ProductFrame
+              ratio="4/3"
+              label="NUCLIEX SSD — photography pending"
+              priority
+            />
           </div>
         </div>
       </Container>

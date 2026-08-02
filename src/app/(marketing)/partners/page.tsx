@@ -16,11 +16,13 @@ export default function PartnersPage() {
   return (
     <>
       <Section spacing="hero">
-        <p className="text-label text-brand-500 uppercase">Dealers &amp; distributors</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-4 max-w-4xl font-bold">
+        <p className="text-label text-brand-500 uppercase">
+          Dealers &amp; distributors
+        </p>
+        <h1 className="mt-4 max-w-4xl font-display text-display-2 font-bold text-brand-900">
           Sell a brand that backs you up after the sale.
         </h1>
-        <p className="text-body-lg text-fg-muted mt-6 max-w-[56ch]">
+        <p className="mt-6 max-w-[56ch] text-body-lg text-fg-muted">
           Clear margins, dependable supply, and an RMA process that
           doesn&rsquo;t leave you explaining delays to your customer.
         </p>
@@ -74,25 +76,32 @@ export default function PartnersPage() {
 
       <Section tone="subtle">
         <Reveal>
-          <SectionHeader eyebrow="Application" title="How the application works" />
+          <SectionHeader
+            eyebrow="Application"
+            title="How the application works"
+          />
           <ProcessSteps
             className="max-w-2xl"
             steps={[
               {
                 title: "Apply online",
-                detail: "The form takes five minutes — business details, GSTIN, and what you want to stock.",
+                detail:
+                  "The form takes five minutes — business details, GSTIN, and what you want to stock.",
               },
               {
                 title: "A real conversation",
-                detail: "The partner team calls within three working days to understand your market.",
+                detail:
+                  "The partner team calls within three working days to understand your market.",
               },
               {
                 title: "Terms in writing",
-                detail: "Margins, supply expectations, and RMA handling — documented before you commit.",
+                detail:
+                  "Margins, supply expectations, and RMA handling — documented before you commit.",
               },
               {
                 title: "Onboarding",
-                detail: "Product content, datasheets, and your direct contact. First order ships.",
+                detail:
+                  "Product content, datasheets, and your direct contact. First order ships.",
               },
             ]}
           />
@@ -103,10 +112,10 @@ export default function PartnersPage() {
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="text-h2 font-display text-brand-900 font-medium">
+              <h2 className="font-display text-h2 font-medium text-brand-900">
                 Ready to stock NUCLIEX?
               </h2>
-              <p className="text-body-lg text-fg-muted mt-3 max-w-[56ch]">
+              <p className="mt-3 max-w-[56ch] text-body-lg text-fg-muted">
                 Apply now — the partner team replies within three working days.
               </p>
             </div>

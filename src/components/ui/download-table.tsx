@@ -13,19 +13,26 @@ export function DownloadTable({ items }: { items: DownloadItem[] }) {
   const [product, setProduct] = useState("all");
   const [type, setType] = useState("all");
 
-  const products = useMemo(() => [...new Set(items.map((i) => i.product))], [items]);
+  const products = useMemo(
+    () => [...new Set(items.map((i) => i.product))],
+    [items],
+  );
   const types = useMemo(() => [...new Set(items.map((i) => i.type))], [items]);
 
   const filtered = items.filter(
     (item) =>
-      (product === "all" || item.product === product) && (type === "all" || item.type === type),
+      (product === "all" || item.product === product) &&
+      (type === "all" || item.type === type),
   );
 
   return (
     <div>
       <div className="mb-6 flex flex-wrap gap-4">
         <div>
-          <label htmlFor="filter-product" className="text-label text-fg-subtle mb-2 block uppercase">
+          <label
+            htmlFor="filter-product"
+            className="mb-2 block text-label text-fg-subtle uppercase"
+          >
             Product
           </label>
           <Select
@@ -43,7 +50,10 @@ export function DownloadTable({ items }: { items: DownloadItem[] }) {
           </Select>
         </div>
         <div>
-          <label htmlFor="filter-type" className="text-label text-fg-subtle mb-2 block uppercase">
+          <label
+            htmlFor="filter-type"
+            className="mb-2 block text-label text-fg-subtle uppercase"
+          >
             Document type
           </label>
           <Select
@@ -65,33 +75,48 @@ export function DownloadTable({ items }: { items: DownloadItem[] }) {
       <table className="w-full border-collapse">
         <caption className="sr-only">Downloadable documents</caption>
         <thead>
-          <tr className="border-border border-b">
-            {["Title", "Product", "Type", "Version", "Date", "Size", ""].map((heading, i) => (
-              <th
-                key={i}
-                scope="col"
-                className="text-label text-fg-subtle py-3 pr-4 text-left uppercase"
-              >
-                {heading}
-              </th>
-            ))}
+          <tr className="border-b border-border">
+            {["Title", "Product", "Type", "Version", "Date", "Size", ""].map(
+              (heading, i) => (
+                <th
+                  key={i}
+                  scope="col"
+                  className="py-3 pr-4 text-left text-label text-fg-subtle uppercase"
+                >
+                  {heading}
+                </th>
+              ),
+            )}
           </tr>
         </thead>
         <tbody>
           {filtered.map((item) => (
-            <tr key={item.href} className="border-border border-b">
-              <th scope="row" className="text-body text-fg py-3 pr-4 text-left font-medium">
+            <tr key={item.href} className="border-b border-border">
+              <th
+                scope="row"
+                className="py-3 pr-4 text-left text-body font-medium text-fg"
+              >
                 {item.title}
               </th>
-              <td className="text-body-sm text-fg-muted py-3 pr-4">{item.product}</td>
-              <td className="text-body-sm text-fg-muted py-3 pr-4">{item.type}</td>
-              <td className="text-data font-mono tnum py-3 pr-4">{item.version}</td>
-              <td className="text-body-sm text-fg-muted py-3 pr-4">{item.date}</td>
-              <td className="text-data font-mono tnum py-3 pr-4">{item.size}</td>
+              <td className="py-3 pr-4 text-body-sm text-fg-muted">
+                {item.product}
+              </td>
+              <td className="py-3 pr-4 text-body-sm text-fg-muted">
+                {item.type}
+              </td>
+              <td className="py-3 pr-4 font-mono tnum text-data">
+                {item.version}
+              </td>
+              <td className="py-3 pr-4 text-body-sm text-fg-muted">
+                {item.date}
+              </td>
+              <td className="py-3 pr-4 font-mono tnum text-data">
+                {item.size}
+              </td>
               <td className="py-3">
                 <a
                   href={item.href}
-                  className="text-brand-500 hover:text-brand-600 inline-flex items-center gap-1.5 font-medium"
+                  className="inline-flex items-center gap-1.5 font-medium text-brand-500 hover:text-brand-600"
                 >
                   <Download size={16} strokeWidth={1.5} aria-hidden="true" />
                   <span>
@@ -107,7 +132,7 @@ export function DownloadTable({ items }: { items: DownloadItem[] }) {
         </tbody>
       </table>
       {filtered.length === 0 ? (
-        <p className="text-body text-fg-muted border-border border-b py-6">
+        <p className="border-b border-border py-6 text-body text-fg-muted">
           No documents match these filters.
         </p>
       ) : null}

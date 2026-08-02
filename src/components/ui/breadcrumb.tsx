@@ -17,7 +17,7 @@ type BreadcrumbProps = {
 export function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className={className}>
-      <ol className="text-body-sm text-fg-subtle flex flex-wrap items-center gap-2">
+      <ol className="flex flex-wrap items-center gap-2 text-body-sm text-fg-subtle">
         {items.map((item, i) => {
           const isLast = i === items.length - 1;
           return (
@@ -26,12 +26,15 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
                 {item.href && !isLast ? (
                   <Link
                     href={item.href as Route}
-                    className="hover:text-brand-500 transition-colors duration-fast"
+                    className="duration-fast transition-colors hover:text-brand-500"
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <span aria-current={isLast ? "page" : undefined} className="text-fg-muted">
+                  <span
+                    aria-current={isLast ? "page" : undefined}
+                    className="text-fg-muted"
+                  >
                     {item.label}
                   </span>
                 )}

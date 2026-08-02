@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/utility/json-ld";
@@ -92,6 +94,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        {/* Cookieless — no consent banner required (CLAUDE.md §2.7) */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

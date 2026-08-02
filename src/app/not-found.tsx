@@ -7,10 +7,10 @@ export default function NotFound() {
     <Section spacing="hero">
       <div className="max-w-2xl">
         <p className="text-label text-fg-subtle uppercase">404</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           That page isn&rsquo;t here.
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           It may have moved, or the link may be wrong.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">

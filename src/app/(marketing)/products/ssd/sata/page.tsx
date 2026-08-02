@@ -25,10 +25,10 @@ export default function SataSsdPage() {
           ]}
         />
         <p className="text-label text-brand-500 uppercase">SATA SSDs</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           The upgrade most machines actually need
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           A 2.5-inch SATA SSD is still the highest-impact upgrade for a working
           laptop or desktop. Ours are validated for sustained performance, and
           we publish the conditions every figure was measured under.

@@ -23,7 +23,12 @@ export function WarrantyForm() {
           >
             <Input autoComplete="off" />
           </FormField>
-          <FormField name="product" label="Product" help="e.g. NX-500" state={state}>
+          <FormField
+            name="product"
+            label="Product"
+            help="e.g. NX-500"
+            state={state}
+          >
             <Input autoComplete="off" />
           </FormField>
           <FormField name="purchaseDate" label="Purchase date" state={state}>

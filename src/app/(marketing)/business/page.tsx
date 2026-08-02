@@ -25,14 +25,16 @@ export default function BusinessPage() {
   return (
     <>
       <Section spacing="hero">
-        <p className="text-label text-brand-500 uppercase">For business &amp; enterprise</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-4 max-w-4xl font-bold">
+        <p className="text-label text-brand-500 uppercase">
+          For business &amp; enterprise
+        </p>
+        <h1 className="mt-4 max-w-4xl font-display text-display-2 font-bold text-brand-900">
           Storage and IT support for teams that can&rsquo;t afford downtime.
         </h1>
-        <p className="text-body-lg text-fg-muted mt-6 max-w-[56ch]">
+        <p className="mt-6 max-w-[56ch] text-body-lg text-fg-muted">
           Bulk pricing, GST invoicing, consistent supply, and a named contact
-          who knows your setup. For IT companies, system integrators,
-          retailers, schools, and government buyers.
+          who knows your setup. For IT companies, system integrators, retailers,
+          schools, and government buyers.
         </p>
         <div className="mt-8">
           <Button href="/business/quote" size="lg">
@@ -79,12 +81,15 @@ export default function BusinessPage() {
           <SectionHeader eyebrow="Sectors" title="Who we supply" />
           <ul className="grid grid-cols-2 gap-x-8 gap-y-4 md:grid-cols-3">
             {sectors.map((sector) => (
-              <li key={sector} className="border-border text-body text-fg-muted border-t pt-4">
+              <li
+                key={sector}
+                className="border-t border-border pt-4 text-body text-fg-muted"
+              >
                 {sector}
               </li>
             ))}
           </ul>
-          <p className="text-body text-fg-muted mt-10 max-w-[68ch]">
+          <p className="mt-10 max-w-[68ch] text-body text-fg-muted">
             Government and education buyers: we understand tender documentation,
             compliance declarations, and formal quotation requirements. Ask for
             the paperwork you need with your quote and it arrives with the
@@ -105,7 +110,8 @@ export default function BusinessPage() {
             steps={[
               {
                 title: "Send the requirement",
-                detail: "Products, quantities, and timeline through the quote form — rough is fine.",
+                detail:
+                  "Products, quantities, and timeline through the quote form — rough is fine.",
               },
               {
                 title: "Quote within one working day",
@@ -113,11 +119,13 @@ export default function BusinessPage() {
               },
               {
                 title: "Confirm and schedule",
-                detail: "You approve, we lock stock and agree the delivery date.",
+                detail:
+                  "You approve, we lock stock and agree the delivery date.",
               },
               {
                 title: "Delivery and documentation",
-                detail: "Goods, invoice, and warranty registration details together.",
+                detail:
+                  "Goods, invoice, and warranty registration details together.",
               },
             ]}
           />
@@ -128,11 +136,12 @@ export default function BusinessPage() {
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="text-h2 font-display text-brand-900 font-medium">
+              <h2 className="font-display text-h2 font-medium text-brand-900">
                 Tell us what your fleet needs.
               </h2>
-              <p className="text-body-lg text-fg-muted mt-3 max-w-[56ch]">
-                One office or two hundred workstations — the process is the same.
+              <p className="mt-3 max-w-[56ch] text-body-lg text-fg-muted">
+                One office or two hundred workstations — the process is the
+                same.
               </p>
             </div>
             <Button href="/business/quote" size="lg" className="shrink-0">

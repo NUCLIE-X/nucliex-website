@@ -47,10 +47,10 @@ export default function SupportPage() {
     <>
       <Section spacing="tight" className="pt-16 md:pt-20">
         <p className="text-label text-brand-500 uppercase">Support</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           If something&rsquo;s wrong, start here.
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           Warranty, replacements, documents, and people who answer. No ticket
           maze — pick the door that matches your problem.
         </p>
@@ -67,12 +67,15 @@ export default function SupportPage() {
                   aria-hidden="true"
                   className="text-brand-500"
                 />
-                <h2 className="text-h4 mt-4 font-medium">
-                  <Link href={entry.href as Route} className="after:absolute after:inset-0">
+                <h2 className="mt-4 text-h4 font-medium">
+                  <Link
+                    href={entry.href as Route}
+                    className="after:absolute after:inset-0"
+                  >
                     {entry.title}
                   </Link>
                 </h2>
-                <p className="text-body-sm text-fg-muted mt-2">{entry.body}</p>
+                <p className="mt-2 text-body-sm text-fg-muted">{entry.body}</p>
               </CardBody>
             </Card>
           ))}
@@ -90,22 +93,30 @@ export default function SupportPage() {
           lead="Stated response times, not vague promises — exact figures are published with the contact details."
         />
         <dl className="grid gap-8 sm:grid-cols-3">
-          <div className="border-border border-t pt-4">
+          <div className="border-t border-border pt-4">
             <dt className="text-label text-fg-subtle uppercase">Phone</dt>
-            <dd className="text-body text-fg mt-2">{company.phone}</dd>
-            <dd className="text-body-sm text-fg-subtle mt-1">{company.hours}</dd>
+            <dd className="mt-2 text-body text-fg">{company.phone}</dd>
+            <dd className="mt-1 text-body-sm text-fg-subtle">
+              {company.hours}
+            </dd>
           </div>
-          <div className="border-border border-t pt-4">
-            <dt className="text-label text-fg-subtle uppercase">Support email</dt>
-            <dd className="text-body text-fg mt-2">{company.supportEmail}</dd>
-            <dd className="text-body-sm text-fg-subtle mt-1">
+          <div className="border-t border-border pt-4">
+            <dt className="text-label text-fg-subtle uppercase">
+              Support email
+            </dt>
+            <dd className="mt-2 text-body text-fg">{company.supportEmail}</dd>
+            <dd className="mt-1 text-body-sm text-fg-subtle">
               First response: {"{{TBD:rma_hours}}"} hours
             </dd>
           </div>
-          <div className="border-border border-t pt-4">
-            <dt className="text-label text-fg-subtle uppercase">Remote support</dt>
-            <dd className="text-body text-fg mt-2">By arrangement over phone or email</dd>
-            <dd className="text-body-sm text-fg-subtle mt-1">
+          <div className="border-t border-border pt-4">
+            <dt className="text-label text-fg-subtle uppercase">
+              Remote support
+            </dt>
+            <dd className="mt-2 text-body text-fg">
+              By arrangement over phone or email
+            </dd>
+            <dd className="mt-1 text-body-sm text-fg-subtle">
               Sessions start only with your consent
             </dd>
           </div>

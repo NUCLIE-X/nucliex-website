@@ -29,12 +29,17 @@ export function SectionHeader({
         className,
       )}
     >
-      <div className={cn("flex items-end justify-between gap-8", align === "center" && "block")}>
+      <div
+        className={cn(
+          "flex items-end justify-between gap-8",
+          align === "center" && "block",
+        )}
+      >
         <div>
           {eyebrow ? (
             <p
               className={cn(
-                "text-label mb-3 uppercase",
+                "mb-3 text-label uppercase",
                 onDark ? "text-fg-inverse-muted" : "text-brand-500",
               )}
             >
@@ -43,7 +48,7 @@ export function SectionHeader({
           ) : null}
           <h2
             className={cn(
-              "text-h2 font-display font-medium",
+              "font-display text-h2 font-medium",
               onDark ? "text-fg-inverse" : "text-brand-900",
             )}
           >
@@ -52,7 +57,7 @@ export function SectionHeader({
           {lead ? (
             <p
               className={cn(
-                "text-body-lg mt-4 max-w-[56ch]",
+                "mt-4 max-w-[56ch] text-body-lg",
                 onDark ? "text-fg-inverse-muted" : "text-fg-muted",
               )}
             >
@@ -60,7 +65,9 @@ export function SectionHeader({
             </p>
           ) : null}
         </div>
-        {action ? <div className="hidden shrink-0 md:block">{action}</div> : null}
+        {action ? (
+          <div className="hidden shrink-0 md:block">{action}</div>
+        ) : null}
       </div>
     </div>
   );

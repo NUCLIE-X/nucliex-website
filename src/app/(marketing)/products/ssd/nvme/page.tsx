@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "NVMe SSDs",
-  description: "M.2 NVMe SSDs for gaming, content creation, and workstation builds.",
+  description:
+    "M.2 NVMe SSDs for gaming, content creation, and workstation builds.",
 };
 
 export default function NvmeSsdPage() {
@@ -25,10 +26,10 @@ export default function NvmeSsdPage() {
           ]}
         />
         <p className="text-label text-brand-500 uppercase">NVMe SSDs</p>
-        <h1 className="text-display-2 font-display text-brand-900 mt-3 font-bold">
+        <h1 className="mt-3 font-display text-display-2 font-bold text-brand-900">
           M.2 drives for builds that outgrow SATA
         </h1>
-        <p className="text-body-lg text-fg-muted mt-4 max-w-[56ch]">
+        <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           Gaming, content creation, and workstation loads want the bandwidth
           only NVMe gives. Our NVMe line follows the same rule as everything we
           make: no figure is published before it&rsquo;s verified.
@@ -45,11 +46,11 @@ export default function NvmeSsdPage() {
             ))}
           </ul>
         ) : (
-          <div className="border-border max-w-2xl rounded-lg border border-dashed p-8">
-            <h2 className="text-h3 text-brand-900 font-semibold">
+          <div className="max-w-2xl rounded-lg border border-dashed border-border p-8">
+            <h2 className="text-h3 font-semibold text-brand-900">
               The NVMe line-up is being finalised.
             </h2>
-            <p className="text-body text-fg-muted mt-3 max-w-[60ch]">
+            <p className="mt-3 max-w-[60ch] text-body text-fg-muted">
               Models and validated specifications are published here the moment
               they clear testing. If you&rsquo;re planning a build or a bulk
               order now, talk to us — we&rsquo;ll tell you exactly what&rsquo;s

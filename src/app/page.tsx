@@ -77,7 +77,10 @@ export default function HomePage() {
       {/* 02 — Spec rail: company figures, only real numbers (docs/05 §3) */}
       <SpecRail
         items={[
-          { value: "{{TBD:warranty_years}} YEAR", label: "Warranty on every drive" },
+          {
+            value: "{{TBD:warranty_years}} YEAR",
+            label: "Warranty on every drive",
+          },
           { value: "{{TBD:rma_hours}} HR", label: "RMA first response" },
           { value: "{{TBD:service_count}}", label: "IT services delivered" },
           { value: "PUNE, MH", label: "Service & support base" },
@@ -92,7 +95,12 @@ export default function HomePage() {
             title="Two families, chosen deliberately"
             lead="We make the drives most machines actually need — SATA for dependable upgrades, NVMe for speed-hungry builds."
             action={
-              <Button href="/products" variant="secondary" icon={ArrowRight} iconPosition="right">
+              <Button
+                href="/products"
+                variant="secondary"
+                icon={ArrowRight}
+                iconPosition="right"
+              >
                 All products
               </Button>
             }
@@ -105,12 +113,17 @@ export default function HomePage() {
                 </CardMedia>
                 <CardBody>
                   <h3 className="text-h3 font-semibold">
-                    <Link href={family.href as Route} className="after:absolute after:inset-0">
+                    <Link
+                      href={family.href as Route}
+                      className="after:absolute after:inset-0"
+                    >
                       {family.name}
                     </Link>
                   </h3>
-                  <p className="text-body text-fg-muted mt-2">{family.descriptor}</p>
-                  <p className="text-body text-brand-500 mt-4 font-medium">
+                  <p className="mt-2 text-body text-fg-muted">
+                    {family.descriptor}
+                  </p>
+                  <p className="mt-4 text-body font-medium text-brand-500">
                     View specifications
                   </p>
                 </CardBody>
@@ -158,7 +171,12 @@ export default function HomePage() {
             title="We've been fixing and building IT systems since before we made drives."
             lead="Laptop and desktop upgrades, Windows deployment, data migration, networking, CCTV, and annual maintenance contracts for offices across Pune."
             action={
-              <Button href="/services" variant="secondary" icon={ArrowRight} iconPosition="right">
+              <Button
+                href="/services"
+                variant="secondary"
+                icon={ArrowRight}
+                iconPosition="right"
+              >
                 View all services
               </Button>
             }
@@ -168,7 +186,7 @@ export default function HomePage() {
               <li key={chip.href}>
                 <Link
                   href={chip.href as Route}
-                  className="border-border-strong bg-surface text-body text-fg hover:border-brand-500 hover:text-brand-500 inline-flex h-11 items-center rounded-md border px-5 font-medium transition-colors duration-fast ease-out"
+                  className="duration-fast inline-flex h-11 items-center rounded-md border border-border-strong bg-surface px-5 text-body font-medium text-fg transition-colors ease-out hover:border-brand-500 hover:text-brand-500"
                 >
                   {chip.label}
                 </Link>
@@ -176,7 +194,12 @@ export default function HomePage() {
             ))}
           </ul>
           <div className="mt-8 md:hidden">
-            <Button href="/services" variant="secondary" icon={ArrowRight} iconPosition="right">
+            <Button
+              href="/services"
+              variant="secondary"
+              icon={ArrowRight}
+              iconPosition="right"
+            >
               View all services
             </Button>
           </div>
@@ -189,9 +212,11 @@ export default function HomePage() {
           <SectionHeader eyebrow="Built for" title="Who we build for" />
           <div className="grid gap-10 md:grid-cols-3">
             {builtFor.map((audience) => (
-              <div key={audience.title} className="border-border border-t pt-6">
+              <div key={audience.title} className="border-t border-border pt-6">
                 <h3 className="text-h3 font-semibold">{audience.title}</h3>
-                <p className="text-body-sm text-fg-subtle mt-1">{audience.intro}</p>
+                <p className="mt-1 text-body-sm text-fg-subtle">
+                  {audience.intro}
+                </p>
                 <ul className="mt-4 space-y-2">
                   {audience.cases.map((useCase) => (
                     <li key={useCase} className="text-body text-fg-muted">
@@ -201,7 +226,7 @@ export default function HomePage() {
                 </ul>
                 <Link
                   href={audience.href as Route}
-                  className="text-body text-brand-500 hover:text-brand-600 mt-4 inline-block font-medium"
+                  className="mt-4 inline-block text-body font-medium text-brand-500 hover:text-brand-600"
                 >
                   {audience.linkLabel}
                 </Link>
@@ -241,12 +266,12 @@ export default function HomePage() {
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div>
-              <h2 className="text-h2 font-display text-brand-900 font-medium">
+              <h2 className="font-display text-h2 font-medium text-brand-900">
                 Tell us what you&rsquo;re building.
               </h2>
-              <p className="text-body-lg text-fg-muted mt-3 max-w-[56ch]">
-                Whether it&rsquo;s one laptop upgrade or two hundred workstations,
-                we&rsquo;ll give you a straight answer.
+              <p className="mt-3 max-w-[56ch] text-body-lg text-fg-muted">
+                Whether it&rsquo;s one laptop upgrade or two hundred
+                workstations, we&rsquo;ll give you a straight answer.
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap items-center gap-4">
@@ -254,12 +279,17 @@ export default function HomePage() {
                 Request a quote
               </Button>
               {isTbd(company.phone) ? (
-                <span className="text-body text-fg-muted flex items-center gap-2">
+                <span className="flex items-center gap-2 text-body text-fg-muted">
                   <Phone size={20} strokeWidth={1.5} aria-hidden="true" />
                   {company.phone}
                 </span>
               ) : (
-                <Button href={`tel:${company.phone}`} variant="secondary" size="lg" icon={Phone}>
+                <Button
+                  href={`tel:${company.phone}`}
+                  variant="secondary"
+                  size="lg"
+                  icon={Phone}
+                >
                   {company.phone}
                 </Button>
               )}

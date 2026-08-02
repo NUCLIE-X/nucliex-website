@@ -15,14 +15,18 @@ type CapacitySelectorProps = {
  * movement for free. Does not navigate and does not add to a cart — v1 has
  * no cart by decision.
  */
-export function CapacitySelector({ capacities, onChange, className }: CapacitySelectorProps) {
+export function CapacitySelector({
+  capacities,
+  onChange,
+  className,
+}: CapacitySelectorProps) {
   const [selected, setSelected] = useState(capacities[0]);
 
   if (capacities.length === 0) return null;
 
   return (
     <fieldset className={className}>
-      <legend className="text-body text-fg mb-3 font-medium">Capacity</legend>
+      <legend className="mb-3 text-body font-medium text-fg">Capacity</legend>
       <div className="flex flex-wrap gap-2">
         {capacities.map((capacity) => {
           const active = selected === capacity;
@@ -30,9 +34,9 @@ export function CapacitySelector({ capacities, onChange, className }: CapacitySe
             <label
               key={capacity}
               className={cn(
-                "text-body cursor-pointer rounded-md border px-4 py-2 font-medium",
-                "transition-colors duration-fast ease-out",
-                "has-focus-visible:outline-2 has-focus-visible:outline-accent-500 has-focus-visible:outline-offset-2",
+                "cursor-pointer rounded-md border px-4 py-2 text-body font-medium",
+                "duration-fast transition-colors ease-out",
+                "has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-accent-500",
                 active
                   ? "border-brand-500 bg-brand-50 text-brand-700"
                   : "border-border-strong text-fg-muted hover:border-brand-500 hover:text-brand-500",

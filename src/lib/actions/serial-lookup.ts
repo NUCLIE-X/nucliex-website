@@ -18,10 +18,16 @@ const serialSchema = z
  * format and hand the visitor a direct route to the support team with the
  * serial attached, not to fake a lookup result.
  */
-export async function lookupSerial(_prev: LookupState, formData: FormData): Promise<LookupState> {
+export async function lookupSerial(
+  _prev: LookupState,
+  formData: FormData,
+): Promise<LookupState> {
   const parsed = serialSchema.safeParse(formData.get("serial"));
   if (!parsed.success) {
-    return { status: "error", message: parsed.error.issues[0]?.message ?? "Enter a serial number." };
+    return {
+      status: "error",
+      message: parsed.error.issues[0]?.message ?? "Enter a serial number.",
+    };
   }
   return { status: "result", serial: parsed.data };
 }

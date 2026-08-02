@@ -9,7 +9,13 @@ const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
 
 /** Magic-byte sniffing — never trust the extension (docs/03 §5). */
 function sniffInvoice(bytes: Uint8Array): "jpg" | "png" | "pdf" | null {
-  if (bytes.length > 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff) return "jpg";
+  if (
+    bytes.length > 3 &&
+    bytes[0] === 0xff &&
+    bytes[1] === 0xd8 &&
+    bytes[2] === 0xff
+  )
+    return "jpg";
   if (
     bytes.length > 7 &&
     bytes[0] === 0x89 &&
@@ -18,7 +24,13 @@ function sniffInvoice(bytes: Uint8Array): "jpg" | "png" | "pdf" | null {
     bytes[3] === 0x47
   )
     return "png";
-  if (bytes.length > 4 && bytes[0] === 0x25 && bytes[1] === 0x50 && bytes[2] === 0x44 && bytes[3] === 0x46)
+  if (
+    bytes.length > 4 &&
+    bytes[0] === 0x25 &&
+    bytes[1] === 0x50 &&
+    bytes[2] === 0x44 &&
+    bytes[3] === 0x46
+  )
     return "pdf";
   return null;
 }
@@ -32,7 +44,10 @@ export async function submitWarrantyRegistration(
   const data = guarded.data;
 
   // Registration ID derived from the serial — stable, human-quotable, no DB in v1.
-  const registrationId = `WR-${data.serialNumber.replace(/[^A-Za-z0-9]/g, "").slice(-8).toUpperCase()}`;
+  const registrationId = `WR-${data.serialNumber
+    .replace(/[^A-Za-z0-9]/g, "")
+    .slice(-8)
+    .toUpperCase()}`;
 
   const success: FormState = {
     status: "success",
@@ -51,7 +66,10 @@ export async function submitWarrantyRegistration(
       return {
         status: "error",
         formError: "Fix the highlighted fields and submit again.",
-        fieldErrors: { invoice: "The invoice file is over 5 MB. Compress it or upload a smaller scan." },
+        fieldErrors: {
+          invoice:
+            "The invoice file is over 5 MB. Compress it or upload a smaller scan.",
+        },
       };
     }
     const bytes = new Uint8Array(await invoice.arrayBuffer());
@@ -63,7 +81,10 @@ export async function submitWarrantyRegistration(
         fieldErrors: { invoice: "Upload the invoice as a JPEG, PNG, or PDF." },
       };
     }
-    attachment = { filename: `invoice-${registrationId}.${kind}`, content: Buffer.from(bytes) };
+    attachment = {
+      filename: `invoice-${registrationId}.${kind}`,
+      content: Buffer.from(bytes),
+    };
   }
 
   try {

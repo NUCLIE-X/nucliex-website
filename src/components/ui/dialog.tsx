@@ -14,30 +14,36 @@ type DialogProps = {
 };
 
 /** Radix handles focus trap, Esc close, and focus return (docs/06 §2). */
-export function Dialog({ trigger, title, description, className, children }: DialogProps) {
+export function Dialog({
+  trigger,
+  title,
+  description,
+  className,
+  children,
+}: DialogProps) {
   return (
     <DialogPrimitive.Root>
       <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay
           className={cn(
-            "bg-brand-900/60 fixed inset-0 z-50",
+            "fixed inset-0 z-50 bg-brand-900/60",
             "animate-overlay-in motion-reduce:animate-none",
           )}
         />
         <DialogPrimitive.Content
           className={cn(
-            "bg-surface fixed top-1/2 left-1/2 z-50 w-[calc(100vw-40px)] max-w-lg",
+            "fixed top-1/2 left-1/2 z-50 w-[calc(100vw-40px)] max-w-lg bg-surface",
             "-translate-x-1/2 -translate-y-1/2 rounded-xl p-6 shadow-lg lg:p-8",
             "animate-dialog-in motion-reduce:animate-none",
             className,
           )}
         >
-          <DialogPrimitive.Title className="text-h3 text-brand-900 font-semibold">
+          <DialogPrimitive.Title className="text-h3 font-semibold text-brand-900">
             {title}
           </DialogPrimitive.Title>
           {description ? (
-            <DialogPrimitive.Description className="text-body-sm text-fg-muted mt-2">
+            <DialogPrimitive.Description className="mt-2 text-body-sm text-fg-muted">
               {description}
             </DialogPrimitive.Description>
           ) : null}
@@ -45,8 +51,8 @@ export function Dialog({ trigger, title, description, className, children }: Dia
           <DialogPrimitive.Close
             aria-label="Close dialog"
             className={cn(
-              "text-fg-subtle hover:text-fg hover:bg-surface-subtle absolute top-4 right-4",
-              "flex size-11 items-center justify-center rounded-md transition-colors duration-fast",
+              "absolute top-4 right-4 text-fg-subtle hover:bg-surface-subtle hover:text-fg",
+              "duration-fast flex size-11 items-center justify-center rounded-md transition-colors",
             )}
           >
             <X size={20} strokeWidth={1.5} aria-hidden="true" />

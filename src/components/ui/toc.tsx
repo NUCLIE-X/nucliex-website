@@ -8,12 +8,12 @@ export function Toc({ items }: TocProps) {
   return (
     <nav aria-label="On this page" className="sticky top-24 hidden lg:block">
       <p className="text-label text-fg-subtle uppercase">On this page</p>
-      <ul className="border-border mt-4 space-y-2 border-l pl-4">
+      <ul className="mt-4 space-y-2 border-l border-border pl-4">
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="text-body-sm text-fg-muted hover:text-brand-500 block transition-colors duration-fast"
+              className="duration-fast block text-body-sm text-fg-muted transition-colors hover:text-brand-500"
             >
               {item.title}
             </a>

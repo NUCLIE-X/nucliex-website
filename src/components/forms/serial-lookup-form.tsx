@@ -15,7 +15,10 @@ export function SerialLookupForm() {
 
   return (
     <form action={formAction} className="max-w-xl">
-      <label htmlFor="serial-lookup" className="text-body text-fg mb-2 block font-medium">
+      <label
+        htmlFor="serial-lookup"
+        className="mb-2 block text-body font-medium text-fg"
+      >
         Check a serial number
       </label>
       <div className="flex flex-col gap-3 sm:flex-row">
@@ -23,7 +26,9 @@ export function SerialLookupForm() {
           id="serial-lookup"
           name="serial"
           autoComplete="off"
-          aria-describedby={state.status === "error" ? "serial-lookup-error" : undefined}
+          aria-describedby={
+            state.status === "error" ? "serial-lookup-error" : undefined
+          }
           aria-invalid={state.status === "error" ? "true" : undefined}
           className="sm:max-w-xs"
         />
@@ -33,7 +38,10 @@ export function SerialLookupForm() {
         <FieldError id="serial-lookup-error">{state.message}</FieldError>
       ) : null}
       {state.status === "result" ? (
-        <div role="status" className="border-border bg-surface-subtle mt-4 rounded-lg border p-4">
+        <div
+          role="status"
+          className="mt-4 rounded-lg border border-border bg-surface-subtle p-4"
+        >
           <p className="text-body text-fg">
             Serial <span className="font-mono tnum">{state.serial}</span> noted.
             Warranty records are confirmed by the support team while the
@@ -41,7 +49,10 @@ export function SerialLookupForm() {
             {isTbd(company.supportEmail) ? (
               <span>{company.supportEmail}</span>
             ) : (
-              <a href={`mailto:${company.supportEmail}`} className="text-brand-500 underline underline-offset-2">
+              <a
+                href={`mailto:${company.supportEmail}`}
+                className="text-brand-500 underline underline-offset-2"
+              >
                 {company.supportEmail}
               </a>
             )}{" "}

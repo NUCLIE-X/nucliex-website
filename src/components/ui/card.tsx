@@ -15,9 +15,9 @@ export function Card({ interactive = false, className, children }: CardProps) {
   return (
     <div
       className={cn(
-        "border-border bg-surface relative rounded-lg border",
+        "relative rounded-lg border border-border bg-surface",
         interactive &&
-          "hover:border-brand-200 hover:shadow-md transition-[border-color,box-shadow] duration-fast ease-out",
+          "duration-fast transition-[border-color,box-shadow] ease-out hover:border-brand-200 hover:shadow-md",
         className,
       )}
     >
@@ -26,17 +26,40 @@ export function Card({ interactive = false, className, children }: CardProps) {
   );
 }
 
-export function CardMedia({ className, children }: { className?: string; children: React.ReactNode }) {
+export function CardMedia({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
   return <div className={cn("p-4 pb-0", className)}>{children}</div>;
 }
 
-export function CardBody({ className, children }: { className?: string; children: React.ReactNode }) {
+export function CardBody({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
   return <div className={cn("p-6 lg:p-8", className)}>{children}</div>;
 }
 
-export function CardFooter({ className, children }: { className?: string; children: React.ReactNode }) {
+export function CardFooter({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className={cn("border-border flex items-center gap-4 border-t px-6 py-4 lg:px-8", className)}>
+    <div
+      className={cn(
+        "flex items-center gap-4 border-t border-border px-6 py-4 lg:px-8",
+        className,
+      )}
+    >
       {children}
     </div>
   );

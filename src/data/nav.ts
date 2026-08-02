@@ -48,7 +48,8 @@ export const headerNav: NavItem[] = [
           {
             label: "Roadmap",
             href: "/products/roadmap",
-            description: "Memory, external drives, and enterprise storage in planning",
+            description:
+              "Memory, external drives, and enterprise storage in planning",
           },
           {
             label: "Downloads",

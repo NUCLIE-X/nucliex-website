@@ -9,10 +9,18 @@ import { Select } from "@/components/ui/select";
 
 export function QuoteForm() {
   return (
-    <AppForm action={submitQuote} submitLabel="Request a quote" pendingLabel="Sending…">
+    <AppForm
+      action={submitQuote}
+      submitLabel="Request a quote"
+      pendingLabel="Sending…"
+    >
       {(state) => (
         <div className="grid gap-6 sm:grid-cols-2">
-          <FormField name="company" label="Company / organisation" state={state}>
+          <FormField
+            name="company"
+            label="Company / organisation"
+            state={state}
+          >
             <Input autoComplete="organization" />
           </FormField>
           <FormField

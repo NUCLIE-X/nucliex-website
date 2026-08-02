@@ -22,7 +22,10 @@ const typeLabels: Record<string, string> = {
   other: "Other",
 };
 
-export async function submitContact(_prev: FormState, formData: FormData): Promise<FormState> {
+export async function submitContact(
+  _prev: FormState,
+  formData: FormData,
+): Promise<FormState> {
   const guarded = await guardAndParse(contactSchema, formData);
   if (!guarded.ok) return guarded.state;
 

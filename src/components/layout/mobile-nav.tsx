@@ -35,8 +35,8 @@ export function MobileNav() {
           type="button"
           aria-label="Open menu"
           className={cn(
-            "text-fg hover:bg-surface-subtle flex size-11 items-center justify-center",
-            "rounded-md transition-colors duration-fast lg:hidden",
+            "flex size-11 items-center justify-center text-fg hover:bg-surface-subtle",
+            "duration-fast rounded-md transition-colors lg:hidden",
           )}
         >
           <Menu size={24} strokeWidth={1.5} aria-hidden="true" />
@@ -45,13 +45,19 @@ export function MobileNav() {
       <DialogPrimitive.Portal>
         <DialogPrimitive.Content
           className={cn(
-            "bg-surface fixed inset-0 z-50 flex flex-col",
+            "fixed inset-0 z-50 flex flex-col bg-surface",
             "animate-overlay-in motion-reduce:animate-none",
           )}
         >
-          <DialogPrimitive.Title className="sr-only">Menu</DialogPrimitive.Title>
-          <div className="border-border flex h-18 shrink-0 items-center justify-between border-b px-5">
-            <Link href="/" aria-label="NUCLIEX home" onClick={() => setOpen(false)}>
+          <DialogPrimitive.Title className="sr-only">
+            Menu
+          </DialogPrimitive.Title>
+          <div className="flex h-18 shrink-0 items-center justify-between border-b border-border px-5">
+            <Link
+              href="/"
+              aria-label="NUCLIEX home"
+              onClick={() => setOpen(false)}
+            >
               <Logo kind="mark" className="h-9 w-auto" />
             </Link>
             <DialogPrimitive.Close asChild>
@@ -59,8 +65,8 @@ export function MobileNav() {
                 type="button"
                 aria-label="Close menu"
                 className={cn(
-                  "text-fg hover:bg-surface-subtle flex size-11 items-center justify-center",
-                  "rounded-md transition-colors duration-fast",
+                  "flex size-11 items-center justify-center text-fg hover:bg-surface-subtle",
+                  "duration-fast rounded-md transition-colors",
                 )}
               >
                 <X size={24} strokeWidth={1.5} aria-hidden="true" />
@@ -75,12 +81,12 @@ export function MobileNav() {
                   <AccordionPrimitive.Item
                     key={item.label}
                     value={item.label}
-                    className="border-border border-b"
+                    className="border-b border-border"
                   >
                     <AccordionPrimitive.Header className="m-0">
                       <AccordionPrimitive.Trigger
                         className={cn(
-                          "group text-body text-fg flex w-full items-center justify-between",
+                          "group flex w-full items-center justify-between text-body text-fg",
                           "py-4 text-left font-medium",
                         )}
                       >
@@ -89,28 +95,30 @@ export function MobileNav() {
                           size={20}
                           strokeWidth={1.5}
                           aria-hidden="true"
-                          className="text-fg-subtle transition-transform duration-base group-data-[state=open]:rotate-180 motion-reduce:transition-none"
+                          className="duration-base text-fg-subtle transition-transform group-data-[state=open]:rotate-180 motion-reduce:transition-none"
                         />
                       </AccordionPrimitive.Trigger>
                     </AccordionPrimitive.Header>
                     <AccordionPrimitive.Content
                       className={cn(
                         "overflow-hidden",
-                        "data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up",
+                        "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
                         "motion-reduce:animate-none",
                       )}
                     >
                       <ul className="space-y-1 pb-4">
-                        {item.panel.flatMap((column) => column.links).map((link) => (
-                          <li key={link.href}>
-                            <Link
-                              href={link.href as Route}
-                              className="text-body text-fg-muted hover:text-brand-500 block rounded-md py-2.5 pl-3"
-                            >
-                              {link.label}
-                            </Link>
-                          </li>
-                        ))}
+                        {item.panel
+                          .flatMap((column) => column.links)
+                          .map((link) => (
+                            <li key={link.href}>
+                              <Link
+                                href={link.href as Route}
+                                className="block rounded-md py-2.5 pl-3 text-body text-fg-muted hover:text-brand-500"
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
                       </ul>
                     </AccordionPrimitive.Content>
                   </AccordionPrimitive.Item>
@@ -118,19 +126,22 @@ export function MobileNav() {
                   <Link
                     key={item.label}
                     href={item.href as Route}
-                    className="text-body text-fg border-border block border-b py-4 font-medium"
+                    className="block border-b border-border py-4 text-body font-medium text-fg"
                   >
                     {item.label}
                   </Link>
                 ),
               )}
             </AccordionPrimitive.Root>
-            <Link href="/contact" className="text-body text-fg border-border block border-b py-4 font-medium">
+            <Link
+              href="/contact"
+              className="block border-b border-border py-4 text-body font-medium text-fg"
+            >
               Contact
             </Link>
           </nav>
 
-          <div className="border-border shrink-0 border-t p-5">
+          <div className="shrink-0 border-t border-border p-5">
             <Button href="/business/quote" className="w-full">
               Request a quote
             </Button>
