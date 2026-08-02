@@ -14,6 +14,86 @@ import { Select } from "@/components/ui/select";
 import { Tabs } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { SectionHeader } from "@/components/layout/section-header";
+import { ProductFrame } from "@/components/product/product-frame";
+import { SpecRail } from "@/components/product/spec-rail";
+import { SpecTable } from "@/components/product/spec-table";
+import { ProcessSteps } from "@/components/ui/process-steps";
+import { TrustPoints } from "@/components/ui/trust-points";
+
+export function SignatureShowcase() {
+  return (
+    <div className="space-y-14">
+      <p className="text-body-sm text-fg-subtle">
+        Structure demos with sample figures — not product data. Real values are
+        gated by docs/09-OPEN-QUESTIONS.md.
+      </p>
+      <div>
+        <h3 className="text-h3 mb-6 font-semibold">SpecRail — navy (signature) and light</h3>
+        <div className="space-y-8">
+          <SpecRail
+            bleed={false}
+            items={[
+              { value: "550 MB/s", label: "Seq. read", note: "CrystalDiskMark 8, 1 GiB test file, empty drive." },
+              { value: "500 MB/s", label: "Seq. write" },
+              { value: "3 YEAR", label: "Warranty" },
+              { value: "24 HR", label: "RMA response" },
+            ]}
+          />
+          <SpecRail
+            bleed={false}
+            tone="light"
+            items={[
+              { value: "02", label: "Condensed" },
+              { value: "2-UP", label: "Service form" },
+            ]}
+          />
+        </div>
+      </div>
+      <div>
+        <h3 className="text-h3 mb-6 font-semibold">SpecTable</h3>
+        <SpecTable
+          className="max-w-2xl"
+          specs={[
+            { label: "Sequential read", value: "550 MB/s", group: "performance", note: "Measured at QD32, 1 GiB span." },
+            { label: "Sequential write", value: "500 MB/s", group: "performance" },
+            { label: "TBW (512 GB)", value: "240 TB", group: "endurance" },
+            { label: "Form factor", value: "2.5-inch", group: "physical" },
+            { label: "Interface", value: "SATA III 6 Gb/s", group: "compatibility" },
+            { label: "Warranty", value: "3 years", group: "warranty" },
+          ]}
+        />
+      </div>
+      <div>
+        <h3 className="text-h3 mb-6 font-semibold">ProductFrame — placeholder and ratios</h3>
+        <div className="grid gap-6 sm:grid-cols-3">
+          <ProductFrame ratio="1/1" label="NX-500 · 512 GB SATA SSD" />
+          <ProductFrame ratio="4/3" label="NX-500 · 512 GB SATA SSD" />
+          <ProductFrame ratio="16/9" label="Workspace placeholder" />
+        </div>
+      </div>
+      <div>
+        <h3 className="text-h3 mb-6 font-semibold">ProcessSteps (earned numbering only)</h3>
+        <ProcessSteps
+          className="max-w-2xl"
+          steps={[
+            { title: "Raise the RMA", detail: "Structure demo — the real sequence lives on /support/rma." },
+            { title: "We respond with a decision", detail: "Replacement or repair, stated plainly." },
+            { title: "Drive ships back", detail: "With the outcome documented." },
+          ]}
+        />
+      </div>
+      <div>
+        <h3 className="text-h3 mb-6 font-semibold">TrustPoints (hairline list, not cards)</h3>
+        <TrustPoints
+          points={[
+            { title: "Engineered, then verified.", body: "Structure demo — approved copy comes from docs/05 §3." },
+            { title: "A warranty written in plain language.", body: "The term, coverage, and exclusions on the product page." },
+          ]}
+        />
+      </div>
+    </div>
+  );
+}
 
 export function PrimitivesShowcase() {
   return (

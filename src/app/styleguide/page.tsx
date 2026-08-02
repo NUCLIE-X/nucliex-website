@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PrimitivesShowcase } from "./primitives";
+import { PrimitivesShowcase, SignatureShowcase } from "./primitives";
 
 /**
  * Throwaway token audit page — docs/08-BUILD-PLAN.md Phase 1.
@@ -184,6 +184,10 @@ export default function StyleguidePage() {
 
       <Block title="Primitives (Phase 2)">
         <PrimitivesShowcase />
+      </Block>
+
+      <Block title="Signature components (Phase 4)">
+        <SignatureShowcase />
       </Block>
     </div>
   );
