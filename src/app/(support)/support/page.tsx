@@ -106,7 +106,7 @@ export default function SupportPage() {
             </dt>
             <dd className="mt-2 text-body text-fg">{company.supportEmail}</dd>
             <dd className="mt-1 text-body-sm text-fg-subtle">
-              First response: {"{{TBD:rma_hours}}"} hours
+              First response: within 48 hours
             </dd>
           </div>
           <div className="border-t border-border pt-4">

@@ -73,7 +73,7 @@ export default function WarrantyPage() {
                 </dt>
                 <dd className="mt-1 text-fg-muted">
                   Raise an RMA quoting your registration ID. First response
-                  within {"{{TBD:rma_hours}}"} hours.
+                  within 48 hours.
                 </dd>
               </div>
             </dl>

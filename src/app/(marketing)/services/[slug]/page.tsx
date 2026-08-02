@@ -77,6 +77,11 @@ export default async function ServicePage({
         <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           {service.summary}
         </p>
+        {service.turnaround ? (
+          <p className="mt-4 text-body-sm text-fg-subtle">
+            Turnaround: {service.turnaround}
+          </p>
+        ) : null}
         <div className="mt-8">
           <Button href={`/contact?service=${service.slug}`}>
             Enquire about this service

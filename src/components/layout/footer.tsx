@@ -118,8 +118,11 @@ export function Footer() {
               ))}
             </ul>
             <p>
-              © {new Date().getFullYear()} {company.legalName}. GSTIN{" "}
-              {company.gstin} · CIN {company.cin}
+              © {new Date().getFullYear()} {company.legalName}.
+              {/* GSTIN/CIN appear here once supplied ({{TBD:gstin}} {{TBD:cin}}) —
+                  a placeholder registration number is worse than none. */}
+              {!isTbd(company.gstin) && ` GSTIN ${company.gstin}`}
+              {!isTbd(company.cin) && ` · CIN ${company.cin}`}
             </p>
           </div>
         </div>

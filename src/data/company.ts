@@ -26,8 +26,14 @@ export const company = {
   supportEmail: "support@nucliex.in",
   // No partners@ mailbox exists yet — partner enquiries route to sales.
   partnersEmail: "sales@nucliex.in",
-  hours: "{{TBD:hours}}",
-  gstin: "{{TBD:gstin}}",
+  // Default set by builder pending client confirmation (docs/09 #6).
+  hours: "Mon–Sat, 10 am–7 pm IST",
+  /** Stated support commitment — first response within this window (docs/09 #5). */
+  rmaResponseHours: 48,
+  // GSTIN from the client's GST REG-06 certificate (2026-08-02).
+  gstin: "27IAIPM5293K1ZX",
+  // PAN inside the GSTIN marks a proprietorship — a CIN likely doesn't
+  // exist for this entity; confirm before ever adding one (docs/09 #7).
   cin: "{{TBD:cin}}",
 } as const;
 

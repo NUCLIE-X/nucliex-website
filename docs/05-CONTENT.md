@@ -42,11 +42,27 @@
   (No partners@ yet — partner enquiries route to sales.)
 - **Registered address:** A2, Marble Arch, Lodha Road, Naya Nagar, Mira Road, Thane,
   Maharashtra – 401107, India.
-  ⚠️ **This supersedes every "Pune" reference in this document set.** The original brief said
-  Pune; the confirmed base is Mira Road, Thane. All site copy, metadata, JSON-LD, and the
-  homepage rail now say Thane/Mumbai. Open question: whether the company was *founded* in
-  Pune (the About copy now avoids naming a founding city until confirmed).
+  ⚠️ **This supersedes every current-locality "Pune" reference in this document set.**
+  Client confirmed: **founded in Pune, now based in Mira Road, Thane.** Current-operations
+  copy, metadata, JSON-LD, and the homepage rail say Thane/Mumbai; the About page states the
+  Pune founding as history.
+- **GSTIN:** 27IAIPM5293K1ZX (from the GST REG-06 certificate). The embedded PAN marks a
+  proprietorship, so a CIN likely does not exist for this entity.
+- **Founding:** founded in Pune, now based in Mira Road, Thane (client confirmed).
 - Source artwork: `brand-assets/green-ssd-256gb-box-original.jpeg`.
+
+### 1b. Builder-set defaults of 2026-08-02 (client asked for gaps to be filled — CONFIRM OR CORRECT)
+
+- **Business hours:** Mon–Sat, 10 am–7 pm IST.
+- **RMA first response:** within 48 hours (homepage rail, support hub, RMA page, warranty
+  policy, FAQ).
+- **Homepage rail third figure:** "14 — IT services on offer" (count of the confirmed
+  services list in §1; replaces the unverifiable services-delivered statistic).
+- **Service turnarounds:** conservative "typically…" wording on upgrades, repair,
+  Windows deployment, and remote support.
+- **Legal pages:** privacy, terms, and warranty policy now carry full drafted text
+  (marked draft, noindex) with {company.founder} as DPDP grievance officer — all pending
+  the legal advisor's review.
 
 ## 2. Facts that are NOT confirmed — use `{{TBD}}`
 

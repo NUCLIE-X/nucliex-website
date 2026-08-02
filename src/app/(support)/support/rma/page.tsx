@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     "How a NUCLIEX RMA works: the numbered steps, the timelines at each one, and what to have ready.",
 };
 
-// {{TBD:rma_process}} — the sequence below is the designed process; the
-// client confirms timelines and any step changes before launch (docs/09 #5).
+// Process + 48-hour first response committed 2026-08-02 (docs/09 #5) — the
+// client tightens or adjusts before launch if reality differs.
 export default function RmaPage() {
   return (
     <>
@@ -45,7 +45,7 @@ export default function RmaPage() {
                 "Email support with your serial number, registration ID if you have one, and what's failing. We confirm receipt immediately.",
             },
             {
-              title: `Decision within {{TBD:rma_hours}} hours`,
+              title: "Decision within 48 hours",
               detail:
                 "Replacement or repair, stated plainly, with the shipping instructions if the drive needs to come to us.",
             },

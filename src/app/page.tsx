@@ -82,8 +82,8 @@ export default function HomePage() {
             label: "Warranty with registration",
             note: "GREEN Series: 5 years standard + 2 years extended registration benefit. T&C apply.",
           },
-          { value: "{{TBD:rma_hours}} HR", label: "RMA first response" },
-          { value: "{{TBD:service_count}}", label: "IT services delivered" },
+          { value: "48 HR", label: "RMA first response" },
+          { value: "14", label: "IT services on offer" },
           { value: "THANE, MH", label: "Service & support base" },
         ]}
       />
@@ -250,7 +250,7 @@ export default function HomePage() {
               onDark
               eyebrow="Warranty & support"
               title="If something goes wrong, here's exactly what happens."
-              lead="Register your product once. If a drive fails inside its warranty term, raise an RMA and we respond within {{TBD:rma_hours}} hours with a replacement or repair decision. No forms in triplicate, no proof-of-purchase games."
+              lead="Register your product once. If a drive fails inside its warranty term, raise an RMA and we respond within 48 hours with a replacement or repair decision. No forms in triplicate, no proof-of-purchase games."
             />
             <div className="flex flex-wrap gap-4">
               <Button href="/support/warranty" variant="onDark">

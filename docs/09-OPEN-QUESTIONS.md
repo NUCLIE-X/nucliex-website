@@ -48,8 +48,13 @@ code. **Blockers marked 🔴 must be resolved before launch.**
 - **#2 products — PARTIALLY RESOLVED:** real product is the **GREEN Series SSD** (256 GB SATA III); it replaced the provisional NX-500 and ships at status `available`. Other models/capacities still open.
 - **#3 specs — PARTIALLY RESOLVED:** packaging figures live on the product page with a "measured-conditions datasheet pending" footnote. The datasheet itself is still open.
 - **#4 warranty — RESOLVED:** 5 years standard + 2 years extended registration benefit (7 total), T&C apply.
-- **#6 contacts — MOSTLY RESOLVED:** phone +91 9167862127; support@/sales@/accounts@/ram@ @nucliex.in; registered address A2, Marble Arch, Lodha Road, Naya Nagar, Mira Road, Thane, Maharashtra – 401107. **Hours still open.** No partners@ mailbox (routes to sales). ⚠️ The brief said Pune — the confirmed base is Thane; all locality copy updated. **New sub-question: was the company founded in Pune?** The About page avoids naming a founding city until answered.
+- **#6 contacts — MOSTLY RESOLVED:** phone +91 9167862127; support@/sales@/accounts@/ram@ @nucliex.in; registered address A2, Marble Arch, Lodha Road, Naya Nagar, Mira Road, Thane, Maharashtra – 401107. **Hours still open.** No partners@ mailbox (routes to sales). Client confirmed: **founded in Pune, now based in Thane** — current-locality copy says Thane/Mumbai, About states the Pune founding as history.
 - **#9 domain — RESOLVED:** `www.nucliex.in` (confirm www-vs-apex canonical at deploy).
+- **#7 GSTIN/CIN — MOSTLY RESOLVED:** GSTIN 27IAIPM5293K1ZX (GST REG-06). The embedded PAN indicates a proprietorship, so **a CIN likely does not exist** — footer omits it; confirm.
+- **#5 RMA — DEFAULT SET:** 48-hour first response committed site-wide by the builder at the client's "fill the gaps" instruction; tighten/correct if operations differ.
+- **#18 turnarounds / hours — DEFAULTS SET:** conservative "typically…" turnarounds on four services; hours Mon–Sat 10 am–7 pm IST. Confirm or correct (docs/05 §1b).
+- **#8 legal — DRAFTED:** all three legal pages carry full builder-drafted text (noindex, marked draft) with the founder as DPDP grievance officer. Advisor review still required before indexing.
+- **#14 rail statistic — RESOLVED differently:** replaced with the derivable "14 IT services on offer"; the years-in-operation figure remains unused.
 - **#12 certifications — PARTIALLY RESOLVED:** BIS certification claimed on packaging and listed on the spec table; certificate number still open.
 
 ---

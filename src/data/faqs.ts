@@ -38,7 +38,7 @@ export const faqs: Faq[] = [
     group: "RMA & replacements",
     question: "How do I start an RMA?",
     answer:
-      "Use the RMA page to raise the request with your serial number and a description of the fault. We respond with a replacement or repair decision within the stated first-response time ({{TBD:rma_hours}} hours).",
+      "Use the RMA page to raise the request with your serial number and a description of the fault. We respond with a replacement or repair decision within 48 hours.",
   },
   {
     id: "rma-need",
