@@ -98,7 +98,7 @@ function Block({ title, children }: { title: string; children: React.ReactNode }
 
 export default function StyleguidePage() {
   return (
-    <main className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
+    <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
       <p className="text-label text-fg-subtle uppercase">Internal — delete before launch</p>
       <h1 className="text-display-2 font-display text-brand-900 mt-2 mb-12 font-bold">
         Token styleguide
@@ -185,6 +185,6 @@ export default function StyleguidePage() {
       <Block title="Primitives (Phase 2)">
         <PrimitivesShowcase />
       </Block>
-    </main>
+    </div>
   );
 }

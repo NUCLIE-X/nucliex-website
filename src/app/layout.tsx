@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { JsonLd } from "@/components/utility/json-ld";
+import { company } from "@/data/company";
+import { env } from "@/lib/env";
 import "@/styles/globals.css";
 
 // Exactly the weights in docs/02-DESIGN-SYSTEM.md §3 — each extra weight is ~15 kB.
@@ -25,9 +30,50 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NUCLIEX — SSDs & IT solutions engineered in India",
+  metadataBase: new URL(env.NEXT_PUBLIC_SITE_URL),
+  title: {
+    default: "NUCLIEX — SSDs & IT solutions engineered in India",
+    template: "%s — NUCLIEX",
+  },
   description:
     "SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Pune. Clear warranty, real support.",
+  // Relative canonical resolves per-page against metadataBase.
+  alternates: { canonical: "./" },
+  openGraph: {
+    siteName: "NUCLIEX",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
+};
+
+/**
+ * JSON-LD carries only confirmed facts (docs/05 §1) — street address, phone,
+ * and sameAs join once docs/09 items 6 and 15 are resolved.
+ */
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  name: company.brand,
+  legalName: company.legalName,
+  url: env.NEXT_PUBLIC_SITE_URL,
+  logo: `${env.NEXT_PUBLIC_SITE_URL}/brand/nucliex-logo-navy.png`,
+  founder: { "@type": "Person", name: company.founder },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: company.city,
+    addressRegion: company.state,
+    addressCountry: company.country,
+  },
+  areaServed: ["Pune", "Maharashtra", "India"],
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: company.brand,
+  url: env.NEXT_PUBLIC_SITE_URL,
 };
 
 export default function RootLayout({
@@ -38,7 +84,15 @@ export default function RootLayout({
       lang="en-IN"
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={webSiteJsonLd} />
+        <Header />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
