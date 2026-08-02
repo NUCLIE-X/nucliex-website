@@ -1,18 +1,43 @@
 "use client";
 
-import { submitDealerApplication } from "@/lib/actions/dealer";
-import { AppForm } from "@/components/ui/app-form";
+import { dealerSchema } from "@/lib/schemas/forms";
+import { company } from "@/data/company";
+import { StaticForm } from "@/components/ui/static-form";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
 
+const typeLabels: Record<string, string> = {
+  retailer: "Retailer",
+  distributor: "Distributor",
+  "system-integrator": "System integrator",
+  "online-seller": "Online seller",
+};
+
 export function DealerForm() {
   return (
-    <AppForm
-      action={submitDealerApplication}
+    <StaticForm
+      schema={dealerSchema}
+      recipient={() => company.partnersEmail}
+      subject={(d) => `Dealer application — ${d.businessName} (${d.city})`}
+      body={(d) =>
+        [
+          `Business: ${d.businessName}`,
+          `Type: ${typeLabels[d.businessType]}`,
+          `Location: ${d.city}, ${d.state}`,
+          `GSTIN: ${d.gstin}`,
+          `Years in business: ${d.yearsInBusiness}`,
+          `Contact: ${d.name} · ${d.email} · +91 ${d.phone}`,
+          "",
+          "Product interest:",
+          d.productInterest,
+        ].join("\n")
+      }
+      whatsappText={(d) =>
+        `Dealer application: ${d.businessName} (${typeLabels[d.businessType]}, ${d.city}) — contact ${d.name}, +91 ${d.phone}`
+      }
       submitLabel="Apply to become a partner"
-      pendingLabel="Sending…"
     >
       {(state) => (
         <div className="grid gap-6 sm:grid-cols-2">
@@ -44,11 +69,7 @@ export function DealerForm() {
           >
             <Input autoComplete="off" />
           </FormField>
-          <FormField
-            name="yearsInBusiness"
-            label="Years in business"
-            state={state}
-          >
+          <FormField name="yearsInBusiness" label="Years in business" state={state}>
             <Select defaultValue="">
               <option value="" disabled>
                 Choose a range
@@ -85,6 +106,6 @@ export function DealerForm() {
           </div>
         </div>
       )}
-    </AppForm>
+    </StaticForm>
   );
 }

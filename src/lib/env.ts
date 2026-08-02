@@ -37,8 +37,6 @@ export const mailConfigured = Boolean(
   env.MAIL_TO_PARTNERS,
 );
 
-if (process.env.VERCEL_ENV === "production" && !mailConfigured) {
-  throw new Error(
-    "Production deploy without complete mail configuration. Set RESEND_API_KEY, MAIL_FROM and all MAIL_TO_* variables.",
-  );
-}
+// STATIC EXPORT MODE: no server-side mail, so the production mail guard is
+// suspended. Reinstate the hard VERCEL_ENV throw when switching back to the
+// full server mode (see git history of this file).

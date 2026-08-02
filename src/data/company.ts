@@ -22,6 +22,8 @@ export const company = {
   // ram@, support@, sales@, accounts@ @nucliex.in · +91 9167862127.
   phone: "+91 9167862127",
   phoneHref: "tel:+919167862127",
+  /** Digits only, for wa.me links. */
+  whatsapp: "919167862127",
   salesEmail: "sales@nucliex.in",
   supportEmail: "support@nucliex.in",
   // No partners@ mailbox exists yet — partner enquiries route to sales.

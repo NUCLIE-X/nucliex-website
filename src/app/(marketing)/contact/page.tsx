@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { getService } from "@/data/services";
 import { company, isTbd } from "@/data/company";
 import { Section } from "@/components/layout/section";
-import { ContactForm } from "@/components/forms/contact-form";
+import { ContactFormFromParams } from "@/components/forms/contact-form-from-params";
 
 export const metadata: Metadata = {
   title: "Contact NUCLIEX INFOSYS",
@@ -11,18 +11,7 @@ export const metadata: Metadata = {
     "Talk to our team about products, bulk orders, IT services, or support.",
 };
 
-type SearchParams = Promise<Record<string, string | string[] | undefined>>;
-
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  const params = await searchParams;
-  const serviceSlug =
-    typeof params.service === "string" ? params.service : undefined;
-  const service = serviceSlug ? getService(serviceSlug) : undefined;
-
+export default function ContactPage() {
   return (
     <Section spacing="tight" className="py-16 md:py-20">
       <div className="grid gap-12 lg:grid-cols-12">
@@ -36,12 +25,9 @@ export default async function ContactPage({
             misbehaving — one form, routed to the right person.
           </p>
           <div className="mt-10">
-            <ContactForm
-              defaultEnquiryType={service ? "services" : undefined}
-              defaultMessage={
-                service ? `Enquiry about: ${service.name}\n\n` : undefined
-              }
-            />
+            <Suspense fallback={null}>
+              <ContactFormFromParams />
+            </Suspense>
           </div>
         </div>
 

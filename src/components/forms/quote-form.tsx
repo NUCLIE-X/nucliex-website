@@ -1,26 +1,46 @@
 "use client";
 
-import { submitQuote } from "@/lib/actions/quote";
-import { AppForm } from "@/components/ui/app-form";
+import { quoteSchema } from "@/lib/schemas/forms";
+import { company } from "@/data/company";
+import { StaticForm } from "@/components/ui/static-form";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
 
+const timelineLabels: Record<string, string> = {
+  "this-week": "This week",
+  "this-month": "This month",
+  "this-quarter": "This quarter",
+  exploring: "Just exploring",
+};
+
 export function QuoteForm() {
   return (
-    <AppForm
-      action={submitQuote}
+    <StaticForm
+      schema={quoteSchema}
+      recipient={() => company.salesEmail}
+      subject={(d) => `Quote request — ${d.company}`}
+      body={(d) =>
+        [
+          `Company: ${d.company}`,
+          d.gstin ? `GSTIN: ${d.gstin}` : "GSTIN: not provided",
+          `Contact: ${d.name} · ${d.email} · +91 ${d.phone}`,
+          `Timeline: ${timelineLabels[d.timeline]}`,
+          "",
+          "Requirements:",
+          d.requirements,
+          d.message ? `\nMessage:\n${d.message}` : "",
+        ].join("\n")
+      }
+      whatsappText={(d) =>
+        `Quote request from ${d.company} (${d.name}, +91 ${d.phone}): ${d.requirements} — timeline ${timelineLabels[d.timeline]}`
+      }
       submitLabel="Request a quote"
-      pendingLabel="Sending…"
     >
       {(state) => (
         <div className="grid gap-6 sm:grid-cols-2">
-          <FormField
-            name="company"
-            label="Company / organisation"
-            state={state}
-          >
+          <FormField name="company" label="Company / organisation" state={state}>
             <Input autoComplete="organization" />
           </FormField>
           <FormField
@@ -61,24 +81,19 @@ export function QuoteForm() {
             <FormField
               name="requirements"
               label="Products and quantities"
-              help="e.g. 40 × 512 GB SATA SSDs for office desktops; 5 × NVMe for workstations."
+              help="e.g. 40 × 256 GB GREEN SSDs for office desktops."
               state={state}
             >
               <Textarea rows={4} />
             </FormField>
           </div>
           <div className="sm:col-span-2">
-            <FormField
-              name="message"
-              label="Anything else"
-              required={false}
-              state={state}
-            >
+            <FormField name="message" label="Anything else" required={false} state={state}>
               <Textarea rows={3} />
             </FormField>
           </div>
         </div>
       )}
-    </AppForm>
+    </StaticForm>
   );
 }

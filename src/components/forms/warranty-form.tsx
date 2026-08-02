@@ -1,17 +1,32 @@
 "use client";
 
-import { submitWarrantyRegistration } from "@/lib/actions/warranty";
-import { AppForm } from "@/components/ui/app-form";
+import { warrantySchema } from "@/lib/schemas/forms";
+import { company } from "@/data/company";
+import { StaticForm } from "@/components/ui/static-form";
 import { FormField } from "@/components/ui/form-field";
 import { Input } from "@/components/ui/input";
-import { FileInput } from "@/components/ui/file-input";
 
 export function WarrantyForm() {
   return (
-    <AppForm
-      action={submitWarrantyRegistration}
+    <StaticForm
+      schema={warrantySchema}
+      recipient={() => company.supportEmail}
+      subject={(d) => `Warranty registration — ${d.product}, serial ${d.serialNumber}`}
+      body={(d) =>
+        [
+          `Product: ${d.product}`,
+          `Serial: ${d.serialNumber}`,
+          `Purchased: ${d.purchaseDate} from ${d.seller}`,
+          `Customer: ${d.name} · ${d.email} · +91 ${d.phone}`,
+          "",
+          "Please attach a photo or PDF of the invoice to this email if you have it —",
+          "it speeds up any future claim.",
+        ].join("\n")
+      }
+      whatsappText={(d) =>
+        `Warranty registration: ${d.product}, serial ${d.serialNumber}, bought ${d.purchaseDate} from ${d.seller}. ${d.name}, +91 ${d.phone}`
+      }
       submitLabel="Register warranty"
-      pendingLabel="Registering…"
     >
       {(state) => (
         <div className="grid gap-6 sm:grid-cols-2">
@@ -23,12 +38,7 @@ export function WarrantyForm() {
           >
             <Input autoComplete="off" />
           </FormField>
-          <FormField
-            name="product"
-            label="Product"
-            help="e.g. GREEN SSD 256 GB"
-            state={state}
-          >
+          <FormField name="product" label="Product" help="e.g. GREEN SSD 256 GB" state={state}>
             <Input autoComplete="off" />
           </FormField>
           <FormField name="purchaseDate" label="Purchase date" state={state}>
@@ -56,17 +66,14 @@ export function WarrantyForm() {
           >
             <Input type="tel" autoComplete="tel" inputMode="numeric" />
           </FormField>
-          <FormField
-            name="invoice"
-            label="Invoice"
-            required={false}
-            help="JPEG, PNG, or PDF, up to 5 MB. Speeds up any future claim."
-            state={state}
-          >
-            <FileInput accept="image/jpeg,image/png,application/pdf" />
-          </FormField>
+          <div className="flex items-end">
+            <p className="text-body-sm text-fg-subtle">
+              Have the invoice? Attach it to the email that opens — it speeds
+              up any future claim.
+            </p>
+          </div>
         </div>
       )}
-    </AppForm>
+    </StaticForm>
   );
 }
