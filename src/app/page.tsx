@@ -78,13 +78,13 @@ export default function HomePage() {
       <SpecRail
         items={[
           {
-            value: "7 YEAR",
-            label: "Warranty with registration",
-            note: "GREEN Series: 5 years standard + 2 years extended registration benefit. T&C apply.",
+            value: "7 YEARS",
+            label: "Warranty when you register",
+            note: "GREEN Series drives carry 5 years of warranty as standard — registering the drive adds 2 more, free. Conditions apply.",
           },
-          { value: "48 HR", label: "RMA first response" },
-          { value: "14", label: "IT services on offer" },
-          { value: "THANE, MH", label: "Service & support base" },
+          { value: "48 HRS", label: "Response when a drive fails" },
+          { value: "14", label: "IT services, upgrades to AMC" },
+          { value: "THANE, MH", label: "Where our team is based" },
         ]}
       />
 

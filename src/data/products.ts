@@ -90,15 +90,15 @@ export const products: Product[] = [
     highlights: [
       {
         value: "560 MB/s",
-        label: "Seq. read (up to)",
-        note: "Figures as rated on retail packaging; measured-conditions datasheet pending.",
+        label: "Read speed (up to)",
+        note: "Speed figures as rated on the retail packaging; the full test-condition datasheet is coming.",
       },
-      { value: "520 MB/s", label: "Seq. write (up to)" },
-      { value: "170 TBW", label: "Endurance (256 GB)" },
+      { value: "520 MB/s", label: "Write speed (up to)" },
+      { value: "170 TBW", label: "Rated endurance (256 GB)" },
       {
-        value: "7 YEAR",
-        label: "Warranty",
-        note: "5 years standard + 2 years extended registration benefit. T&C apply.",
+        value: "7 YEARS",
+        label: "Warranty when you register",
+        note: "5 years standard — registering the drive adds 2 more, free. Conditions apply.",
       },
     ],
     specs: [

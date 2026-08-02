@@ -86,9 +86,7 @@ export function SpecRail({
                 )}
               >
                 {item.label}
-                {noteIndex ? (
-                  <span className="sr-only"> (see note {noteIndex})</span>
-                ) : null}
+                {noteIndex ? <span className="sr-only"> (note {noteIndex})</span> : null}
               </dt>
             </div>
           );
