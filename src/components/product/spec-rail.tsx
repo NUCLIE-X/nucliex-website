@@ -38,12 +38,17 @@ export function SpecRail({ items, tone = "navy", bleed = true, className }: Spec
       >
         {items.map((item, i) => {
           const noteIndex = item.note ? notes.indexOf(item) + 1 : null;
+          // {{TBD}} tokens render as deliberate smaller placeholders — a
+          // pending value must never masquerade as a published figure.
+          const pending = item.value.includes("{{TBD");
           return (
-            <div key={item.label} className={cn("flex flex-col gap-2", i > 0 && "md:pl-8", i < items.length - 1 && "md:pr-8")}>
+            <div key={item.label} className={cn("flex min-w-0 flex-col gap-2", i > 0 && "md:pl-8", i < items.length - 1 && "md:pr-8")}>
               <dd
                 className={cn(
-                  "text-data-lg font-mono tnum order-1 font-medium",
-                  dark ? "text-fg-inverse" : "text-brand-900",
+                  "font-mono tnum order-1 break-words",
+                  pending
+                    ? cn("text-data", dark ? "text-fg-inverse-muted" : "text-fg-subtle")
+                    : cn("text-data-lg font-medium", dark ? "text-fg-inverse" : "text-brand-900"),
                 )}
               >
                 {item.value}

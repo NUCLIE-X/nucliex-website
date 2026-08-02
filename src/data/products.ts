@@ -66,3 +66,24 @@ export const specGroupLabels: Record<SpecGroup, string> = {
 
 /** Populated in Phase 6 — kept typed and empty until then. */
 export const products: Product[] = [];
+
+/**
+ * Families the company currently focuses on (confirmed in docs/05 §1).
+ * The homepage shows one card per family — never padded to three.
+ */
+export const activeFamilies = [
+  {
+    key: "sata-ssd" as ProductFamily,
+    name: "SATA SSDs",
+    href: "/products/ssd/sata",
+    descriptor: "2.5-inch drives that give working laptops and desktops a faster second life.",
+    frameLabel: "SATA SSD family",
+  },
+  {
+    key: "nvme-ssd" as ProductFamily,
+    name: "NVMe SSDs",
+    href: "/products/ssd/nvme",
+    descriptor: "M.2 drives for gaming, content creation, and workstation builds.",
+    frameLabel: "NVMe SSD family",
+  },
+];
