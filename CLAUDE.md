@@ -6,21 +6,12 @@
 
 ---
 
-## 0. Current repository state (2026-08-02 — delete this section once Phase 0 is done)
+## 0. Local machine constraint (this Windows box only)
 
-The codebase has **not been scaffolded yet**. This folder holds only the spec bundle, laid out
-flat rather than in the target structure of §5:
-
-- The nine spec files (`01-BRAND.md` … `09-OPEN-QUESTIONS.md`) sit at the repo **root**. Every
-  `/docs/...` reference in this file and in `README.md` currently resolves to `./<same-name>.md`.
-- The recoloured logo rasters also sit at root (`nucliex-logo-navy.png`, `nucliex-logo-white.png`,
-  `nucliex-mark-navy.png`, `NI_ FULL LOGO THIRD.png`) — these are the future `/brand-assets`.
-- There is no `package.json`, `/src`, or `.git` yet, so none of the commands in §8 work.
-
-The first task is Phase 0 of `08-BUILD-PLAN.md`: `git init`, scaffold Next.js, then move the spec
-files into `/docs` and the PNGs into `/brand-assets` so §5 becomes true. Note `create-next-app`
-refuses a non-empty directory — scaffold in a temporary folder and merge, or move the docs into
-`/docs` first.
+Smart App Control blocks the native SWC binary (`@next/swc-win32-x64-msvc`), so Turbopack cannot
+run here — Next falls back to WASM SWC, which only supports webpack. `npm run dev` and
+`npm run build` therefore use the `--webpack` flag. Do not remove it while developing on this
+machine; the SAC warning line in build output is expected noise. Vercel builds are unaffected.
 
 ---
 
