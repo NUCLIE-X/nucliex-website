@@ -79,14 +79,14 @@ export function Footer() {
                   aria-hidden="true"
                   className="shrink-0 text-fg-inverse-muted"
                 />
-                {isTbd(company.salesEmail) ? (
-                  <span>{company.salesEmail}</span>
+                {isTbd(company.supportEmail) ? (
+                  <span>{company.supportEmail}</span>
                 ) : (
                   <a
-                    href={`mailto:${company.salesEmail}`}
+                    href={`mailto:${company.supportEmail}`}
                     className="duration-fast transition-colors hover:text-accent-400"
                   >
-                    {company.salesEmail}
+                    {company.supportEmail}
                   </a>
                 )}
               </li>

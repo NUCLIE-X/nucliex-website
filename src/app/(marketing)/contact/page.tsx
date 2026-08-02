@@ -80,14 +80,14 @@ export default async function ContactPage({
                   aria-hidden="true"
                   className="shrink-0 text-fg-subtle"
                 />
-                {isTbd(company.salesEmail) ? (
-                  <span className="text-fg-muted">{company.salesEmail}</span>
+                {isTbd(company.supportEmail) ? (
+                  <span className="text-fg-muted">{company.supportEmail}</span>
                 ) : (
                   <a
-                    href={`mailto:${company.salesEmail}`}
+                    href={`mailto:${company.supportEmail}`}
                     className="text-brand-500"
                   >
-                    {company.salesEmail}
+                    {company.supportEmail}
                   </a>
                 )}
               </li>
