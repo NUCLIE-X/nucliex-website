@@ -73,7 +73,7 @@ export const faqs: Faq[] = [
     group: "Services",
     question: "Where do you provide IT services?",
     answer:
-      "On-site services cover Pune and surrounding areas. Remote support — diagnostics, software fixes, optimisation — works wherever you are.",
+      "On-site services cover Mira Road, Thane, and the surrounding Mumbai region. Remote support — diagnostics, software fixes, optimisation — works wherever you are.",
   },
   {
     id: "services-amc",

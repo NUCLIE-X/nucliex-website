@@ -23,7 +23,7 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
   return {
-    title: `${service.name} — Pune`,
+    title: `${service.name} — Thane`,
     description: service.summary,
   };
 }
@@ -43,7 +43,7 @@ export default async function ServicePage({
     name: service.name,
     description: service.summary,
     provider: { "@type": "Organization", name: company.legalName },
-    areaServed: ["Pune", "Maharashtra", "India"],
+    areaServed: ["Thane", "Mumbai", "Maharashtra", "India"],
     url: `${env.NEXT_PUBLIC_SITE_URL}/services/${service.slug}`,
   };
 

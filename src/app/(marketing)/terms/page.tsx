@@ -33,7 +33,7 @@ export default function TermsPage() {
         <h2>Limitation of liability</h2>
         <p>{"{{TBD:legal}}"}</p>
         <h2>Governing law</h2>
-        <p>{"{{TBD:legal}}"} — jurisdiction: Pune, Maharashtra, India.</p>
+        <p>{"{{TBD:legal}}"} — jurisdiction: Thane, Maharashtra, India.</p>
       </Prose>
     </Section>
   );

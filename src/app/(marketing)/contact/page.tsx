@@ -61,7 +61,7 @@ export default async function ContactPage({
                 <span className="text-fg-muted">
                   {company.addressLine}
                   <br />
-                  {company.city}, {company.state}, India
+                  {company.city}, {company.state} - {company.pin}, India
                 </span>
               </li>
               <li className="flex items-center gap-3">

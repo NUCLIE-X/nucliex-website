@@ -54,7 +54,7 @@ export async function submitDealerApplication(
         "We received your dealer application for " + data.businessName + ".",
         "Our partner team reviews applications and will be in touch within three working days.",
         "",
-        "NUCLIEX INFOSYS, Pune",
+        "NUCLIEX INFOSYS, Thane",
       ].join("\n"),
     });
   } catch (error) {

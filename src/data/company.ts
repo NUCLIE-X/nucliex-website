@@ -10,10 +10,14 @@ export const company = {
   corporateSignature: "Driven by Expertise",
   productTagline: "Powering Reliable Technology",
   founder: "Ramjit J. Mourya",
-  city: "Pune",
+  // Registered address confirmed by the client 2026-08-02. NOTE: the original
+  // brief said Pune; the real base is Mira Road, Thane — docs/09 tracks the
+  // founding-city question left open by this.
+  city: "Mira Road, Thane",
   state: "Maharashtra",
+  pin: "401107",
   country: "IN",
-  addressLine: "{{TBD:address}}",
+  addressLine: "A2, Marble Arch, Lodha Road, Naya Nagar",
   // Phone + mailboxes confirmed by the client 2026-08-02 (packaging + chat):
   // ram@, support@, sales@, accounts@ @nucliex.in · +91 9167862127.
   phone: "+91 9167862127",

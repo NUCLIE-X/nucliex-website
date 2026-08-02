@@ -56,7 +56,7 @@ export async function submitQuote(
         "What you sent us:",
         data.requirements,
         "",
-        "NUCLIEX INFOSYS, Pune",
+        "NUCLIEX INFOSYS, Thane",
       ].join("\n"),
     });
   } catch (error) {

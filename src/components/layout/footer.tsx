@@ -51,7 +51,7 @@ export function Footer() {
                 <span>
                   {company.addressLine}
                   <br />
-                  {company.city}, {company.state}, India
+                  {company.city}, {company.state} - {company.pin}, India
                 </span>
               </li>
               <li className="flex items-center gap-2">

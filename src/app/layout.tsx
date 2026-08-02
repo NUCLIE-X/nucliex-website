@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s — NUCLIEX",
   },
   description:
-    "SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Pune. Clear warranty, real support.",
+    "SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Thane. Clear warranty, real support.",
   // Relative canonical resolves per-page against metadataBase.
   alternates: { canonical: "./" },
   openGraph: {
@@ -66,11 +66,13 @@ const organizationJsonLd = {
   email: company.supportEmail,
   address: {
     "@type": "PostalAddress",
+    streetAddress: company.addressLine,
     addressLocality: company.city,
     addressRegion: company.state,
+    postalCode: company.pin,
     addressCountry: company.country,
   },
-  areaServed: ["Pune", "Maharashtra", "India"],
+  areaServed: ["Thane", "Mumbai", "Maharashtra", "India"],
 };
 
 const webSiteJsonLd = {

@@ -48,7 +48,7 @@ code. **Blockers marked 🔴 must be resolved before launch.**
 - **#2 products — PARTIALLY RESOLVED:** real product is the **GREEN Series SSD** (256 GB SATA III); it replaced the provisional NX-500 and ships at status `available`. Other models/capacities still open.
 - **#3 specs — PARTIALLY RESOLVED:** packaging figures live on the product page with a "measured-conditions datasheet pending" footnote. The datasheet itself is still open.
 - **#4 warranty — RESOLVED:** 5 years standard + 2 years extended registration benefit (7 total), T&C apply.
-- **#6 contacts — PARTIALLY RESOLVED:** phone +91 9167862127; support@/sales@/accounts@/ram@ @nucliex.in. Address and hours still open; no partners@ mailbox (routes to sales).
+- **#6 contacts — MOSTLY RESOLVED:** phone +91 9167862127; support@/sales@/accounts@/ram@ @nucliex.in; registered address A2, Marble Arch, Lodha Road, Naya Nagar, Mira Road, Thane, Maharashtra – 401107. **Hours still open.** No partners@ mailbox (routes to sales). ⚠️ The brief said Pune — the confirmed base is Thane; all locality copy updated. **New sub-question: was the company founded in Pune?** The About page avoids naming a founding city until answered.
 - **#9 domain — RESOLVED:** `www.nucliex.in` (confirm www-vs-apex canonical at deploy).
 - **#12 certifications — PARTIALLY RESOLVED:** BIS certification claimed on packaging and listed on the spec table; certificate number still open.
 

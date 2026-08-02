@@ -10,7 +10,7 @@ import { Reveal } from "@/components/ui/reveal";
 export const metadata: Metadata = {
   title: "About NUCLIEX INFOSYS",
   description:
-    "An Indian technology company building reliable storage, founded in Pune by Ramjit J. Mourya.",
+    "An Indian technology company building reliable storage, founded by Ramjit J. Mourya. Based in Mira Road, Thane.",
 };
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
           built.
         </h1>
         <p className="mt-6 max-w-[56ch] text-body-lg text-fg-muted">
-          NUCLIEX INFOSYS started as an IT services business in Pune — fixing
+          NUCLIEX INFOSYS started as an IT services business — fixing
           machines, deploying Windows, running office networks, and replacing a
           lot of failed drives. That last part is why we started making our own.
         </p>
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="Today"
             title="What we do now, honestly stated"
-            lead="Founded in Pune. Currently serving customers across Maharashtra."
+            lead="Based in Mira Road, Thane. Serving customers across Maharashtra."
           />
           <div className="grid gap-10 md:grid-cols-2">
             <div className="border-t border-border pt-6">

@@ -18,7 +18,7 @@ import { company, isTbd } from "@/data/company";
 export const metadata: Metadata = {
   title: { absolute: "NUCLIEX — SSDs & IT solutions engineered in India" },
   description:
-    "SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Pune. Clear warranty, real support.",
+    "SATA and NVMe SSDs, computer hardware, and professional IT services from NUCLIEX INFOSYS, Thane. Clear warranty, real support.",
 };
 
 // Six live, deliverable services (docs/05 §1) — chips on the services strip.
@@ -84,7 +84,7 @@ export default function HomePage() {
           },
           { value: "{{TBD:rma_hours}} HR", label: "RMA first response" },
           { value: "{{TBD:service_count}}", label: "IT services delivered" },
-          { value: "PUNE, MH", label: "Service & support base" },
+          { value: "THANE, MH", label: "Service & support base" },
         ]}
       />
 
@@ -158,7 +158,7 @@ export default function HomePage() {
               },
               {
                 title: "Support that answers.",
-                body: "Phone, email, and remote support from a team based in Pune. You reach a person, not a queue.",
+                body: "Phone, email, and remote support from a team based in Thane. You reach a person, not a queue.",
               },
               {
                 title: "Honest specifications.",
@@ -175,7 +175,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="IT services"
             title="We've been fixing and building IT systems since before we made drives."
-            lead="Laptop and desktop upgrades, Windows deployment, data migration, networking, CCTV, and annual maintenance contracts for offices across Pune."
+            lead="Laptop and desktop upgrades, Windows deployment, data migration, networking, CCTV, and annual maintenance contracts for offices across Thane and Mumbai."
             action={
               <Button
                 href="/services"

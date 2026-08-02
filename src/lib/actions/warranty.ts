@@ -111,7 +111,7 @@ export async function submitWarrantyRegistration(
         `Your ${data.product} (serial ${data.serialNumber}) is registered.`,
         `Registration ID: ${registrationId} — quote it if you ever need an RMA.`,
         "",
-        "NUCLIEX INFOSYS, Pune",
+        "NUCLIEX INFOSYS, Thane",
       ].join("\n"),
     });
   } catch (error) {

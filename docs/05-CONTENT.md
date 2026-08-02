@@ -40,6 +40,12 @@
 - **Phone:** +91 9167862127.
 - **Mailboxes:** ram@nucliex.in · support@nucliex.in · sales@nucliex.in · accounts@nucliex.in.
   (No partners@ yet — partner enquiries route to sales.)
+- **Registered address:** A2, Marble Arch, Lodha Road, Naya Nagar, Mira Road, Thane,
+  Maharashtra – 401107, India.
+  ⚠️ **This supersedes every "Pune" reference in this document set.** The original brief said
+  Pune; the confirmed base is Mira Road, Thane. All site copy, metadata, JSON-LD, and the
+  homepage rail now say Thane/Mumbai. Open question: whether the company was *founded* in
+  Pune (the About copy now avoids naming a founding city until confirmed).
 - Source artwork: `brand-assets/green-ssd-256gb-box-original.jpeg`.
 
 ## 2. Facts that are NOT confirmed — use `{{TBD}}`

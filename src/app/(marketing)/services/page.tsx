@@ -28,7 +28,7 @@ import { Reveal } from "@/components/ui/reveal";
 export const metadata: Metadata = {
   title: "IT services & support",
   description:
-    "SSD upgrades, Windows deployment, data migration, networking, CCTV, and AMC for businesses in Pune.",
+    "SSD upgrades, Windows deployment, data migration, networking, CCTV, and AMC for businesses in Thane and Mumbai.",
 };
 
 const icons: Record<string, LucideIcon> = {
@@ -62,7 +62,8 @@ export default function ServicesPage() {
         <p className="mt-4 max-w-[56ch] text-body-lg text-fg-muted">
           Before NUCLIEX made drives, we fixed machines, deployed Windows, ran
           office networks, and replaced a lot of failed storage. That work — for
-          homes and offices across Pune — is still what we do every day.
+          homes and offices across Thane and Mumbai — is still what we do
+          every day.
         </p>
       </Section>
 
